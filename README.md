@@ -1,13 +1,21 @@
 # Liikuntakoutsaus
 
+PROJEKTIN KUVAUS
+
 Helsingin Kaupungin sisäinen työkalu, jota käytetään Helsingin kaupungin työntekijöiden liikuntaneuvonta-tarpeiden arvioimiseen.
 
-Käyttäjät vastaavat lomaketyyliseen kyselyyn, jonka tulosten perusteella voidaan arvioida heidän voimavaransa ja liikuntakoutsauksen tarpeellisuuden suhteessa heidän nykytilanteeseensa.
+Käyttäjät vastaavat lomaketyyliseen monivaihekyselyyn, jonka tulosten perusteella voidaan arvioida heidän voimavaransa ja liikuntakoutsauksen tarpeellisuuden suhteessa heidän nykytilanteeseensa.
 
 Työkalu integroidaan selainympäristöön (intraan).
 
 Työkalun sisäinen logiikka;
 
--> Esikysely, joka arvioi, onko käyttäjän mahdollista ylinpäätään saada koutsausta työkykynsä tason vuoksi
--> Jos työkyky on tarpeeksi hyvä, käyttäjä arvioi omia tarpeitaan lisäkysymysten kautta, joiden vastauksen perusteella hänelle kertyy pisteitä.
--> Jos pistemäärä on puolet tai yli puolet kokonaispistemäärästä, suositellaan koutsausta, ja tarjotaan ajanvarauspalvelu. Muuten käyttäjää suositellaan jatkamaan nykyisten elintapojensa noudattamista.
+1. Esikysely, joka arvioi, onko käyttäjän työkyky tarpeeksi hyvä liikuntakoutsauksen saamiseen.
+  -> Jos työkyky on tarpeeksi hyvä, käyttäjä siirtyy pääkyselyyn.
+
+2. Pääkyselyssä käyttäjä arvioi omia tarpeitaan ja liikuntatottumuksiaan, ja vastaa kysymyksiin.
+  -> Koutsaustarvetta puoltavista vastauksista käyttäjälle kertyy pisteitä.
+
+3. Kun käyttäjä on vastannut kaikkiin kysymyksiin, työkalu laskee yhteen pisteet ja kertyneen pistemäärän mukaan tulostaa käyttäjälle kyselyn tulokset.
+  -> Jos pistemäärä on puolet tai yli puolet kokonaispistemäärästä, suositellaan koutsausta, ja tarjotaan ajanvarauspalvelu.
+  -> Jos pistemäärä on alle puolet kokonaispistemäärästä, käyttäjää suositellaan jatkamaan nykyisten liikuntatottumustensa noudattamista.
