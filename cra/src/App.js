@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-     <Quiz currentQuestion={currentQuestion}/>
+     <Quiz />
     </div>
   );
 }

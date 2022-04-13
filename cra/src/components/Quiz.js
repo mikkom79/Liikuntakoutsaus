@@ -1,54 +1,57 @@
-import useState from "react";
-import Radiobutton from "./Radiobutton";
+import { useState } from "react";
+import FormStep from "./FormStep";
 
-const Quiz = ( { currentQuestion } ) => {
+const Quiz = () => {
+  const questions = [
+    {
+      questionTitle: "QuestionTitleA",
+      answerOptions: [
+        { id: 1, optionText: "Option A1", addPoint: false },
+        { id: 2, optionText: "Option A2", addPoint: true },
+        { id: 3, optionText: "Option A3", addPoint: false },
+      ],
+    },
+    {
+      questionTitle: "QuestionTitleB",
+      answerOptions: [
+        { id: 1, optionText: "Option B1", addPoint: false },
+        { id: 2, optionText: "Option B2", addPoint: true },
+        { id: 3, optionText: "Option B3", addPoint: false },
+      ],
+    },
+    {
+      questionTitle: "QuestionTitleC",
+      answerOptions: [
+        { id: 1, optionText: "Option C1", addPoint: false },
+        { id: 2, optionText: "Option C2", addPoint: true },
+        { id: 3, optionText: "Option C3", addPoint: false },
+      ],
+    },
+  ];
 
-    const questions = [
-        {
-          questionTitle: "Elit sint tempor ex adipisicing non reprehenderit.",
-          answerOptions: [
-            { optionText: "Cillum veniam et nostrud est amet.", addPoint: false },
-            { optionText: "Nostrud aute dolor ut eu voluptate sit eu ea mollit velit", addPoint: true },
-            { optionText: "Adipisicing commodo eiusmod velit cupidatat adipisicing quis", addPoint: true },
-          ],
-        },
-        {
-          questionTitle: "Elit sint tempor ex adipisicing non reprehenderit.",
-          answerOptions: [
-            { optionText: "Cillum veniam et nostrud est amet.", addPoint: false },
-            { optionText: "Nostrud aute dolor ut eu voluptate sit eu ea mollit velit", addPoint: true },
-            { optionText: "Adipisicing commodo eiusmod velit cupidatat adipisicing quis", addPoint: false },
-          ],
-        },
-        {
-          questionTitle: "Elit sint tempor ex adipisicing non reprehenderit.",
-          answerOptions: [
-            { optionText: "Cillum veniam et nostrud est amet.", addPoint: true },
-            { optionText: "Nostrud aute dolor ut eu voluptate sit eu ea mollit velit", addPoint: false },
-            { optionText: "Adipisicing commodo eiusmod velit cupidatat adipisicing quis", addPoint: true },
-          ],
-        },
-    
-      ];
+  const [formStep, setFormStep] = useState(1);
+  const [questionAnswer1, setquestionAnswer1] = useState("");
+  const [questionAnswer2, setquestionAnswer2] = useState("");
+  const [questionAnswer3, setquestionAnswer3] = useState("");
 
-      const [questionAnswer1, setquestionAnswer1] = useState("");
-      const [questionAnswer2, setquestionAnswer2] = useState("");
-      const [questionAnswer3, setquestionAnswer3] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
+  /*  */
 
-    return ( 
-        
-            <ul className="quiz-list">
-                <span>1/{questions.length}</span>
-        
-                <li><Radiobutton label={"Radio button"} value={"yay"}/></li>
+  const handleChange = (e) => {};
 
-            </ul>
-        
-     );
-}
- 
+  return (
+    <form className="quiz-form" onSubmit={handleSubmit}>
+      {formStep === 1 &&
+      <FormStep
+      questions={questions}
+      step={formStep}
+      handleChange={handleChange}/>}
+    </form>
+  );
+  //
+};
+
 export default Quiz;
-
-
-

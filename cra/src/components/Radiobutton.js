@@ -1,7 +1,15 @@
-const Radiobutton = ({label,value,questionID,addPoint,onChange}) => {
-    return ( 
-        <input type="radio" value={value} name={questionID} addPoint={addPoint} onChange={onChange}><label>{label}</label></input>
-     );
+const Radiobutton = ({label, value, name, onChange}) => {
+    return (  
+    <li>
+        <label>{label}</label>
+        <input
+        type="radio"
+        value={value}
+        name={name}
+        onChange={onChange}>
+        </input>
+    </li>
+    );
 }
  
 export default Radiobutton;
