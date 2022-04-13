@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import FormStep from "./FormStep";
 
 const Quiz = () => {
+
+  const [formStep, setFormStep] = useState(1);
 
   const questions = [
     {
@@ -30,7 +32,7 @@ const Quiz = () => {
     },
   ];
 
-  const [formStep, setFormStep] = useState(1);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
   };
