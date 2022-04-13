@@ -1,7 +1,7 @@
 const Radiobutton = ({label, value, name, onChange}) => {
     return (  
     <li>
-        <label for={value}>{label}</label>
+        <label htmlFor={value}>{label}</label>
         <input
         type="radio"
         value={value}

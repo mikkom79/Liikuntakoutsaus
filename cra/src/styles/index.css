@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: grey;
+    min-height: 100vh;
+}
+
+body, .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.App {
+    width: clamp(10em,100vw,20em);
+    padding: 2em;
+    background-color: white;
+    text-align: center;
+}
+
+form,
+section,
+form ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:1em;
+    list-style: none;
+}
+
+form h1 {
+    font-size: 1.8rem;
+}
+
+.step-tracker {
+font-size: 1.4rem;
+}
+
+button {
+    cursor: pointer;
+    background-color:grey;
+    color: white;
+    padding: 0.5em;
+}
