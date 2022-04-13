@@ -2,8 +2,20 @@ import { useState, useReducer } from "react";
 import FormStep from "./FormStep";
 
 const Quiz = () => {
+  const initialState = { step: 1 };
 
-  const [formStep, setFormStep] = useState(1);
+  function reducer(state, action) {
+    switch (action.type) {
+      case "next":
+        return { step: state.step + 1 };
+      case "previous":
+        return { step: state.step - 1 };
+      default:
+        throw new Error();
+    }
+  }
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const questions = [
     {
@@ -20,6 +32,7 @@ const Quiz = () => {
         { id: 1, optionText: "Option B1", addPoint: false },
         { id: 2, optionText: "Option B2", addPoint: true },
         { id: 3, optionText: "Option B3", addPoint: false },
+        { id: 4, optionText: "Option B3", addPoint: false },
       ],
     },
     {
@@ -32,30 +45,32 @@ const Quiz = () => {
     },
   ];
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
-  /*  */
-
   const handleChange = (e) => {};
-
-  const handleSteps = (e) => {};
 
   return (
     <form className="quiz-form" onSubmit={handleSubmit}>
-      {formStep && (
+      {state.step && (
         <FormStep
           questions={questions}
-          step={formStep}
+          step={state.step}
           handleChange={handleChange}
         />
       )}
 
-      {formStep !== 1 && <button>Edellinen</button>}
-      {formStep !== questions.length && <button>Seuraava</button>}
-
+      {state.step !== 1 && (
+        <button id="prev" onClick={() => dispatch({ type: "previous" })}>
+          Edellinen
+        </button>
+      )}
+      {state.step !== questions.length && (
+        <button id="next" onClick={() => dispatch({ type: "next" })}>
+          Seuraava
+        </button>
+      )}
     </form>
   );
 };
