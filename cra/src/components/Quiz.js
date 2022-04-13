@@ -2,7 +2,6 @@ import { useState } from "react";
 import FormStep from "./FormStep";
 
 const Quiz = () => {
-  const USER_ANSWERS = ["", "", ""]; //store user's answers temporarily
 
   const questions = [
     {
@@ -32,8 +31,6 @@ const Quiz = () => {
   ];
 
   const [formStep, setFormStep] = useState(1);
-  const [userAnswers, setUserAnswers] = useState(USER_ANSWERS);
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -57,7 +54,6 @@ const Quiz = () => {
       {formStep !== 1 && <button>Edellinen</button>}
       {formStep !== questions.length && <button>Seuraava</button>}
 
-      <p>current answers:{userAnswers[1]}</p>
     </form>
   );
 };
