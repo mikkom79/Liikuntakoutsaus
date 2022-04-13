@@ -44,7 +44,7 @@ const Quiz = () => {
 
   return (
     <form className="quiz-form" onSubmit={handleSubmit}>
-      {formStep === 1 &&
+      {formStep &&
       <FormStep
       questions={questions}
       step={formStep}
