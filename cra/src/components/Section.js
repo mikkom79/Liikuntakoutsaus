@@ -1,25 +1,26 @@
 import Radiobutton from "./Radiobutton";
+import { useState } from "react";
 
-const FormStep = ({ questions, step, handleChange }) => {
+const Section = ({ questions, step, onChange }) => {
   return (
     <section>
       <span className="step-tracker">
         {step}/{questions.length}
       </span>
       <h1>{questions[step - 1].questionTitle}</h1>
-      {questions[step - 1].answerOptions.map((option) => (
-        <ul>
+      <ul>
+        {questions[step - 1].answerOptions.map((option) => (
           <Radiobutton
             key={option.id}
             label={option.optionText}
             value={option.id}
             name={`question${step}`}
-            onChange={handleChange}
+            onChange={onChange}
           />
-        </ul>
-      ))}
+        ))}
+      </ul>
     </section>
   );
 };
 
-export default FormStep;
+export default Section;

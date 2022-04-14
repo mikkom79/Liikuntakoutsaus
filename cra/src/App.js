@@ -1,15 +1,12 @@
 import { useState } from "react";
-import Quiz from "./components/Quiz";
+import Form from "./components/Form";
 
 function App() {
-  const [preQuestionnaireDone, setPreQuestionnaireDone] = useState(true);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-
-  // { preQuestionnaireDone &&
-
+  const [preDone, setPreDone] = useState(true);
+ //tarkista, onko alkukartoitus (työkyky 0-10) tehty
   return (
     <div className="App">
-      <Quiz />
+      {preDone && <Form />} 
     </div>
   );
 }

@@ -39,6 +39,10 @@ form ul {
     margin: 0;
 }
 
+section {
+    padding-bottom: 2em;
+}
+
 form h1 {
     font-size: 1.8rem;
 }

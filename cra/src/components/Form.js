@@ -1,7 +1,10 @@
 import { useState, useReducer } from "react";
-import FormStep from "./FormStep";
+import Section from "./Section";
 
-const Quiz = () => {
+const Form = () => {
+
+  const [answer, setAnswer] = useState([]);
+
   const initialState = { step: 1 };
 
   function reducer(state, action) {
@@ -20,6 +23,7 @@ const Quiz = () => {
   const questions = [
     {
       questionTitle: "QuestionTitleA",
+      id:1,
       answerOptions: [
         { id: 1, optionText: "Option A1", addPoint: false },
         { id: 2, optionText: "Option A2", addPoint: true },
@@ -28,6 +32,7 @@ const Quiz = () => {
     },
     {
       questionTitle: "QuestionTitleB",
+      id:2,
       answerOptions: [
         { id: 1, optionText: "Option B1", addPoint: false },
         { id: 2, optionText: "Option B2", addPoint: true },
@@ -37,6 +42,7 @@ const Quiz = () => {
     },
     {
       questionTitle: "QuestionTitleC",
+      id:3,
       answerOptions: [
         { id: 1, optionText: "Option C1", addPoint: false },
         { id: 2, optionText: "Option C2", addPoint: true },
@@ -49,16 +55,28 @@ const Quiz = () => {
     e.preventDefault();
   };
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setAnswer({q: {}, a: {}})
+    console.log(answer);
+  };
+
+
+
 
   return (
     <form className="quiz-form" onSubmit={handleSubmit}>
       {state.step && (
-        <FormStep
+        <Section
           questions={questions}
           step={state.step}
-          handleChange={handleChange}
+          onChange={handleChange}
         />
+      )}
+
+      {state.step !== questions.length && (
+        <button id="next" onClick={() => dispatch({ type: "next" })}>
+          Seuraava
+        </button>
       )}
 
       {state.step !== 1 && (
@@ -66,13 +84,8 @@ const Quiz = () => {
           Edellinen
         </button>
       )}
-      {state.step !== questions.length && (
-        <button id="next" onClick={() => dispatch({ type: "next" })}>
-          Seuraava
-        </button>
-      )}
     </form>
   );
 };
 
-export default Quiz;
+export default Form;
