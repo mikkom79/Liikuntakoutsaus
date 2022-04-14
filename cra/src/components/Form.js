@@ -3,8 +3,9 @@ import Section from "./Section";
 import Summary from "./Summary";
 
 const Form = () => {
-
-  const [answer, setAnswer] = useState([]);
+  const [answer1, setAnswer1] = useState();
+  const [answer2, setAnswer2] = useState();
+  const [answer3, setAnswer3] = useState();
 
   const initialState = { step: 1 };
 
@@ -24,7 +25,6 @@ const Form = () => {
   const questions = [
     {
       questionTitle: "QuestionTitleA",
-      id:1,
       answerOptions: [
         { id: 1, optionText: "Option A1", addPoint: false },
         { id: 2, optionText: "Option A2", addPoint: true },
@@ -33,7 +33,6 @@ const Form = () => {
     },
     {
       questionTitle: "QuestionTitleB",
-      id:2,
       answerOptions: [
         { id: 1, optionText: "Option B1", addPoint: false },
         { id: 2, optionText: "Option B2", addPoint: true },
@@ -43,7 +42,6 @@ const Form = () => {
     },
     {
       questionTitle: "QuestionTitleC",
-      id:3,
       answerOptions: [
         { id: 1, optionText: "Option C1", addPoint: false },
         { id: 2, optionText: "Option C2", addPoint: true },
@@ -56,14 +54,25 @@ const Form = () => {
     e.preventDefault();
   };
 
-  const handleChange = (e, text) => {
-    setAnswer([{q: e.target.name, a: e.target.value}])
-    console.log(answer);
+  const handleChange = (e) => {
+    switch (e.target.name) {
+      case "question1":
+        setAnswer1(e.target.value);
+        break;
+      case "question2":
+        setAnswer2(e.target.value);
+        break;
+      case "question3":
+        setAnswer3(e.target.value);
+        break;
+      default:
+        return;
+    }
   };
 
   return (
     <form className="quiz-form" onSubmit={handleSubmit}>
-      {state.step && (
+      {state.step !== questions.length+1 && (
         <Section
           questions={questions}
           step={state.step}
@@ -71,7 +80,7 @@ const Form = () => {
         />
       )}
 
-      {state.step !== questions.length && (
+      {state.step !== questions.length+1 && (
         <button id="next" onClick={() => dispatch({ type: "next" })}>
           Seuraava
         </button>
@@ -82,7 +91,15 @@ const Form = () => {
           Edellinen
         </button>
       )}
-      <Summary answers={answer}/>
+
+      {state.step === questions.length+1 &&
+      <Summary
+      questions={questions}
+      answer1={answer1}
+      answer2={answer2}
+      answer3={answer3}
+      />}
+     
     </form>
   );
 };
