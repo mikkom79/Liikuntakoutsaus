@@ -1,12 +1,12 @@
 const Summary = ({answers}) => {
     return ( 
-        <div>
+        <ul>
             {answers.map((answer) => (
-            <>
+            <li key={answer.q}>
             <p>Question: {answer.q}</p>
             <p>Answer: {answer.a}</p>
-            </>))}
-        </div>
+            </li>))}
+        </ul>
      );
 }
  
