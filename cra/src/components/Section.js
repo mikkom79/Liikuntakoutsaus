@@ -13,7 +13,7 @@ const Section = ({ questions, step, onChange }) => {
           <Radiobutton
             key={option.id}
             label={option.optionText}
-            value={option.id}
+            value={option.optionText}
             name={`question${step}`}
             onChange={onChange}
           />

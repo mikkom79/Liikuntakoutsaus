@@ -1,5 +1,6 @@
 import { useState, useReducer } from "react";
 import Section from "./Section";
+import Summary from "./Summary";
 
 const Form = () => {
 
@@ -55,13 +56,10 @@ const Form = () => {
     e.preventDefault();
   };
 
-  const handleChange = (e) => {
-    setAnswer({q: {}, a: {}})
+  const handleChange = (e, text) => {
+    setAnswer([{q: e.target.name, a: e.target.value}])
     console.log(answer);
   };
-
-
-
 
   return (
     <form className="quiz-form" onSubmit={handleSubmit}>
@@ -84,6 +82,7 @@ const Form = () => {
           Edellinen
         </button>
       )}
+      <Summary answers={answer}/>
     </form>
   );
 };

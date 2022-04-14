@@ -1,7 +1,11 @@
-const Summary = () => {
+const Summary = ({answers}) => {
     return ( 
         <div>
-            <p>summary</p>
+            {answers.map((answer) => (
+            <>
+            <p>Question: {answer.q}</p>
+            <p>Answer: {answer.a}</p>
+            </>))}
         </div>
      );
 }
