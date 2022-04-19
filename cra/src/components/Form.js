@@ -1,12 +1,7 @@
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import Section from "./Section";
-import Summary from "./Summary";
 
 const Form = () => {
-  const [answer1, setAnswer1] = useState();
-  const [answer2, setAnswer2] = useState();
-  const [answer3, setAnswer3] = useState();
-
   const initialState = { step: 1 };
 
   function reducer(state, action) {
@@ -24,28 +19,28 @@ const Form = () => {
 
   const questions = [
     {
-      questionTitle: "QuestionTitleA",
+      questionTitle: "QuestionTitle1",
       answerOptions: [
-        { id: 1, optionText: "Option A1", addPoint: false },
-        { id: 2, optionText: "Option A2", addPoint: true },
-        { id: 3, optionText: "Option A3", addPoint: false },
+        { id: "1A", optionText: "Option 1A", addPoint: false },
+        { id: "1B", optionText: "Option 1B", addPoint: true },
+        { id: "1C", optionText: "Option 1C", addPoint: false },
       ],
     },
     {
-      questionTitle: "QuestionTitleB",
+      questionTitle: "QuestionTitle2",
       answerOptions: [
-        { id: 1, optionText: "Option B1", addPoint: false },
-        { id: 2, optionText: "Option B2", addPoint: true },
-        { id: 3, optionText: "Option B3", addPoint: false },
-        { id: 4, optionText: "Option B3", addPoint: false },
+        { id: "2A", optionText: "Option 2A", addPoint: false },
+        { id: "2B", optionText: "Option 2B", addPoint: true },
+        { id: "2C", optionText: "Option 2C", addPoint: false },
+        { id: "2D", optionText: "Option 2D", addPoint: false },
       ],
     },
     {
-      questionTitle: "QuestionTitleC",
+      questionTitle: "QuestionTitle3",
       answerOptions: [
-        { id: 1, optionText: "Option C1", addPoint: false },
-        { id: 2, optionText: "Option C2", addPoint: true },
-        { id: 3, optionText: "Option C3", addPoint: false },
+        { id: "3A", optionText: "Option 3A", addPoint: false },
+        { id: "3B", optionText: "Option 3B", addPoint: true },
+        { id: "3C", optionText: "Option 3C", addPoint: false },
       ],
     },
   ];
@@ -54,33 +49,16 @@ const Form = () => {
     e.preventDefault();
   };
 
-  const handleChange = (e) => {
-    switch (e.target.name) {
-      case "question1":
-        setAnswer1(e.target.value);
-        break;
-      case "question2":
-        setAnswer2(e.target.value);
-        break;
-      case "question3":
-        setAnswer3(e.target.value);
-        break;
-      default:
-        return;
-    }
-  };
-
   return (
     <form className="quiz-form" onSubmit={handleSubmit}>
-      {state.step !== questions.length+1 && (
-        <Section
-          questions={questions}
-          step={state.step}
-          onChange={handleChange}
-        />
+      
+      <Section step={state.step} questions={questions} /> 
+
+      {state.step === questions.length + 1 && (
+          <button type="submit">Lähetä vastaukset</button>
       )}
 
-      {state.step !== questions.length+1 && (
+      {state.step !== questions.length + 1 && (
         <button id="next" onClick={() => dispatch({ type: "next" })}>
           Seuraava
         </button>
@@ -91,15 +69,6 @@ const Form = () => {
           Edellinen
         </button>
       )}
-
-      {state.step === questions.length+1 &&
-      <Summary
-      questions={questions}
-      answer1={answer1}
-      answer2={answer2}
-      answer3={answer3}
-      />}
-     
     </form>
   );
 };
