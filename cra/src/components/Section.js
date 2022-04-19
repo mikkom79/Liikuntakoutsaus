@@ -30,56 +30,58 @@ const Section = ({ questions, step }) => {
       <span className="step-tracker">
         {step}/{questions.length + 1}
       </span>
-      {step === questions.length + 1 ? (
-        <h1>Yhteenveto</h1>
-      ) : (
-        <h1>{questions[step - 1].questionTitle}</h1>
+      {step !== questions.length + 1 && (
+        <>
+          <h1>{questions[step - 1].questionTitle}</h1>
+          <ul>
+            {step === 1 &&
+              questions[step - 1].answerOptions.map((option) => (
+                <Radiobutton
+                  key={option.id}
+                  label={option.optionText}
+                  value={option.id}
+                  name={`question${step}`}
+                  onChange={handleChange}
+                  checked={answer1 === option.id}
+                />
+              ))}
+            {step === 2 &&
+              questions[step - 1].answerOptions.map((option) => (
+                <Radiobutton
+                  key={option.id}
+                  label={option.optionText}
+                  value={option.id}
+                  name={`question${step}`}
+                  onChange={handleChange}
+                  checked={answer2 === option.id}
+                />
+              ))}
+            {step === 3 &&
+              questions[step - 1].answerOptions.map((option) => (
+                <Radiobutton
+                  key={option.id}
+                  label={option.optionText}
+                  value={option.id}
+                  name={`question${step}`}
+                  onChange={handleChange}
+                  checked={answer3 === option.id}
+                />
+              ))}
+          </ul>
+        </>
       )}
-      <ul>
-        {step === 1 &&
-          questions[step - 1].answerOptions.map((option) => (
-            <Radiobutton
-              key={option.id}
-              label={option.optionText}
-              value={option.id}
-              name={`question${step}`}
-              onChange={handleChange}
-              checked={answer1 === option.id}
-            />
-          ))}
-        {step === 2 &&
-          questions[step - 1].answerOptions.map((option) => (
-            <Radiobutton
-              key={option.id}
-              label={option.optionText}
-              value={option.id}
-              name={`question${step}`}
-              onChange={handleChange}
-              checked={answer2 === option.id}
-            />
-          ))}
-        {step === 3 &&
-          questions[step - 1].answerOptions.map((option) => (
-            <Radiobutton
-              key={option.id}
-              label={option.optionText}
-              value={option.id}
-              name={`question${step}`}
-              onChange={handleChange}
-              checked={answer3 === option.id}
-            />
-          ))
-        }
 
-        {step === questions.length + 1 && (
+      {step === questions.length + 1 && (
+        <>
+          <h1>Yhteenveto vastauksista</h1>
           <Summary
             questions={questions}
             answer1={answer1}
             answer2={answer2}
             answer3={answer3}
           />
-        )}
-      </ul>
+        </>
+      )}
     </section>
   );
 };

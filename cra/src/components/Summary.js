@@ -4,7 +4,7 @@ const Summary = ({ questions, answer1, answer2, answer3 }) => {
   const TEXT_ALT = "Ei vastausta";
 
   return (
-    <ul className="summary">
+    <ol className="summary">
       <li>
         <p>{questionsArr[0]}</p>
         <p>
@@ -26,7 +26,7 @@ const Summary = ({ questions, answer1, answer2, answer3 }) => {
           {answer3 || TEXT_ALT}
         </p>
       </li>
-    </ul>
+    </ol>
   );
 };
 
