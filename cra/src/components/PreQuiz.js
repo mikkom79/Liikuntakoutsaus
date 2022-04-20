@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Slider from "./Slider";
 
 const PreQuiz = ({ setPreDone }) => {
   const [showForm, setShowForm] = useState(false);
@@ -10,7 +11,7 @@ const PreQuiz = ({ setPreDone }) => {
     }
 
   return (
-    <div>
+    <div className="container">
       {!showForm && (
         <p>
           Et in nisi commodo esse non dolore adipisicing qui aute culpa irure
@@ -31,6 +32,7 @@ const PreQuiz = ({ setPreDone }) => {
             laborum magna Lorem. Deserunt laboris aliquip eu culpa. Mollit
             excepteur ex ex occaecat aliqua in Lorem excepteur?
           </p>
+          < Slider />
         </form>
       )}
       {showForm && <button type="submit" onClick={handleSubmit}>Lähetä vastaus</button>}

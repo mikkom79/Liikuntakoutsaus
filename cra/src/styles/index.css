@@ -27,10 +27,15 @@ body,
     text-align: center;
 }
 
+.App > * > * {
+    margin-top: 2em;
+}
+
 form,
 section,
 form ul,
-form ol {
+form ol,
+.container {
     display: flex;
     flex-direction: column;
     width: 100%;
