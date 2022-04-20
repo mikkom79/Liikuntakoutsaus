@@ -1,7 +1,9 @@
 import { useReducer, useState } from "react";
 import Section from "./Section";
 
-const Form = () => {
+const Form = ({ setQuizDone, setRecommendCoaching }) => {
+  const threshold = 3; //minimum amount of points needed for the coaching to be recommended
+
   const initialState = { step: 1 };
 
   function reducer(state, action) {
@@ -21,16 +23,16 @@ const Form = () => {
     {
       questionTitle: "QuestionTitle1",
       answerOptions: [
-        { id: "1A", optionText: "Option 1A", addPoint: false },
-        { id: "1B", optionText: "Option 1B", addPoint: true },
+        { id: "1A", optionText: "Option 1A", addPoint: true },
+        { id: "1B", optionText: "Option 1B", addPoint: false },
         { id: "1C", optionText: "Option 1C", addPoint: false },
       ],
     },
     {
       questionTitle: "QuestionTitle2",
       answerOptions: [
-        { id: "2A", optionText: "Option 2A", addPoint: false },
-        { id: "2B", optionText: "Option 2B", addPoint: true },
+        { id: "2A", optionText: "Option 2A", addPoint: true },
+        { id: "2B", optionText: "Option 2B", addPoint: false },
         { id: "2C", optionText: "Option 2C", addPoint: false },
         { id: "2D", optionText: "Option 2D", addPoint: false },
       ],
@@ -38,8 +40,8 @@ const Form = () => {
     {
       questionTitle: "QuestionTitle3",
       answerOptions: [
-        { id: "3A", optionText: "Option 3A", addPoint: false },
-        { id: "3B", optionText: "Option 3B", addPoint: true },
+        { id: "3A", optionText: "Option 3A", addPoint: true },
+        { id: "3B", optionText: "Option 3B", addPoint: false },
         { id: "3C", optionText: "Option 3C", addPoint: false },
       ],
     },
@@ -53,14 +55,15 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let isComplete = true;
+    let isComplete = true; //defaults to true
 
     Object.values(answers).map((value) => {
       if (!value) {
         isComplete = false;
       }
     });
-    if (!isComplete) { //if any of answers is undefined, do not calculate points
+    if (!isComplete) {
+      //if any of answers is undefined, do not calculate points
       return;
     }
     let totalPoints = 0;
@@ -73,6 +76,8 @@ const Form = () => {
       }
     });
     console.log(totalPoints);
+    setRecommendCoaching(totalPoints >= threshold ? true : false)
+    setQuizDone(true);
   };
 
   return (
