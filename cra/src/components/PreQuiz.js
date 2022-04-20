@@ -32,10 +32,14 @@ const PreQuiz = ({ setPreDone }) => {
             laborum magna Lorem. Deserunt laboris aliquip eu culpa. Mollit
             excepteur ex ex occaecat aliqua in Lorem excepteur?
           </p>
+          <span className="range-slider">
+          <p className="label">0</p>
           < Slider />
+          <p className="label">10</p>
+          </span>
+          <button type="submit">Lähetä vastaus</button>
         </form>
       )}
-      {showForm && <button type="submit" onClick={handleSubmit}>Lähetä vastaus</button>}
     </div>
   );
 };

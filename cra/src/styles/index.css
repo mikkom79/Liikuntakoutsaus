@@ -21,14 +21,22 @@ body,
 }
 
 .App {
-    width: clamp(10em, 100vw, 20em);
-    padding: 2em;
+    width: clamp(15em, 100vw, 30em);
+    padding: 5%;
     background-color: white;
     text-align: center;
 }
 
 .App > * > * {
     margin-top: 2em;
+}
+
+.range-slider {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap:0.5em;
+    color: #548BF4;
+    font-weight: 600;
 }
 
 form,
@@ -83,4 +91,10 @@ input {
 
 p {
     margin: 0.5em;
+}
+
+.label {
+    font-size: 0.9rem;
+    color:grey;
+    font-weight: 200;
 }

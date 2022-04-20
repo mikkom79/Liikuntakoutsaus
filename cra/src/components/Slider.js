@@ -27,7 +27,7 @@ const Slider = ({ rtl }) => {
             {...props}
             style={{
               ...props.style,
-              height: "16px",
+              height: "18px",
               width: "2px",
               backgroundColor: index * STEP < values[0] ? "#548BF4" : "#ccc",
             }}
@@ -39,7 +39,7 @@ const Slider = ({ rtl }) => {
             onTouchStart={props.onTouchStart}
             style={{
               ...props.style,
-              height: "6px",
+              height: "30px",
               display: "flex",
               width: "100%"
             }}
