@@ -3,12 +3,19 @@ import Slider from "./Slider";
 
 const PreQuiz = ({ setPreDone }) => {
   const [showForm, setShowForm] = useState(false);
+  const [values, setValues] = useState([5]);
   const [showResult, setShowResult] = useState(false);
 
   const handleSubmit = (e) => {
-        e.preventDefault();
-        setPreDone(true);
+    e.preventDefault();
+
+    if (values < 6) {
+      setShowResult(true);
     }
+    if (values >= 6) {
+      setPreDone(true);
+    }
+  };
 
   return (
     <div className="container">
@@ -25,7 +32,7 @@ const PreQuiz = ({ setPreDone }) => {
         <button onClick={() => setShowForm(true)}>Tee testi</button>
       )}
 
-      {showForm && (
+      {showForm && !showResult && (
         <form onSubmit={handleSubmit}>
           <p>
             Velit elit culpa ea nisi aliquip consectetur commodo sit quis
@@ -33,12 +40,31 @@ const PreQuiz = ({ setPreDone }) => {
             excepteur ex ex occaecat aliqua in Lorem excepteur?
           </p>
           <span className="range-slider">
-          <p className="label">0</p>
-          < Slider />
-          <p className="label">10</p>
+            <p className="label left">0</p>
+            <Slider values={values} setValues={setValues} />
+            <p className="label right">10</p>
           </span>
           <button type="submit">Lähetä vastaus</button>
         </form>
+      )}
+      {showResult && (
+        <>
+          <p>Vastasit:</p>
+          <p>{values}/10</p>
+          <p>Elit voluptate non quis occaecat aute eiusmod ullamco culpa.</p>
+          <div className="card">
+            <h2>Non labore cillum esse id:</h2>
+            <ul>
+              <li>Aute proident esse mollit qui proident.</li>
+              <li>Ullamco anim consectetur amet id aliquip.</li>
+              <li>Ut ipsum esse labore aute et adipisicing ut velit sint.</li>
+            </ul>
+          </div>
+         
+            <a href="https://www.google.com/" target="_blank" rel="noreferrer">
+              PlaceholderLinkki
+            </a>
+        </>
       )}
     </div>
   );

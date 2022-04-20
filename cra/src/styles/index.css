@@ -22,13 +22,9 @@ body,
 
 .App {
     width: clamp(15em, 100vw, 30em);
-    padding: 5%;
+    padding: 10%;
     background-color: white;
     text-align: center;
-}
-
-.App > * > * {
-    margin-top: 2em;
 }
 
 .range-slider {
@@ -61,6 +57,10 @@ form ol {
     align-items: center;
 }
 
+li {
+    margin-top: 1em;
+}
+
 section {
     padding-bottom: 2em;
 }
@@ -73,7 +73,7 @@ form h1 {
     font-size: 1.4rem;
 }
 
-button {
+button, a {
     cursor: pointer;
     background-color: grey;
     color: white;
@@ -82,6 +82,7 @@ button {
     font-size: 1.1rem;
     border: none;
     font-weight: normal;
+    text-decoration: none;
 }
 
 input {
@@ -90,11 +91,27 @@ input {
 }
 
 p {
-    margin: 0.5em;
+    margin: 0;
+    padding: 0;
 }
 
 .label {
     font-size: 0.9rem;
     color:grey;
     font-weight: 200;
+    margin-top: 6px;
+}
+
+.label.left {
+    margin-right: 0.5em;
+}
+
+.label.right {
+    margin-left: 0.5em;
+}
+
+.card {
+    background-color: #dbdbdb;
+    padding: 5%;
+    text-align: left;
 }

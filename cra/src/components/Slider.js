@@ -5,8 +5,7 @@ const STEP = 1;
 const MIN = 0;
 const MAX = 10;
 
-const Slider = ({ rtl }) => {
-  const [values, setValues] = React.useState([5]);
+const Slider = ({ rtl, values, setValues }) => {
   return (
     <div
       style={{
@@ -70,8 +69,8 @@ const Slider = ({ rtl }) => {
             {...props}
             style={{
               ...props.style,
-              height: isDragged ? "20px" : "30px",
-              width: isDragged ? "20px" : "30px",
+              height: isDragged ? "15px" : "25px",
+              width: isDragged ? "15px" : "25px",
               borderRadius: "50%",
               backgroundColor: "#000000",
               display: "flex",
@@ -90,7 +89,7 @@ const Slider = ({ rtl }) => {
           </div>
         )}
       />
-      <output style={{ marginTop: "30px" }}>{values[0]}</output>
+      <output style={{ marginTop: "15px" }}>{values[0]}</output>
     </div>
   );
 };
