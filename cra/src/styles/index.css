@@ -21,23 +21,44 @@ body,
 }
 
 .App {
-    width: clamp(10em, 100vw, 20em);
-    padding: 2em;
+    width: clamp(15em, 100vw, 30em);
+    padding: 10%;
     background-color: white;
     text-align: center;
+}
+
+.range-slider {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap:0.5em;
+    color: #548BF4;
+    font-weight: 600;
 }
 
 form,
 section,
 form ul,
-.summary {
+form ol,
+.container {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 1em;
-    list-style: none;
     padding: 0;
     margin: 0;
+}
+
+form ul {
+    list-style: none;
+}
+
+form ol {
+    text-align: left;
+    align-items: center;
+}
+
+li {
+    margin-top: 1em;
 }
 
 section {
@@ -45,14 +66,14 @@ section {
 }
 
 form h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 
 .step-tracker {
     font-size: 1.4rem;
 }
 
-button {
+button, a {
     cursor: pointer;
     background-color: grey;
     color: white;
@@ -61,6 +82,7 @@ button {
     font-size: 1.1rem;
     border: none;
     font-weight: normal;
+    text-decoration: none;
 }
 
 input {
@@ -69,5 +91,31 @@ input {
 }
 
 p {
-    margin: 0.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.label {
+    font-size: 0.9rem;
+    color:grey;
+    font-weight: 200;
+    margin-top: 6px;
+}
+
+.label.left {
+    margin-right: 0.5em;
+}
+
+.label.right {
+    margin-left: 0.5em;
+}
+
+.card {
+    background-color: #dbdbdb;
+    padding: 5%;
+    text-align: left;
+}
+
+label {
+    user-select: none;
 }

@@ -1,24 +1,49 @@
 import Radiobutton from "./Radiobutton";
-import { useState } from "react";
+import Summary from "./Summary";
 
-const Section = ({ questions, step, onChange }) => {
+const Section = ({ questions, step, answers, setAnswers }) => {
+
+
+  const handleChange = (value) => {
+    console.log(value)
+    const _answers = {...answers};
+    _answers[`answer${step}`]=value; //put into array before setAswers
+    setAnswers(_answers);
+  }
+ 
+
   return (
     <section>
       <span className="step-tracker">
-        {step}/{questions.length}
+        {step}/{questions.length + 1}
       </span>
-      <h1>{questions[step - 1].questionTitle}</h1>
-      <ul>
-        {questions[step - 1].answerOptions.map((option) => (
-          <Radiobutton
-            key={option.id}
-            label={option.optionText}
-            value={option.optionText}
-            name={`question${step}`}
-            onChange={onChange}
+      {step !== questions.length + 1 && (
+        <>
+          <h1>{questions[step - 1].questionTitle}</h1>
+          <ul>
+            {questions[step - 1].answerOptions.map((option) => (
+                <Radiobutton
+                  key={option.id}
+                  label={option.optionText}
+                  value={option.id}
+                  name={`question${step}`}
+                  onChange={handleChange}
+                  checked={answers[`answer${step}`] === option.id}
+                />
+              ))}
+          </ul>
+        </>
+      )}
+
+      {step === questions.length + 1 && (
+        <>
+          <h1>Yhteenveto vastauksista</h1>
+          <Summary
+            questions={questions}
+            answers={answers}
           />
-        ))}
-      </ul>
+        </>
+      )}
     </section>
   );
 };
