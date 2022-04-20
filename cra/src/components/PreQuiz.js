@@ -60,10 +60,10 @@ const PreQuiz = ({ setPreDone }) => {
               <li>Ut ipsum esse labore aute et adipisicing ut velit sint.</li>
             </ul>
           </div>
-         
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer">
-              PlaceholderLinkki
-            </a>
+
+          <a href="https://www.google.com/" target="_blank" rel="noreferrer">
+            PlaceholderLinkki
+          </a>
         </>
       )}
     </div>

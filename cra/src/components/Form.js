@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import Section from "./Section";
 
 const Form = () => {
@@ -45,17 +45,47 @@ const Form = () => {
     },
   ];
 
+  const [answers, setAnswers] = useState({
+    answer1: undefined,
+    answer2: undefined,
+    answer3: undefined,
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    let isComplete = true;
+
+    Object.values(answers).map((value) => {
+      if (!value) {
+        isComplete = false;
+      }
+    });
+    if (!isComplete) { //if any of answers is undefined, do not calculate points
+      return;
+    }
+    let totalPoints = 0;
+    Object.values(answers).map((value, index) => {
+      const option = questions[index].answerOptions.find(
+        (question) => question.id === value
+      );
+      if (option?.addPoint) {
+        totalPoints++;
+      }
+    });
+    console.log(totalPoints);
   };
 
   return (
     <form className="quiz-form" onSubmit={handleSubmit}>
-      
-      <Section step={state.step} questions={questions} /> 
+      <Section
+        step={state.step}
+        questions={questions}
+        answers={answers}
+        setAnswers={setAnswers}
+      />
 
       {state.step === questions.length + 1 && (
-          <button type="submit">Lähetä vastaukset</button>
+        <button type="submit">Lähetä vastaukset</button>
       )}
 
       {state.step !== questions.length + 1 && (

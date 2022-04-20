@@ -115,3 +115,7 @@ p {
     padding: 5%;
     text-align: left;
 }
+
+label {
+    user-select: none;
+}

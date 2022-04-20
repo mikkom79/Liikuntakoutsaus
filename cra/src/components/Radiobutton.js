@@ -1,8 +1,8 @@
 const Radiobutton = ({ label, value, name, onChange, checked }) => {
   return (
     <li>
-      <input type="radio" value={value} name={name} onChange={onChange} checked={checked}/>
-      <label htmlFor={value}>{label}</label>
+      <input type="radio" name={name} onChange={() => onChange(value)} checked={checked}/>
+      <label htmlFor={value} onClick={() => onChange(value)}>{label}</label>
     </li>
   );
 };
