@@ -51,8 +51,8 @@ const Result = ({ recommendCoaching, reset }) => {
       {recommendCoaching && <button>Varaa aika</button>}
       {recommendCoaching && <button>Helmi-liikuntakoutsaus</button>}
       <button type="button" onClick={() => reset()}>
-            Palaa alkuun
-          </button>
+        Palaa alkuun
+      </button>
     </div>
   );
 };
