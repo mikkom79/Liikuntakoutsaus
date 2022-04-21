@@ -10,6 +10,8 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    scrollbar-gutter: stable both-edges;
+    overflow-x: hidden;
 }
 
 body,
@@ -129,4 +131,18 @@ label {
     color:grey;
     font-style:italic;
     padding-bottom: 1em;
+}
+
+.summary.no-answer {
+    color:red;
+    font-style: italic;
+    font-weight: 600;
+}
+
+p.modal {
+    padding: 0.5em;
+    margin: 1em;
+    padding-top: 1em;
+    font-size: 0.9rem;
+    text-align: center;
 }

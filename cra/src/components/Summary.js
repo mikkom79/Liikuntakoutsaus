@@ -10,7 +10,7 @@ const Summary = ({ questions, answers }) => {
           <li key={index}>
             <h2>{title}</h2>
             <span className="summary label">{TEXT_BEFORE}</span>
-             <p className="summary answer">{Object.values(answers)[index] || TEXT_ALT}</p>
+             {Object.values(answers)[index] === undefined ? <p className="summary no-answer">{TEXT_ALT}</p> : <p>{Object.values(answers)[index]}</p>}
             {/*Object.values = js magic*/}
           </li>
         );

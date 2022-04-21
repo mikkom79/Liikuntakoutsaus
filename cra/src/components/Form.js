@@ -1,9 +1,9 @@
 import { useReducer, useState } from "react";
 import Section from "./Section";
 
-const Form = ({ setQuizDone, setRecommendCoaching }) => {
+const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   const threshold = 3; //minimum amount of points needed for the coaching to be recommended
-  const [showErrorModal, setShowErrorModal] = useState(false);
+  
   const initialState = { step: 1 };
 
   function reducer(state, action) {
