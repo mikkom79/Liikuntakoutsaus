@@ -4,7 +4,7 @@ import Slider from "./Slider";
 const PreQuiz = ({ setPreDone }) => {
   const [showForm, setShowForm] = useState(false);
   const [values, setValues] = useState([5]);
-  const [showResult, setShowResult] = useState(false);
+  const [showPreResult, setShowResult] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const PreQuiz = ({ setPreDone }) => {
         <button onClick={() => setShowForm(true)}>Tee testi</button>
       )}
 
-      {showForm && !showResult && (
+      {showForm && !showPreResult && (
         <form onSubmit={handleSubmit}>
           <p>
             Velit elit culpa ea nisi aliquip consectetur commodo sit quis
@@ -47,7 +47,7 @@ const PreQuiz = ({ setPreDone }) => {
           <button type="submit">Lähetä vastaus</button>
         </form>
       )}
-      {showResult && (
+      {showPreResult && (
         <>
           <p>Vastasit:</p>
           <p>{values}/10</p>
@@ -68,6 +68,7 @@ const PreQuiz = ({ setPreDone }) => {
             onClick={() => {
               setShowForm(false);
               setShowResult(false);
+              setValues([5]);
             }}
           >
             Palaa alkuun
