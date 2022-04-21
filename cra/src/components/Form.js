@@ -3,7 +3,7 @@ import Section from "./Section";
 
 const Form = ({ setQuizDone, setRecommendCoaching }) => {
   const threshold = 3; //minimum amount of points needed for the coaching to be recommended
-
+  const [showErrorModal, setShowErrorModal] = useState(false);
   const initialState = { step: 1 };
 
   function reducer(state, action) {
@@ -64,6 +64,7 @@ const Form = ({ setQuizDone, setRecommendCoaching }) => {
     });
     if (!isComplete) {
       //if any of answers is undefined, do not calculate points
+      setShowErrorModal(true);
       return;
     }
     let totalPoints = 0;
@@ -76,7 +77,7 @@ const Form = ({ setQuizDone, setRecommendCoaching }) => {
       }
     });
     console.log(totalPoints);
-    setRecommendCoaching(totalPoints >= threshold ? true : false)
+    setRecommendCoaching(totalPoints >= threshold ? true : false);
     setQuizDone(true);
   };
 
@@ -94,13 +95,21 @@ const Form = ({ setQuizDone, setRecommendCoaching }) => {
       )}
 
       {state.step !== questions.length + 1 && (
-        <button id="next" onClick={() => dispatch({ type: "next" })}>
+        <button
+          type="button"
+          id="next"
+          onClick={() => dispatch({ type: "next" })}
+        >
           Seuraava
         </button>
       )}
 
       {state.step !== 1 && (
-        <button id="prev" onClick={() => dispatch({ type: "previous" })}>
+        <button
+          type="button"
+          id="prev"
+          onClick={() => dispatch({ type: "previous" })}
+        >
           Edellinen
         </button>
       )}

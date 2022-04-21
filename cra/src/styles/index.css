@@ -65,8 +65,12 @@ section {
     padding-bottom: 2em;
 }
 
-form h1 {
+h1 {
     font-size: 1.2rem;
+}
+
+h2 {
+    font-size: 1.1rem;
 }
 
 .step-tracker {
@@ -118,4 +122,11 @@ p {
 
 label {
     user-select: none;
+}
+
+.summary.label {
+    font-size:0.9rem;
+    color:grey;
+    font-style:italic;
+    padding-bottom: 1em;
 }
