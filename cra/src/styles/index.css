@@ -14,6 +14,11 @@ body {
     overflow-x: hidden;
 }
 
+body * {
+    margin: 0;
+    padding: 0;
+}
+
 body,
 .App {
     display: flex;
@@ -23,8 +28,8 @@ body,
 }
 
 .App {
-    width: clamp(15em, 100vw, 30em);
-    padding: 10%;
+    width: clamp(15em, 100vw, 26em);
+    padding: 1em 5vw;
     background-color: white;
     text-align: center;
 }
@@ -46,9 +51,7 @@ form ol,
     flex-direction: column;
     width: 100%;
     gap: 1em;
-    padding: 0;
-    margin: 0;
-    gap: 1em;
+    text-align: center;
 }
 
 form ul {
@@ -61,7 +64,8 @@ form ol {
 }
 
 li {
-    margin-top: 1em;
+    margin-top: 0.5em;
+    margin-left: 1em;
 }
 
 section {
@@ -82,6 +86,9 @@ h2 {
 
 button,
 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     background-color: grey;
     color: white;
@@ -91,16 +98,17 @@ a {
     border: none;
     font-weight: normal;
     text-decoration: none;
+    width: clamp(5em, 90vw, 15em);
+    align-self: center;
+}
+
+label {
+    margin: 0 1em;
 }
 
 input {
     height: 1.4em;
     width: 1.4em;
-}
-
-p {
-    margin: 0;
-    padding: 0;
 }
 
 .label {
@@ -120,13 +128,14 @@ p {
 
 .card {
     background-color: #dbdbdb;
-    padding: 5%;
+    padding: 1em 2em;
     text-align: left;
     font-size: 0.9rem;
 }
 
 .card h2 {
     font-size: 1rem;
+    margin-bottom: 1em;
 }
 
 label {
@@ -148,7 +157,6 @@ label {
 
 ul.contact {
     list-style: none;
-    align-items: center;
 }
 
 p.modal {

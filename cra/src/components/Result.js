@@ -1,10 +1,11 @@
 const Result = ({ recommendCoaching, reset }) => {
   return (
     <div className="container">
-      <h1>Tulokset</h1>
+      <h1>Testin tulos</h1>
       {recommendCoaching && (
         <p>
           <strong>Suositellaan koutsausta.</strong>
+          <br />
           <br />
           Enim in veniam ex aliqua ad nostrud labore. Amet eu culpa fugiat
           eiusmod ad eu ex. Sit exercitation dolore excepteur mollit quis magna.
@@ -14,6 +15,7 @@ const Result = ({ recommendCoaching, reset }) => {
       {!recommendCoaching && (
         <p>
           <strong>Koutsausta ei suositella.</strong>
+          <br />
           <br />
           Laboris anim fugiat laboris qui. Nulla ut laborum pariatur est laboris
           est deserunt minim sunt qui occaecat esse cillum qui. Cupidatat dolor

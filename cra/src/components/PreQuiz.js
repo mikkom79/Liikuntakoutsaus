@@ -20,13 +20,16 @@ const PreQuiz = ({ setPreDone }) => {
   return (
     <div className="container">
       {!showForm && (
-        <p>
-          Et in nisi commodo esse non dolore adipisicing qui aute culpa irure
-          cupidatat. Qui pariatur reprehenderit est nostrud officia esse tempor
-          dolore occaecat ad id elit.
-          <br />
-          Consequat consectetur aliquip enim nulla.
-        </p>
+        <>
+          <h1>Dolore enim officia eu ullamco?</h1>
+          <p>
+            Et in nisi commodo esse non dolore adipisicing qui aute culpa irure
+            cupidatat. Qui pariatur reprehenderit est nostrud officia esse
+            tempor dolore occaecat ad id elit.
+            <br />
+            Consequat consectetur aliquip enim nulla.
+          </p>
+        </>
       )}
       {!showForm && (
         <button onClick={() => setShowForm(true)}>Tee testi</button>
