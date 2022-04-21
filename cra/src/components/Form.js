@@ -3,7 +3,7 @@ import Section from "./Section";
 
 const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   const threshold = 3; //minimum amount of points needed for the coaching to be recommended
-  
+
   const initialState = { step: 1 };
 
   function reducer(state, action) {
@@ -21,11 +21,26 @@ const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
 
   const questions = [
     {
-      questionTitle: "QuestionTitle1",
+      questionTitle:
+        "Mollit excepteur voluptate adipisicing sint occaecat labore et eiusmod labore.",
       answerOptions: [
-        { id: "1A", optionText: "Option 1A", addPoint: true },
-        { id: "1B", optionText: "Option 1B", addPoint: false },
-        { id: "1C", optionText: "Option 1C", addPoint: false },
+        {
+          id: "1A",
+          optionText:
+            "Adipisicing ipsum minim enim aliquip eiusmod reprehenderit",
+          addPoint: true,
+        },
+        {
+          id: "1B",
+          optionText: "Exercitation ut qui non irure quis excepteur.",
+          addPoint: false,
+        },
+        {
+          id: "1C",
+          optionText:
+            "Aliqua laboris officia non sunt cillum sint commodo fugiat labore qui velit laboris.",
+          addPoint: false,
+        },
       ],
     },
     {
@@ -96,6 +111,7 @@ const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
 
       {state.step !== questions.length + 1 && (
         <button
+          className="nav next"
           type="button"
           id="next"
           onClick={() => dispatch({ type: "next" })}
@@ -106,6 +122,7 @@ const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
 
       {state.step !== 1 && (
         <button
+          className="nav prev"
           type="button"
           id="prev"
           onClick={() => dispatch({ type: "previous" })}

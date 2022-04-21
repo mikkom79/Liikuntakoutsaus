@@ -17,8 +17,8 @@ const Section = ({ questions, step, answers, setAnswers }) => {
       </span>
       {step !== questions.length + 1 && (
         <>
-          <h1>{questions[step - 1].questionTitle}</h1>
-          <ul>
+          <fieldset>
+            <legend>{questions[step - 1].questionTitle}</legend>
             {questions[step - 1].answerOptions.map((option) => (
               <Radiobutton
                 key={option.id}
@@ -29,7 +29,7 @@ const Section = ({ questions, step, answers, setAnswers }) => {
                 checked={answers[`answer${step}`] === option.id}
               />
             ))}
-          </ul>
+          </fieldset>
         </>
       )}
 

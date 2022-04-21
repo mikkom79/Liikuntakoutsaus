@@ -29,7 +29,7 @@ body,
 
 .App {
     width: clamp(15em, 100vw, 26em);
-    padding: 1em 5vw;
+    padding: 2em 2vw;
     background-color: white;
     text-align: center;
 }
@@ -40,48 +40,64 @@ body,
     gap: 0.5em;
     color: #548BF4;
     font-weight: 600;
+    width: 100%;
 }
 
 form,
-section,
-form ul,
-form ol,
-.container {
+.container,
+section {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 1em;
     text-align: center;
-}
-
-form ul {
-    list-style: none;
-}
-
-form ol {
-    text-align: left;
+    justify-content: center;
     align-items: center;
 }
 
-li {
-    margin-top: 0.5em;
-    margin-left: 1em;
+fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 80%;
+    border: none;
+    justify-content: flex-start;
+    align-items: left;
 }
 
-section {
-    padding-bottom: 2em;
+ol {
+    text-align: left;
+    width: 80%;
+}
+
+
+li {
+    margin: 1em 0;
+}
+
+
+h1,
+h2,
+h3 {
+    margin: 0.2em;
 }
 
 h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
-.step-tracker {
-    font-size: 1.4rem;
+h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 120%;
 }
 
 button,
@@ -100,6 +116,22 @@ a {
     text-decoration: none;
     width: clamp(5em, 90vw, 15em);
     align-self: center;
+}
+
+button.nav {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+button.nav.prev::before {
+    content: "<";
+    margin-right: 0.5em;
+}
+
+button.nav.next::after {
+    content: ">";
+    margin-left: 0.5em;
 }
 
 label {
@@ -126,11 +158,24 @@ input {
     margin-left: 0.5em;
 }
 
+.radio-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 1em 0;
+    text-align: left;
+}
+
+.radio-container input {
+    flex: none;
+}
+
 .card {
     background-color: #dbdbdb;
     padding: 1em 2em;
     text-align: left;
     font-size: 0.9rem;
+    width: 100%;
 }
 
 .card h2 {
@@ -152,7 +197,6 @@ label {
 .summary.no-answer {
     color: red;
     font-style: italic;
-    font-weight: 600;
 }
 
 ul.contact {
@@ -165,4 +209,9 @@ p.modal {
     padding-top: 1em;
     font-size: 0.9rem;
     text-align: center;
+}
+
+.step-tracker {
+    font-size: 1.4rem;
+    font-weight: 600;
 }
