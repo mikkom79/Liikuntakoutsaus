@@ -5,12 +5,17 @@ const Summary = ({ questions, answers }) => {
 
   return (
     <ol className="summary">
+      <h1>Yhteenveto vastauksista</h1>
       {titlesArr.map((title, index) => {
         return (
           <li key={index}>
             <h2>{title}</h2>
             <span className="summary label">{TEXT_BEFORE}</span>
-             {Object.values(answers)[index] === undefined ? <p className="summary no-answer">{TEXT_ALT}</p> : <p>{Object.values(answers)[index]}</p>}
+            {Object.values(answers)[index] === undefined ? (
+              <p className="summary no-answer">{TEXT_ALT}</p>
+            ) : (
+              <p>{Object.values(answers)[index]}</p>
+            )}
             {/*Object.values = js magic*/}
           </li>
         );

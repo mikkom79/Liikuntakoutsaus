@@ -32,7 +32,7 @@ body,
 .range-slider {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap:0.5em;
+    gap: 0.5em;
     color: #548BF4;
     font-weight: 600;
 }
@@ -48,6 +48,7 @@ form ol,
     gap: 1em;
     padding: 0;
     margin: 0;
+    gap: 1em;
 }
 
 form ul {
@@ -68,7 +69,7 @@ section {
 }
 
 h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 h2 {
@@ -79,7 +80,8 @@ h2 {
     font-size: 1.4rem;
 }
 
-button, a {
+button,
+a {
     cursor: pointer;
     background-color: grey;
     color: white;
@@ -103,7 +105,7 @@ p {
 
 .label {
     font-size: 0.9rem;
-    color:grey;
+    color: grey;
     font-weight: 200;
     margin-top: 6px;
 }
@@ -120,6 +122,11 @@ p {
     background-color: #dbdbdb;
     padding: 5%;
     text-align: left;
+    font-size: 0.9rem;
+}
+
+.card h2 {
+    font-size: 1rem;
 }
 
 label {
@@ -127,16 +134,21 @@ label {
 }
 
 .summary.label {
-    font-size:0.9rem;
-    color:grey;
-    font-style:italic;
+    font-size: 0.9rem;
+    color: grey;
+    font-style: italic;
     padding-bottom: 1em;
 }
 
 .summary.no-answer {
-    color:red;
+    color: red;
     font-style: italic;
     font-weight: 600;
+}
+
+ul.contact {
+    list-style: none;
+    align-items: center;
 }
 
 p.modal {

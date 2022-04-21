@@ -1,6 +1,6 @@
 const Result = ({ recommendCoaching, reset }) => {
   return (
-    <div>
+    <div className="container">
       <h1>Tulokset</h1>
       {recommendCoaching && (
         <p>
