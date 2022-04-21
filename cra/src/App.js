@@ -17,17 +17,19 @@ function App() {
    // virheilmoitus, jos käyttäjä yrittää lähettää puutteellisen kyselyn
    const onCloseModal = () => setShowErrorModal(false);
    // sulkee virheilmoituksen
+   const reset = () =>
+   setQuizDone(false);
+   setPreDone(false);
 
   return (
     <div className="App">
       {!preDone && <PreQuiz setPreDone={setPreDone} />}
       {preDone && !quizDone && <Form setQuizDone={setQuizDone} setRecommendCoaching={setRecommendCoaching} setShowErrorModal={setShowErrorModal} />}
-      {quizDone && <Result recommendCoaching={recommendCoaching}/>}
+      {quizDone && <Result recommendCoaching={recommendCoaching} reset={reset}/>}
      
       <Modal open={showErrorModal} onClose={onCloseModal} center>
         <p className="modal">Vastaathan kaikkiin kysymyksiin!</p>
       </Modal>
-
     </div>
   );
 }
