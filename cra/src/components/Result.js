@@ -1,27 +1,29 @@
 const Result = ({ recommendCoaching, reset }) => {
   return (
     <div className="container">
-      <h1>Testin tulos</h1>
-      {recommendCoaching && (
-        <p>
-          <strong>Suositellaan koutsausta.</strong>
-          <br />
-          <br />
-          Enim in veniam ex aliqua ad nostrud labore. Amet eu culpa fugiat
-          eiusmod ad eu ex. Sit exercitation dolore excepteur mollit quis magna.
-          Nostrud eiusmod elit occaecat in sint velit duis.
-        </p>
-      )}
-      {!recommendCoaching && (
-        <p>
-          <strong>Koutsausta ei suositella.</strong>
-          <br />
-          <br />
-          Laboris anim fugiat laboris qui. Nulla ut laborum pariatur est laboris
-          est deserunt minim sunt qui occaecat esse cillum qui. Cupidatat dolor
-          aliquip veniam adipisicing anim.
-        </p>
-      )}
+      <div>
+        <h1>Testin tulos</h1>
+        {recommendCoaching && (
+          <p>
+            <strong>Suositellaan koutsausta.</strong>
+            <br />
+            <br />
+            Enim in veniam ex aliqua ad nostrud labore. Amet eu culpa fugiat
+            eiusmod ad eu ex. Sit exercitation dolore excepteur mollit quis
+            magna. Nostrud eiusmod elit occaecat in sint velit duis.
+          </p>
+        )}
+        {!recommendCoaching && (
+          <p>
+            <strong>Koutsausta ei suositella.</strong>
+            <br />
+            <br />
+            Laboris anim fugiat laboris qui. Nulla ut laborum pariatur est
+            laboris est deserunt minim sunt qui occaecat esse cillum qui.
+            Cupidatat dolor aliquip veniam adipisicing anim.
+          </p>
+        )}
+      </div>
       <div className="card">
         <h2>Non labore cillum esse id:</h2>
         <ul>
@@ -50,11 +52,19 @@ const Result = ({ recommendCoaching, reset }) => {
           <li>09 21321321 </li>
         </ul>
       </div>
-      {recommendCoaching && <button>Varaa aika</button>}
-      {recommendCoaching && <button>Helmi-liikuntakoutsaus</button>}
-      <button type="button" onClick={() => reset()}>
-        Palaa alkuun
-      </button>
+      <div className="buttons-container">
+        {recommendCoaching && <button className="primary">Varaa aika</button>}
+        {recommendCoaching && (
+          <button className="secondary">Helmi-liikuntakoutsaus</button>
+        )}
+        <button
+          className={recommendCoaching ? "secondary" : "primary"}
+          type="button"
+          onClick={() => reset()}
+        >
+          Palaa alkuun
+        </button>
+      </div>
     </div>
   );
 };

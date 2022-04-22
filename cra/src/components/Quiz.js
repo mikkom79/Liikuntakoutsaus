@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
 import Section from "./Section";
 
-const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
+const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   const threshold = 3; //minimum amount of points needed for the coaching to be recommended
 
   const initialState = { step: 1 };
@@ -97,7 +97,7 @@ const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   };
 
   return (
-    <form className="quiz-form" onSubmit={handleSubmit}>
+    <form className="container" onSubmit={handleSubmit}>
       <Section
         step={state.step}
         questions={questions}
@@ -105,33 +105,34 @@ const Form = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
         setAnswers={setAnswers}
       />
 
-      {state.step === questions.length + 1 && (
-        <button type="submit">Lähetä vastaukset</button>
-      )}
+      <div className="buttons-container">
+        {state.step !== 1 && (
+          <button
+            className="secondary prev"
+            type="button"
+            id="prev"
+            onClick={() => dispatch({ type: "previous" })}
+          >
+            Edellinen
+          </button>
+        )}
 
-      {state.step !== questions.length + 1 && (
-        <button
-          className="nav next"
-          type="button"
-          id="next"
-          onClick={() => dispatch({ type: "next" })}
-        >
-          Seuraava
-        </button>
-      )}
-
-      {state.step !== 1 && (
-        <button
-          className="nav prev"
-          type="button"
-          id="prev"
-          onClick={() => dispatch({ type: "previous" })}
-        >
-          Edellinen
-        </button>
-      )}
+        {state.step !== questions.length + 1 && (
+          <button
+            className="secondary next"
+            type="button"
+            id="next"
+            onClick={() => dispatch({ type: "next" })}
+          >
+            Seuraava
+          </button>
+        )}
+        {state.step === questions.length + 1 && (
+          <button type="submit">Lähetä vastaukset</button>
+        )}
+      </div>
     </form>
   );
 };
 
-export default Form;
+export default Quiz;

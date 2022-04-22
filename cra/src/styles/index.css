@@ -5,6 +5,9 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: grey;
     min-height: 100vh;
@@ -19,19 +22,48 @@ body * {
     padding: 0;
 }
 
-body,
 .App {
+    width: clamp(375px, 100vw, 30em);
+    background-color: white;
+    padding: 2em;
+}
+
+.container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: clamp(10em, 80vh, 40em);
+    gap: 1em;
+    text-align: center;
+}
+
+.container>div:not(.buttons-container, .card) {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    min-height: 50vh;
     justify-content: center;
     align-items: center;
 }
 
-.App {
-    width: clamp(15em, 100vw, 26em);
-    padding: 2em 2vw;
-    background-color: white;
-    text-align: center;
+.buttons-container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 80%;
+    border: none;
+    margin: 2vh 0;
 }
 
 .range-slider {
@@ -43,27 +75,6 @@ body,
     width: 100%;
 }
 
-form,
-.container,
-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1em;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-fieldset {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    width: 80%;
-    border: none;
-    justify-content: flex-start;
-    align-items: left;
-}
 
 ol {
     text-align: left;
@@ -95,41 +106,51 @@ h3 {
     font-weight: 500;
 }
 
-p {
+p,
+label,
+legend {
     font-size: 1rem;
     line-height: 120%;
+    max-width: 50ch;
 }
 
 button,
-a {
+a,
+button[type="submit"],
+button.nav {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: grey;
-    color: white;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     font-family: inherit;
-    font-size: 1.1rem;
-    border: none;
+    font-size: 1rem;
     font-weight: normal;
     text-decoration: none;
-    width: clamp(5em, 90vw, 15em);
-    align-self: center;
+    width: 49%;
+    border: 2px solid transparent;
 }
 
-button.nav {
+button[type="submit"],
+button.primary,
+a.primary {
+    background-color: rgb(61, 61, 61);
+    color: white;
+}
+
+button.secondary,
+a.secondary {
     background-color: white;
     border: 2px solid black;
     color: black;
 }
 
-button.nav.prev::before {
+button.prev::before {
     content: "<";
     margin-right: 0.5em;
 }
 
-button.nav.next::after {
+button.next::after {
     content: ">";
     margin-left: 0.5em;
 }
@@ -160,13 +181,12 @@ input {
 
 .radio-container {
     display: flex;
-    justify-content: left;
     align-items: center;
     margin: 1em 0;
     text-align: left;
 }
 
-.radio-container input {
+.radio-container input[type="radio"] {
     flex: none;
 }
 
@@ -175,12 +195,12 @@ input {
     padding: 1em 2em;
     text-align: left;
     font-size: 0.9rem;
-    width: 100%;
 }
 
 .card h2 {
     font-size: 1rem;
     margin-bottom: 1em;
+    width: 24em;
 }
 
 label {

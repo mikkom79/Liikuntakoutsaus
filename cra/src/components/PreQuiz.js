@@ -20,7 +20,7 @@ const PreQuiz = ({ setPreDone }) => {
   return (
     <div className="container">
       {!showForm && (
-        <>
+        <div>
           <h1>Dolore enim officia eu ullamco?</h1>
           <p>
             Et in nisi commodo esse non dolore adipisicing qui aute culpa irure
@@ -29,53 +29,72 @@ const PreQuiz = ({ setPreDone }) => {
             <br />
             Consequat consectetur aliquip enim nulla.
           </p>
-        </>
+        </div>
       )}
       {!showForm && (
-        <button onClick={() => setShowForm(true)}>Tee testi</button>
+        <div className="buttons-container">
+          <button className="primary" onClick={() => setShowForm(true)}>
+            Tee testi
+          </button>
+        </div>
       )}
 
       {showForm && !showPreResult && (
-        <form onSubmit={handleSubmit}>
-          <p>
-            Velit elit culpa ea nisi aliquip consectetur commodo sit quis
-            laborum magna Lorem. Deserunt laboris aliquip eu culpa. Mollit
-            excepteur ex ex occaecat aliqua in Lorem excepteur?
-          </p>
-          <span className="range-slider">
-            <p className="label left">0</p>
-            <Slider values={values} setValues={setValues} />
-            <p className="label right">10</p>
-          </span>
-          <button type="submit">Lähetä vastaus</button>
+        <form className="container" onSubmit={handleSubmit}>
+          <div>
+            <p>
+              Velit elit culpa ea nisi aliquip consectetur commodo sit quis
+              laborum magna Lorem. Deserunt laboris aliquip eu culpa. Mollit
+              excepteur ex ex occaecat aliqua in Lorem excepteur?
+            </p>
+            <span className="range-slider">
+              <p className="label left">0</p>
+              <Slider values={values} setValues={setValues} />
+              <p className="label right">10</p>
+            </span>
+          </div>
+          <div className="buttons-container">
+            <button type="submit">Lähetä vastaus</button>
+          </div>
         </form>
       )}
       {showPreResult && (
         <>
-          <p>Vastasit:</p>
-          <p>{values}/10</p>
-          <p>Elit voluptate non quis occaecat aute eiusmod ullamco culpa.</p>
-          <div className="card">
-            <h2>Non labore cillum esse id:</h2>
-            <ul>
-              <li>Aute proident esse mollit qui proident.</li>
-              <li>Ullamco anim consectetur amet id aliquip.</li>
-              <li>Ut ipsum esse labore aute et adipisicing ut velit sint.</li>
-            </ul>
+          <div>
+            <p>Vastasit:</p>
+            <p>{values}/10</p>
+            <p>Elit voluptate non quis occaecat aute eiusmod ullamco culpa.</p>
+            <div className="card">
+              <h2>Non labore cillum esse id:</h2>
+              <ul>
+                <li>Aute proident esse mollit qui proident.</li>
+                <li>Ullamco anim consectetur amet id aliquip.</li>
+                <li>Ut ipsum esse labore aute et adipisicing ut velit sint.</li>
+              </ul>
+            </div>
           </div>
-          <a href="https://www.google.com/" target="_blank" rel="noreferrer">
-            PlaceholderLinkki
-          </a>
-          <button
-            type="button"
-            onClick={() => {
-              setShowForm(false);
-              setShowResult(false);
-              setValues([5]);
-            }}
-          >
-            Palaa alkuun
-          </button>
+          <div className="buttons-container">
+            <a
+              className="secondary"
+              href="https://www.google.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              PlaceholderLinkki
+            </a>
+
+            <button
+              className="primary"
+              type="button"
+              onClick={() => {
+                setShowForm(false);
+                setShowResult(false);
+                setValues([5]);
+              }}
+            >
+              Palaa alkuun
+            </button>
+          </div>
         </>
       )}
     </div>

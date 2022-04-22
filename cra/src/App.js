@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import Form from "./components/Form";
+import Quiz from "./components/Quiz";
 import PreQuiz from "./components/PreQuiz";
 import Result from "./components/Result";
 
@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       {!preDone && <PreQuiz setPreDone={setPreDone} />}
       {preDone && !quizDone && (
-        <Form
+        <Quiz
           setQuizDone={setQuizDone}
           setRecommendCoaching={setRecommendCoaching}
           setShowErrorModal={setShowErrorModal}

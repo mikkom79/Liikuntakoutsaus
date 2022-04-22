@@ -11,32 +11,30 @@ const Section = ({ questions, step, answers, setAnswers }) => {
   };
 
   return (
-    <section>
+    <>
       <span className="step-tracker">
         {step}/{questions.length + 1}
       </span>
       {step !== questions.length + 1 && (
-        <>
-          <fieldset>
-            <legend>{questions[step - 1].questionTitle}</legend>
-            {questions[step - 1].answerOptions.map((option) => (
-              <Radiobutton
-                key={option.id}
-                label={option.optionText}
-                value={option.id}
-                name={`question${step}`}
-                onChange={handleChange}
-                checked={answers[`answer${step}`] === option.id}
-              />
-            ))}
-          </fieldset>
-        </>
+        <fieldset>
+          <legend>{questions[step - 1].questionTitle}</legend>
+          {questions[step - 1].answerOptions.map((option) => (
+            <Radiobutton
+              key={option.id}
+              label={option.optionText}
+              value={option.id}
+              name={`question${step}`}
+              onChange={handleChange}
+              checked={answers[`answer${step}`] === option.id}
+            />
+          ))}
+        </fieldset>
       )}
 
       {step === questions.length + 1 && (
         <Summary questions={questions} answers={answers} />
       )}
-    </section>
+    </>
   );
 };
 
