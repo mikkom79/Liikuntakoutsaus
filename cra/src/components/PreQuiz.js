@@ -20,7 +20,7 @@ const PreQuiz = ({ setPreDone }) => {
   return (
     <div className="container">
       {!showForm && (
-        <div>
+        <div className="sub-container">
           <h1>Dolore enim officia eu ullamco?</h1>
           <p>
             Et in nisi commodo esse non dolore adipisicing qui aute culpa irure
@@ -41,7 +41,7 @@ const PreQuiz = ({ setPreDone }) => {
 
       {showForm && !showPreResult && (
         <form className="container" onSubmit={handleSubmit}>
-          <div>
+          <div className="sub-container">
             <p>
               Velit elit culpa ea nisi aliquip consectetur commodo sit quis
               laborum magna Lorem. Deserunt laboris aliquip eu culpa. Mollit
@@ -60,7 +60,7 @@ const PreQuiz = ({ setPreDone }) => {
       )}
       {showPreResult && (
         <>
-          <div>
+          <div className="sub-container">
             <p>Vastasit:</p>
             <p>{values}/10</p>
             <p>Elit voluptate non quis occaecat aute eiusmod ullamco culpa.</p>
@@ -82,7 +82,6 @@ const PreQuiz = ({ setPreDone }) => {
             >
               PlaceholderLinkki
             </a>
-
             <button
               className="primary"
               type="button"

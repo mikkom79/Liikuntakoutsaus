@@ -1,7 +1,7 @@
 const Result = ({ recommendCoaching, reset }) => {
   return (
     <div className="container">
-      <div>
+      <div className="sub-container">
         <h1>Testin tulos</h1>
         {recommendCoaching && (
           <p>

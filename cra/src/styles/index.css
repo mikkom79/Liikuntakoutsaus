@@ -31,21 +31,19 @@ body * {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
-    min-height: clamp(10em, 80vh, 40em);
-    gap: 1em;
+    min-height: clamp(325px, 100vh, 30em);
     text-align: center;
 }
 
-.container>div:not(.buttons-container, .card) {
+.sub-container {
     display: flex;
     flex-direction: column;
-    gap: 3em;
-    min-height: 50vh;
-    justify-content: center;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    gap: 0.5em;
 }
 
 .buttons-container {
@@ -55,6 +53,7 @@ body * {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+    margin-top: 1em;
 }
 
 fieldset {
@@ -66,13 +65,19 @@ fieldset {
     margin: 2vh 0;
 }
 
-.range-slider {
+legend {
+    font-weight: 600;
+}
+
+span.range-slider {
+    flex: none;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 0.5em;
     color: #548BF4;
     font-weight: 600;
     width: 100%;
+    margin: 2em 0;
 }
 
 
@@ -159,11 +164,6 @@ label {
     margin: 0 1em;
 }
 
-input {
-    height: 1.4em;
-    width: 1.4em;
-}
-
 .label {
     font-size: 0.9rem;
     color: grey;
@@ -188,6 +188,8 @@ input {
 
 .radio-container input[type="radio"] {
     flex: none;
+    height: 1.4em;
+    width: 1.4em;
 }
 
 .card {
@@ -195,12 +197,13 @@ input {
     padding: 1em 2em;
     text-align: left;
     font-size: 0.9rem;
+    width: 24em;
+    margin-top: 1em;
 }
 
 .card h2 {
     font-size: 1rem;
     margin-bottom: 1em;
-    width: 24em;
 }
 
 label {

@@ -4,7 +4,7 @@ const Summary = ({ questions, answers }) => {
   const TEXT_ALT = "Ei vastausta";
 
   return (
-    <>
+    <div className="sub-container">
       <h2>Yhteenveto vastauksista</h2>
       <ol className="summary">
         {titlesArr.map((title, index) => {
@@ -22,7 +22,7 @@ const Summary = ({ questions, answers }) => {
           );
         })}
       </ol>
-    </>
+    </div>
   );
 };
 
