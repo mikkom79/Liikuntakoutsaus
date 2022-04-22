@@ -5,6 +5,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   const threshold = 3; //minimum amount of points needed for the coaching to be recommended
 
   const initialState = { step: 1 };
+  //controls which quiz page the user is currently on
 
   function reducer(state, action) {
     switch (action.type) {
@@ -63,9 +64,17 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   ];
 
   const [answers, setAnswers] = useState({
+    //used to store the answer IDs (=values)
     answer1: undefined,
     answer2: undefined,
     answer3: undefined,
+  });
+
+  const [answersText, setAnswersText] = useState({
+    //used to store the answer labels (=option text that is rendered to user)
+    answerText1: undefined,
+    answerText2: undefined,
+    answerText3: undefined,
   });
 
   const handleSubmit = (e) => {
@@ -78,7 +87,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
       }
     });
     if (!isComplete) {
-      //if any of answers is undefined, do not calculate points
+      //if any of answers is undefined, do not calculate points, and show error
       setShowErrorModal(true);
       return;
     }
@@ -89,9 +98,9 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
       );
       if (option?.addPoint) {
         totalPoints++;
-      }
+      } //calculate the total points; find and compare currently stored answers to the list of answer options => if addPoint is true, add one point to the total points
     });
-    console.log(totalPoints);
+    console.log(`${totalPoints} out of ${threshold} points`);
     setRecommendCoaching(totalPoints >= threshold ? true : false);
     setQuizDone(true);
   };
@@ -103,6 +112,8 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
         questions={questions}
         answers={answers}
         setAnswers={setAnswers}
+        answersText={answersText}
+        setAnswersText={setAnswersText}
       />
 
       <div className="buttons-container">

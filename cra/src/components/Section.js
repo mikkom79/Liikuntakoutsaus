@@ -1,13 +1,26 @@
 import Radiobutton from "./Radiobutton";
 import Summary from "./Summary";
 
-const Section = ({ questions, step, answers, setAnswers }) => {
-  const handleChange = (value) => {
-    console.log(value);
+const Section = ({
+  questions,
+  step,
+  answers,
+  setAnswers,
+  answersText,
+  setAnswersText,
+}) => {
+  const handleChange = (value, label) => {
+    console.log(value, label);
+
     const _answers = { ...answers };
     _answers[`answer${step}`] = value;
     //insert the answers into an array before assigning it to setAnswers
     setAnswers(_answers);
+
+    const _answersText = { ...answersText };
+    _answersText[`answerText${step}`] = label;
+    //insert the answers-labels into an array before assigning it to setAnswersText
+    setAnswersText(_answersText);
   };
 
   return (
@@ -16,7 +29,7 @@ const Section = ({ questions, step, answers, setAnswers }) => {
         {step}/{questions.length + 1}
       </span>
       {step !== questions.length + 1 && (
-        <fieldset>
+        <fieldset className="sub-container">
           <legend>{questions[step - 1].questionTitle}</legend>
           {questions[step - 1].answerOptions.map((option) => (
             <Radiobutton
@@ -32,7 +45,7 @@ const Section = ({ questions, step, answers, setAnswers }) => {
       )}
 
       {step === questions.length + 1 && (
-        <Summary questions={questions} answers={answers} />
+        <Summary questions={questions} answersText={answersText} />
       )}
     </>
   );

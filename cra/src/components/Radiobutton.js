@@ -4,10 +4,10 @@ const Radiobutton = ({ label, value, name, onChange, checked }) => {
       <input
         type="radio"
         name={name}
-        onChange={() => onChange(value)}
+        onChange={() => onChange(value, label)}
         checked={checked}
       />
-      <label htmlFor={value} onClick={() => onChange(value)}>
+      <label htmlFor={value} onClick={() => onChange(value, label)}>
         {label}
       </label>
     </div>
