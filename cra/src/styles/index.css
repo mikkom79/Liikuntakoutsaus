@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: grey;
+    background-color: var(--color-coat-of-arms-light);
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -24,8 +24,8 @@ body * {
 
 .App {
     width: clamp(375px, 100vw, 30em);
-    background-color: white;
-    padding: 2em;
+    background-color: var(--color-white);
+    padding: 1em;
 }
 
 .container {
@@ -74,7 +74,7 @@ span.range-slider {
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 0.5em;
-    color: #548BF4;
+    color: var(--color-coat-of-arms-dark);
     font-weight: 600;
     width: 100%;
     margin: 2em 0;
@@ -127,27 +127,39 @@ button.nav {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    padding: 0.5em 1em;
+    padding: 0.8em 1em;
     font-family: inherit;
     font-size: 1rem;
     font-weight: normal;
     text-decoration: none;
-    width: 49%;
     border: 2px solid transparent;
+    width: 60%;
 }
 
 button[type="submit"],
 button.primary,
 a.primary {
-    background-color: rgb(61, 61, 61);
-    color: white;
+    background-color: var(--color-coat-of-arms);
+    color: var(--color-white);
 }
 
 button.secondary,
 a.secondary {
-    background-color: white;
-    border: 2px solid black;
-    color: black;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-coat-of-arms);
+    color: var(--color-coat-of-arms);
+}
+
+#main-quiz-submit {
+    width: 45%;
+}
+
+button.prev {
+    width: 45%;
+}
+
+button.next {
+    width: 45%;
 }
 
 button.prev::before {
@@ -160,14 +172,15 @@ button.next::after {
     margin-left: 0.5em;
 }
 
+
+
 label {
     margin: 0 1em;
 }
 
 .label {
-    font-size: 0.9rem;
-    color: grey;
-    font-weight: 200;
+    color: var(--color-black-70);
+    font-weight: normal;
     margin-top: 6px;
 }
 
@@ -182,8 +195,9 @@ label {
 .radio-container {
     display: flex;
     align-items: center;
-    margin: 1em 0;
+    margin: 1vh 0;
     text-align: left;
+    width: 100%;
 }
 
 .radio-container input[type="radio"] {
@@ -193,7 +207,7 @@ label {
 }
 
 .card {
-    background-color: #dbdbdb;
+    background-color: var(--color-coat-of-arms-medium-light);
     padding: 1em 2em;
     text-align: left;
     font-size: 0.9rem;
@@ -210,16 +224,38 @@ label {
     user-select: none;
 }
 
-.summary.label {
+.summary.answer {
+    color: var(--color-black-90);
     font-size: 0.9rem;
-    color: grey;
-    font-style: italic;
-    padding-bottom: 1em;
 }
 
-.summary.no-answer {
-    color: red;
+p.summary.answer::before {
+    content: "Vastaus:";
+    color: var(--color-black-60);
+    display: block;
+    font-size: 0.9rem;
     font-style: italic;
+    margin-top: 0.5em;
+}
+
+.summary li.answer {}
+
+p.summary.no-answer {
+    color: var(--color-error);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.summary li.no-answer {
+    background-color: var(--color-error-light);
+}
+
+.summary li {
+    padding: 0.5em 1em;
+}
+
+.summary li::marker {
+    font-weight: 600;
 }
 
 ul.contact {
@@ -232,9 +268,16 @@ p.modal {
     padding-top: 1em;
     font-size: 0.9rem;
     text-align: center;
+    color: var(--color-black);
 }
 
 .step-tracker {
     font-size: 1.4rem;
     font-weight: 600;
+    color: var(--color-info-dark);
+}
+
+.container.intro {
+    padding: 1em;
+    background-image: url(../img/intro.jpg);
 }

@@ -4,26 +4,35 @@
     .App {
         width: 100vw;
         min-height: 100vh;
-        padding: 1em;
+        padding: 5vh 5vw;
     }
 
     .container {
         min-height: 90vh;
     }
 
+    .sub-container {
+        width: 100%;
+        padding: 0;
+    }
 
     .card {
         width: inherit;
     }
 
+    legend {
+        margin-bottom: 1.5em;
+    }
+
     button,
     a,
     button[type="submit"],
-    button.nav {
+    button.nav,
+    #main-quiz-submit,
+    button.prev,
+    button.next {
         width: inherit;
     }
-
-
 
 }
 
@@ -33,7 +42,7 @@
     .App {
         width: 100vw;
         min-height: 100vh;
-        padding: 1em;
+        padding: 5vh 1em;
     }
 
     .container {
