@@ -129,28 +129,38 @@ legend {
     max-width: 50ch;
 }
 
-button,
-a,
-button[type="submit"],
-button.nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.8em 1em;
-    font-family: inherit;
-    font-size: var(--fontsize-body-l);
-    font-weight: normal;
+a {
     text-decoration: none;
-    border: 2px solid transparent;
-    width: 60%;
+    color: inherit;
 }
 
-button[type="submit"],
-button.primary,
-a.primary {
+button,
+a,
+button[type="submit"] {
+    --border-width: 2px;
+    --color: var(--color-white);
+    --min-size: 44px;
+    --outline-gutter: 2px;
+    --outline-width: 3px;
+    --border-color: var(--color-coat-of-arms);
+    --outline-color: var(--color-bus);
+
+    align-content: flex-start;
+    align-items: center;
     background-color: var(--color-coat-of-arms);
-    color: var(--color-white);
+    border: var(--border-width) solid var(--border-color, transparent);
+    border-radius: 0;
+    color: var(--color);
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 500;
+    justify-content: center;
+    min-height: var(--min-size);
+    min-width: var(--min-size);
+    padding: 0 var(--spacing-2-xs);
+    position: relative;
+    vertical-align: top;
+    width: 60%;
 }
 
 button.secondary,
@@ -158,6 +168,23 @@ a.secondary {
     background-color: var(--color-white);
     border: 2px solid var(--color-coat-of-arms);
     color: var(--color-coat-of-arms);
+}
+
+
+
+button:hover,
+a:hover,
+button[type="submit"]:hover,
+button:focus,
+a:focus,
+button[type="submit"]:focus {
+    transition-property: background-color, border-color, color;
+    transition-duration: 85ms;
+    transition-timing-function: ease-out;
+}
+
+button:hover {
+    background-color: var(--color-coat-of-arms-dark, transparent);
 }
 
 #main-quiz-submit {
@@ -182,13 +209,11 @@ button.next::after {
     margin-left: 0.5em;
 }
 
-
-
 label {
     margin: 0 1em;
 }
 
-.label {
+.range-slider p {
     color: var(--color-black-70);
     font-weight: normal;
     margin-top: 6px;

@@ -48,11 +48,11 @@ const PreQuiz = ({ setPreDone }) => {
               excepteur ex ex occaecat aliqua in Lorem excepteur?
             </p>
             <span className="range-slider">
-              <p className="label left" style={{ marginRight: "0.5em" }}>
+              <p className="left" style={{ marginRight: "0.5em" }}>
                 0
               </p>
               <Slider values={values} setValues={setValues} />
-              <p className="label right" style={{ marginLeft: "0.5em" }}>
+              <p className="right" style={{ marginLeft: "0.5em" }}>
                 10
               </p>
             </span>
