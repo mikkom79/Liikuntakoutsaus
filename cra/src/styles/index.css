@@ -154,6 +154,7 @@ button[type="submit"] {
     cursor: pointer;
     display: inline-flex;
     font-weight: 500;
+    font-size: var(--fontsize-body-m);
     justify-content: center;
     min-height: var(--min-size);
     min-width: var(--min-size);
@@ -170,8 +171,6 @@ a.secondary {
     color: var(--color-coat-of-arms);
 }
 
-
-
 button:hover,
 a:hover,
 button[type="submit"]:hover,
@@ -183,8 +182,18 @@ button[type="submit"]:focus {
     transition-timing-function: ease-out;
 }
 
-button:hover {
+button.primary:hover,
+a.primary:hover,
+button[type="submit"]:hover {
     background-color: var(--color-coat-of-arms-dark, transparent);
+    border-color: var(--color-coat-of-arms-dark, transparent);
+}
+
+button.secondary:hover,
+a.secondary:hover {
+    background-color: var(--color-coat-of-arms-light, transparent);
+    border-color: var(--color-coat-of-arms-dark, transparent);
+    color: var(--color-coat-of-arms-dark, transparent);
 }
 
 #main-quiz-submit {
@@ -200,17 +209,18 @@ button.next {
 }
 
 button.prev::before {
-    content: "<";
+    content: attr(data-icon);
     margin-right: 0.5em;
 }
 
 button.next::after {
-    content: ">";
+    content: attr(data-icon);
     margin-left: 0.5em;
 }
 
 label {
-    margin: 0 1em;
+    padding-left: 1em;
+    cursor: pointer;
 }
 
 .range-slider p {
@@ -231,6 +241,7 @@ label {
     flex: none;
     height: 1.4em;
     width: 1.4em;
+    cursor: pointer;
 }
 
 .card {
@@ -268,7 +279,7 @@ h2.summary-title {
 }
 
 p.summary.answer::before {
-    content: "Vastaus:";
+    content: attr(data-text);
     color: var(--color-black-60);
     display: block;
     font-size: var(--fontsize-body-s);

@@ -7,6 +7,9 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   const initialState = { step: 1 };
   //controls which quiz page the user is currently on
 
+  const iconNext = ">";
+  const iconPrev = "<";
+
   function reducer(state, action) {
     switch (action.type) {
       case "next":
@@ -200,6 +203,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
       <div className="buttons-container">
         {state.step > 1 && (
           <button
+            data-icon={iconPrev}
             className="secondary prev"
             type="button"
             id="prev"
@@ -211,6 +215,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
 
         {state.step <= questions.length && (
           <button
+            data-icon={iconNext}
             className="primary next"
             type="button"
             id="next"
