@@ -33,32 +33,109 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
         },
         {
           id: "1B",
-          optionText: "Exercitation ut qui non irure quis excepteur.",
+          optionText: "Exercitation ut qui non irure quis excepteur",
           addPoint: false,
         },
         {
           id: "1C",
           optionText:
-            "Aliqua laboris officia non sunt cillum sint commodo fugiat labore qui velit laboris.",
+            "Aliqua laboris officia non sunt cillum sint commodo fugiat labore qui velit laboris",
           addPoint: false,
         },
       ],
     },
     {
-      questionTitle: "QuestionTitle2",
+      questionTitle: "Kysymys Kaksi",
       answerOptions: [
-        { id: "2A", optionText: "Option 2A", addPoint: true },
-        { id: "2B", optionText: "Option 2B", addPoint: false },
-        { id: "2C", optionText: "Option 2C", addPoint: false },
-        { id: "2D", optionText: "Option 2D", addPoint: false },
+        {
+          id: "2A",
+          optionText: "Ullamco fugiat consectetur ex laborum non duis",
+          addPoint: true,
+        },
+        {
+          id: "2B",
+          optionText:
+            "Pariatur laboris tempor deserunt nisi aliquip ut in eiusmod quis nostrud est",
+          addPoint: false,
+        },
+        {
+          id: "2C",
+          optionText: "Velit cillum eiusmod elit eu nulla",
+          addPoint: false,
+        },
+        {
+          id: "2D",
+          optionText: "Et eiusmod pariatur mollit commodo",
+          addPoint: false,
+        },
       ],
     },
     {
-      questionTitle: "QuestionTitle3",
+      questionTitle: "Kysymys Kolme",
       answerOptions: [
-        { id: "3A", optionText: "Option 3A", addPoint: true },
-        { id: "3B", optionText: "Option 3B", addPoint: false },
-        { id: "3C", optionText: "Option 3C", addPoint: false },
+        {
+          id: "3A",
+          optionText:
+            "Consectetur do nisi adipisicing eiusmod consectetur anim magna",
+          addPoint: true,
+        },
+        {
+          id: "3B",
+          optionText: "Nulla dolore Lorem nisi dolore",
+          addPoint: false,
+        },
+        {
+          id: "3C",
+          optionText: "Veniam irure deserunt ut aliqua in consectetur",
+          addPoint: false,
+        },
+      ],
+    },
+    {
+      questionTitle: "Kysymys Neljä",
+      answerOptions: [
+        {
+          id: "4A",
+          optionText: "Officia excepteur nisi velit proident officia",
+          addPoint: true,
+        },
+        {
+          id: "4B",
+          optionText: "Esse sunt sint exercitation dolor sit",
+          addPoint: false,
+        },
+        {
+          id: "4C",
+          optionText:
+            "Reprehenderit esse ad cupidatat fugiat aliqua sit ut amet ea ipsum",
+          addPoint: false,
+        },
+        {
+          id: "4D",
+          optionText: "Veniam irure deserunt ut aliqua in consectetur",
+          addPoint: false,
+        },
+      ],
+    },
+    {
+      questionTitle: "Kysymys Viisi",
+      answerOptions: [
+        {
+          id: "5A",
+          optionText: "Cupidatat non cupidatat quis ullamco elit",
+          addPoint: true,
+        },
+        {
+          id: "5B",
+          optionText: "Incididunt magna occaecat voluptate eu velit est culpa",
+          addPoint: false,
+        },
+        {
+          id: "5C",
+          optionText:
+            "Sit nisi esse ad est voluptate irure occaecat exercitation aute amet",
+          addPoint: false,
+        },
       ],
     },
   ];
@@ -68,6 +145,8 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
     answer1: undefined,
     answer2: undefined,
     answer3: undefined,
+    answer4: undefined,
+    answer5: undefined,
   });
 
   const [answersText, setAnswersText] = useState({
@@ -75,6 +154,8 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
     answerText1: undefined,
     answerText2: undefined,
     answerText3: undefined,
+    answerText4: undefined,
+    answerText5: undefined,
   });
 
   const handleSubmit = (e) => {
@@ -117,7 +198,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
       />
 
       <div className="buttons-container">
-        {state.step !== 1 && (
+        {state.step > 1 && (
           <button
             className="secondary prev"
             type="button"
@@ -128,9 +209,9 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
           </button>
         )}
 
-        {state.step !== questions.length + 1 && (
+        {state.step <= questions.length && (
           <button
-            className="secondary next"
+            className="primary next"
             type="button"
             id="next"
             onClick={() => dispatch({ type: "next" })}
@@ -138,8 +219,10 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
             Seuraava
           </button>
         )}
-        {state.step === questions.length + 1 && (
-          <button type="submit">Lähetä vastaukset</button>
+        {state.step > questions.length && (
+          <button type="submit" id="main-quiz-submit">
+            Lähetä vastaukset
+          </button>
         )}
       </div>
     </form>

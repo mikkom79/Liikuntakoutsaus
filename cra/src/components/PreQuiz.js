@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Slider from "./Slider";
+import intro from "../img/intro.jpg";
 
 const PreQuiz = ({ setPreDone }) => {
   const [showForm, setShowForm] = useState(false);
@@ -18,24 +19,24 @@ const PreQuiz = ({ setPreDone }) => {
   };
 
   return (
-    <div className="container">
+    <>
       {!showForm && (
-        <div className="sub-container">
-          <h1>Dolore enim officia eu ullamco?</h1>
-          <p>
-            Et in nisi commodo esse non dolore adipisicing qui aute culpa irure
-            cupidatat. Qui pariatur reprehenderit est nostrud officia esse
-            tempor dolore occaecat ad id elit.
-            <br />
-            Consequat consectetur aliquip enim nulla.
-          </p>
-        </div>
-      )}
-      {!showForm && (
-        <div className="buttons-container">
-          <button className="primary" onClick={() => setShowForm(true)}>
-            Tee testi
-          </button>
+        <div className="container intro">
+          <div className="sub-container">
+            <h1>Dolore enim officia eu ullamco?</h1>
+            <p>
+              Et in nisi commodo esse non dolore adipisicing qui aute culpa
+              irure cupidatat. Qui pariatur reprehenderit est nostrud officia
+              esse tempor dolore occaecat ad id elit.
+              <br />
+              Consequat consectetur aliquip enim nulla.
+            </p>
+          </div>
+          <div className="buttons-container">
+            <button className="primary" onClick={() => setShowForm(true)}>
+              Tee testi
+            </button>
+          </div>
         </div>
       )}
 
@@ -54,12 +55,14 @@ const PreQuiz = ({ setPreDone }) => {
             </span>
           </div>
           <div className="buttons-container">
-            <button type="submit">Lähetä vastaus</button>
+            <button type="submit" className="pre">
+              Lähetä vastaus
+            </button>
           </div>
         </form>
       )}
       {showPreResult && (
-        <>
+        <div className="container">
           <div className="sub-container">
             <p>Vastasit:</p>
             <p>{values}/10</p>
@@ -94,9 +97,9 @@ const PreQuiz = ({ setPreDone }) => {
               Palaa alkuun
             </button>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

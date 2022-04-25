@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Range, getTrackBackground } from 'react-range';
+import { Range, getTrackBackground } from "react-range";
 
 const STEP = 1;
 const MIN = 0;
@@ -28,11 +28,14 @@ const Slider = ({ rtl, values, setValues }) => {
               ...props.style,
               height: "18px",
               width: "2px",
-              backgroundColor: index * STEP < values[0] ? "#548BF4" : "#ccc",
+              backgroundColor:
+                index * STEP < values[0]
+                  ? "var(--color-coat-of-arms)"
+                  : "var(--color-black-20)",
             }}
           />
         )}
-        renderTrack= {({ props, children }) => (
+        renderTrack={({ props, children }) => (
           <div
             onMouseDown={props.onMouseDown}
             onTouchStart={props.onTouchStart}
@@ -40,7 +43,7 @@ const Slider = ({ rtl, values, setValues }) => {
               ...props.style,
               height: "30px",
               display: "flex",
-              width: "100%"
+              width: "100%",
             }}
           >
             <div
@@ -51,13 +54,12 @@ const Slider = ({ rtl, values, setValues }) => {
                 borderRadius: "4px",
                 alignSelf: "center",
                 background: getTrackBackground({
-                    values,
-                    colors: ['#548BF4', '#ccc'],
-                    min: MIN,
-                    max: MAX,
-                    rtl
-                  }),
-                
+                  values,
+                  colors: ["var(--color-coat-of-arms)", "#ccc"],
+                  min: MIN,
+                  max: MAX,
+                  rtl,
+                }),
               }}
             >
               {children}
@@ -69,14 +71,14 @@ const Slider = ({ rtl, values, setValues }) => {
             {...props}
             style={{
               ...props.style,
-              height: isDragged ? "15px" : "25px",
-              width: isDragged ? "15px" : "25px",
+              height: isDragged ? "20px" : "25px",
+              width: isDragged ? "20px" : "25px",
               borderRadius: "50%",
-              backgroundColor: "#000000",
+              backgroundColor: "var(--color-coat-of-arms-dark)",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              boxShadow: "0px 2px 6px #AAA"
+              boxShadow: "var(--box-shadow-l)",
             }}
           >
             <div
@@ -89,7 +91,21 @@ const Slider = ({ rtl, values, setValues }) => {
           </div>
         )}
       />
-      <output style={{ marginTop: "15px" }}>{values[0]}</output>
+      <output
+        style={{
+          marginTop: "25px",
+          fontSize: "1.4rem",
+          backgroundColor: "var(--color-info-light)",
+          height: "2em",
+          width: "2em",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "50%",
+        }}
+      >
+        {values[0]}
+      </output>
     </div>
   );
 };

@@ -238,8 +238,6 @@ p.summary.answer::before {
     margin-top: 0.5em;
 }
 
-.summary li.answer {}
-
 p.summary.no-answer {
     color: var(--color-error);
     font-size: 0.9rem;

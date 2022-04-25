@@ -25,26 +25,28 @@ const Section = ({
 
   return (
     <>
-      <span className="step-tracker">
-        {step}/{questions.length + 1}
-      </span>
-      {step !== questions.length + 1 && (
-        <fieldset className="sub-container">
-          <legend>{questions[step - 1].questionTitle}</legend>
-          {questions[step - 1].answerOptions.map((option) => (
-            <Radiobutton
-              key={option.id}
-              label={option.optionText}
-              value={option.id}
-              name={`question${step}`}
-              onChange={handleChange}
-              checked={answers[`answer${step}`] === option.id}
-            />
-          ))}
-        </fieldset>
+      {step <= questions.length && (
+        <>
+          <span className="step-tracker">
+            {step}/{questions.length}
+          </span>
+          <fieldset className="sub-container">
+            <legend>{questions[step - 1].questionTitle}</legend>
+            {questions[step - 1].answerOptions.map((option) => (
+              <Radiobutton
+                key={option.id}
+                label={option.optionText}
+                value={option.id}
+                name={`question${step}`}
+                onChange={handleChange}
+                checked={answers[`answer${step}`] === option.id}
+              />
+            ))}
+          </fieldset>
+        </>
       )}
 
-      {step === questions.length + 1 && (
+      {step > questions.length && (
         <Summary questions={questions} answersText={answersText} />
       )}
     </>
