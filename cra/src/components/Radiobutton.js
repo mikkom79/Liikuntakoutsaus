@@ -7,7 +7,11 @@ const Radiobutton = ({ label, value, name, onChange, checked }) => {
         onChange={() => onChange(value, label)}
         checked={checked}
       />
-      <label htmlFor={value} onClick={() => onChange(value, label)}>
+      <label
+        className={checked ? "checked" : ""}
+        htmlFor={value}
+        onClick={() => onChange(value, label)}
+      >
         {label}
       </label>
     </div>
