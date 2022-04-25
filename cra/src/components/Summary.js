@@ -1,6 +1,5 @@
 const Summary = ({ questions, answersText }) => {
   const titlesArr = questions.map((question) => question.questionTitle);
-  const TEXT_BEFORE = "Vastaus: ";
   const TEXT_ALT = "Ei vastausta";
 
   return (
@@ -9,13 +8,22 @@ const Summary = ({ questions, answersText }) => {
       <ol className="summary">
         {titlesArr.map((title, index) => {
           return (
-            <li key={index}>
+            <li
+              key={index}
+              className={
+                Object.values(answersText)[index] === undefined
+                  ? "summary no-answer"
+                  : "summary answer"
+              }
+            >
               <p>{title}</p>
-              <span className="summary label">{TEXT_BEFORE}</span>
+
               {Object.values(answersText)[index] === undefined ? (
                 <p className="summary no-answer">{TEXT_ALT}</p>
               ) : (
-                <p>{Object.values(answersText)[index]}</p>
+                <p className="summary answer">
+                  "{Object.values(answersText)[index]}"
+                </p>
               )}
               {/*Object.values = js magic*/}
             </li>
