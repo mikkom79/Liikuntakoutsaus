@@ -81,11 +81,15 @@ span.range-slider {
     margin: 2em 0;
 }
 
-label.checked {
+label.radio-label {
+    min-height: 5vh;
+    padding-left: 3em;
+}
+
+label.radio-label.checked {
     color: var(--color-coat-of-arms-dark);
     font-weight: 600;
 }
-
 
 ol,
 ul {
@@ -95,12 +99,10 @@ ul {
     padding: 0;
 }
 
-
 li {
     margin: 0.5em 0;
     padding: 0;
 }
-
 
 h1,
 h2,
@@ -221,7 +223,6 @@ button.next::after {
 }
 
 label {
-    padding-left: 1em;
     cursor: pointer;
 }
 
@@ -234,16 +235,51 @@ label {
 .radio-container {
     display: flex;
     align-items: center;
-    margin: 1vh 0;
     text-align: left;
     width: 100%;
 }
 
 .radio-container input[type="radio"] {
+    -webkit-appearance: none;
     flex: none;
-    height: 1.4em;
-    width: 1.4em;
     cursor: pointer;
+    position: absolute;
+    appearance: none;
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--color-black-50);
+    width: 1.40em;
+    height: 1.40em;
+    border: 0.20em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.55em);
+    display: grid;
+    place-content: center;
+}
+
+.radio-container input[type="radio"]:checked {
+    border-color: var(--color-coat-of-arms);
+}
+
+.radio-container:focus-within {
+    color: var(--color-coat-of-arms);
+}
+
+.radio-container input[type="radio"]::before {
+    content: "";
+    width: 0.68em;
+    height: 0.68em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--color-coat-of-arms);
+    background-color: var(--color-coat-of-arms);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1.1);
 }
 
 .card {
@@ -252,7 +288,7 @@ label {
     padding: 1em 2em;
     text-align: left;
     font-size: var(--fontsize-body-m);
-    width: clamp(10em, 90vw, 24em);
+    width: clamp(10em, 100vw, 20em);
     margin-top: 1em;
 }
 
@@ -269,6 +305,9 @@ h3,
 h4,
 li:not(.contact > *) {
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .summary-title {
