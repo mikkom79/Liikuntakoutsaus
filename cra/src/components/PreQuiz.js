@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Slider from "./Slider";
-import intro from "../img/intro.jpg";
 
 const PreQuiz = ({ setPreDone }) => {
   const [showForm, setShowForm] = useState(false);
@@ -21,7 +20,7 @@ const PreQuiz = ({ setPreDone }) => {
   return (
     <>
       {!showForm && (
-        <div className="container intro">
+        <div className="container">
           <div className="sub-container">
             <h1>Dolore enim officia eu ullamco?</h1>
             <p>

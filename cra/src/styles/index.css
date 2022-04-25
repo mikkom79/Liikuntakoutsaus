@@ -274,8 +274,3 @@ p.modal {
     font-weight: 600;
     color: var(--color-info-dark);
 }
-
-.container.intro {
-    padding: 1em;
-    background-image: url(../img/intro.jpg);
-}
