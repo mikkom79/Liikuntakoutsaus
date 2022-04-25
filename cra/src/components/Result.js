@@ -1,31 +1,33 @@
 const Result = ({ recommendCoaching, reset }) => {
+  window.scrollTo(0, 0);
+
   return (
     <div className="container">
       <div className="sub-container">
-        <h1>Testin tulos</h1>
+        <h2>Testin tulos</h2>
         {recommendCoaching && (
-          <p>
-            <strong>Suositellaan koutsausta.</strong>
-            <br />
-            <br />
-            Enim in veniam ex aliqua ad nostrud labore. Amet eu culpa fugiat
-            eiusmod ad eu ex. Sit exercitation dolore excepteur mollit quis
-            magna. Nostrud eiusmod elit occaecat in sint velit duis.
-          </p>
+          <>
+            <h3>Suositellaan koutsausta.</h3>
+            <p>
+              Enim in veniam ex aliqua ad nostrud labore. Amet eu culpa fugiat
+              eiusmod ad eu ex. Sit exercitation dolore excepteur mollit quis
+              magna. Nostrud eiusmod elit occaecat in sint velit duis.
+            </p>
+          </>
         )}
         {!recommendCoaching && (
-          <p>
-            <strong>Koutsausta ei suositella.</strong>
-            <br />
-            <br />
-            Laboris anim fugiat laboris qui. Nulla ut laborum pariatur est
-            laboris est deserunt minim sunt qui occaecat esse cillum qui.
-            Cupidatat dolor aliquip veniam adipisicing anim.
-          </p>
+          <>
+            <h3>Koutsausta ei suositella.</h3>
+            <p>
+              Laboris anim fugiat laboris qui. Nulla ut laborum pariatur est
+              laboris est deserunt minim sunt qui occaecat esse cillum qui.
+              Cupidatat dolor aliquip veniam adipisicing anim.
+            </p>
+          </>
         )}
       </div>
       <div className="card">
-        <h2>Non labore cillum esse id:</h2>
+        <h4>Non labore cillum esse id:</h4>
         <ul>
           <li>Aute proident esse mollit qui proident.</li>
           <li>Ullamco anim consectetur amet id aliquip.</li>
@@ -33,7 +35,7 @@ const Result = ({ recommendCoaching, reset }) => {
         </ul>
       </div>
       <div className="card">
-        <h2>Fugiat id cillum ad id nisi:</h2>
+        <h4>Fugiat id cillum ad id nisi:</h4>
         <p>
           Pariatur incididunt ad id velit dolore ut reprehenderit duis nisi
           cupidatat Lorem irure. Ullamco laborum quis aliqua eu nisi sit non
@@ -44,7 +46,7 @@ const Result = ({ recommendCoaching, reset }) => {
         </p>
       </div>
       <div className="card">
-        <h2>Yhteydenotot:</h2>
+        <h4>Yhteydenotot:</h4>
         <ul className="contact">
           <li>040 14522323</li>
           <li>09 23432213</li>

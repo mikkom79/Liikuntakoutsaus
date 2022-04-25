@@ -15,6 +15,7 @@ body {
     padding: 0;
     scrollbar-gutter: stable both-edges;
     overflow-x: hidden;
+    font-size: var(--fontsize-body-m);
 }
 
 body * {
@@ -81,14 +82,18 @@ span.range-slider {
 }
 
 
-ol {
+ol,
+ul {
     text-align: left;
-    width: 80%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 
 li {
-    margin: 1em 0;
+    margin: 0.5em 0;
+    padding: 0;
 }
 
 
@@ -99,22 +104,22 @@ h3 {
 }
 
 h1 {
-    font-size: 1.4rem;
+    font-size: var(--fontsize-heading-l);
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: var(--fontsize-heading-m);
 }
 
 h3 {
-    font-size: 1.1rem;
+    font-size: var(--fontsize-heading-s);
     font-weight: 500;
 }
 
 p,
 label,
 legend {
-    font-size: 1rem;
+    font-size: var(--fontsize-body-m);
     line-height: 120%;
     max-width: 50ch;
 }
@@ -129,7 +134,7 @@ button.nav {
     cursor: pointer;
     padding: 0.8em 1em;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: var(--fontsize-body-l);
     font-weight: normal;
     text-decoration: none;
     border: 2px solid transparent;
@@ -184,14 +189,6 @@ label {
     margin-top: 6px;
 }
 
-.label.left {
-    margin-right: 0.5em;
-}
-
-.label.right {
-    margin-left: 0.5em;
-}
-
 .radio-container {
     display: flex;
     align-items: center;
@@ -210,38 +207,52 @@ label {
     background-color: var(--color-coat-of-arms-medium-light);
     padding: 1em 2em;
     text-align: left;
-    font-size: 0.9rem;
-    width: 24em;
+    font-size: var(--fontsize-body-m);
+    width: clamp(10em, 90vw, 24em);
     margin-top: 1em;
 }
 
-.card h2 {
-    font-size: 1rem;
-    margin-bottom: 1em;
+.card p {
+    margin-top: 1em;
 }
 
-label {
+label,
+p,
+legend,
+h1,
+h2,
+h3,
+h4,
+li:not(.contact > *) {
     user-select: none;
+}
+
+h2.summary-title {
+    font-size: var(--fontsize-heading-xxs);
 }
 
 .summary.answer {
     color: var(--color-black-90);
-    font-size: 0.9rem;
+    font-size: var(--fontsize-body-m);
 }
 
 p.summary.answer::before {
     content: "Vastaus:";
     color: var(--color-black-60);
     display: block;
-    font-size: 0.9rem;
+    font-size: var(--fontsize-body-s);
     font-style: italic;
     margin-top: 0.5em;
 }
 
 p.summary.no-answer {
     color: var(--color-error);
-    font-size: 0.9rem;
+    font-size: var(--fontsize-body-s);
     font-style: italic;
+}
+
+ol.summary {
+    width: 80%;
 }
 
 .summary li.no-answer {
@@ -249,11 +260,17 @@ p.summary.no-answer {
 }
 
 .summary li {
-    padding: 0.5em 1em;
+    padding-left: 0.5em;
+}
+
+.summary li:not(:last-child) {
+    margin-bottom: 1.5em;
 }
 
 .summary li::marker {
     font-weight: 600;
+    font-size: var(--fontsize-body-l);
+    color: var(--color-info-dark);
 }
 
 ul.contact {
@@ -264,13 +281,14 @@ p.modal {
     padding: 0.5em;
     margin: 1em;
     padding-top: 1em;
-    font-size: 0.9rem;
+    font-size: var(--fontsize-body-m);
     text-align: center;
     color: var(--color-black);
 }
 
 .step-tracker {
-    font-size: 1.4rem;
+    font-size: var(--fontsize-heading-m);
     font-weight: 600;
     color: var(--color-info-dark);
+    user-select: none;
 }

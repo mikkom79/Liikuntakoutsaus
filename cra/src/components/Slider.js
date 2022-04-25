@@ -26,7 +26,7 @@ const Slider = ({ rtl, values, setValues }) => {
             {...props}
             style={{
               ...props.style,
-              height: "18px",
+              height: "1.2em",
               width: "2px",
               backgroundColor:
                 index * STEP < values[0]
@@ -51,7 +51,6 @@ const Slider = ({ rtl, values, setValues }) => {
               style={{
                 height: "5px",
                 width: "100%",
-                borderRadius: "4px",
                 alignSelf: "center",
                 background: getTrackBackground({
                   values,

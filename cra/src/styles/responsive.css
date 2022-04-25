@@ -34,6 +34,10 @@
         width: inherit;
     }
 
+    li {
+        width: 100%;
+    }
+
 }
 
 /*landscape*/
@@ -47,5 +51,15 @@
 
     .container {
         min-height: 90vh;
+    }
+
+    button,
+    a,
+    button[type="submit"],
+    button.nav,
+    #main-quiz-submit,
+    button.prev,
+    button.next {
+        width: auto;
     }
 }

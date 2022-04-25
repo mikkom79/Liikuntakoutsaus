@@ -48,9 +48,13 @@ const PreQuiz = ({ setPreDone }) => {
               excepteur ex ex occaecat aliqua in Lorem excepteur?
             </p>
             <span className="range-slider">
-              <p className="label left">0</p>
+              <p className="label left" style={{ marginRight: "0.5em" }}>
+                0
+              </p>
               <Slider values={values} setValues={setValues} />
-              <p className="label right">10</p>
+              <p className="label right" style={{ marginLeft: "0.5em" }}>
+                10
+              </p>
             </span>
           </div>
           <div className="buttons-container">
@@ -63,8 +67,14 @@ const PreQuiz = ({ setPreDone }) => {
       {showPreResult && (
         <div className="container">
           <div className="sub-container">
-            <p>Vastasit:</p>
-            <p>{values}/10</p>
+            <p>
+              <em>
+                <bold></bold>Vastasit:
+              </em>
+            </p>
+            <p>
+              <em>{values}/10</em>
+            </p>
             <p>Elit voluptate non quis occaecat aute eiusmod ullamco culpa.</p>
             <div className="card">
               <h2>Non labore cillum esse id:</h2>

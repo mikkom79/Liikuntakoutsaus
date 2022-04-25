@@ -4,7 +4,7 @@ const Summary = ({ questions, answersText }) => {
 
   return (
     <div className="sub-container">
-      <h2>Yhteenveto vastauksista</h2>
+      <h1>Yhteenveto</h1>
       <ol className="summary">
         {titlesArr.map((title, index) => {
           return (
@@ -16,7 +16,7 @@ const Summary = ({ questions, answersText }) => {
                   : "summary answer"
               }
             >
-              <p>{title}</p>
+              <h2 className="summary-title">{title}</h2>
 
               {Object.values(answersText)[index] === undefined ? (
                 <p className="summary no-answer">{TEXT_ALT}</p>
