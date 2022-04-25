@@ -54,7 +54,7 @@ body * {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 fieldset {
@@ -167,7 +167,7 @@ button[type="submit"] {
 button.secondary,
 a.secondary {
     background-color: var(--color-white);
-    border: 2px solid var(--color-coat-of-arms);
+    border: var(--border-width) solid var(--border-color, transparent);
     color: var(--color-coat-of-arms);
 }
 
@@ -211,11 +211,13 @@ button.next {
 button.prev::before {
     content: attr(data-icon);
     margin-right: 0.5em;
+    font-weight: 600;
 }
 
 button.next::after {
     content: attr(data-icon);
     margin-left: 0.5em;
+    font-weight: 600;
 }
 
 label {
@@ -245,7 +247,7 @@ label {
 }
 
 .card {
-    background-color: var(--color-fog-light);
+    background-color: var(--color-coat-of-arms-medium-light);
     color: var(--color-black);
     padding: 1em 2em;
     text-align: left;
@@ -269,8 +271,9 @@ li:not(.contact > *) {
     user-select: none;
 }
 
-h2.summary-title {
+.summary-title {
     font-size: var(--fontsize-heading-xxs);
+    font-weight: normal;
 }
 
 .summary.answer {
@@ -299,10 +302,12 @@ ol.summary {
 
 .summary li.no-answer {
     background-color: var(--color-error-light);
+    padding: 0.5em;
 }
 
 .summary li {
-    padding-left: 0.5em;
+    background-color: var(--color-coat-of-arms-light);
+    padding: 0.5em;
 }
 
 .summary li:not(:last-child) {
@@ -310,7 +315,7 @@ ol.summary {
 }
 
 .summary li::marker {
-    color: var(--color-info);
+    color: var(--color-coat-of-arms);
     font-weight: 600;
     font-size: var(--fontsize-body-l);
 }
