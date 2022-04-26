@@ -7,8 +7,8 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   const initialState = { step: 1 };
   //controls which quiz page the user is currently on
 
-  const iconNext = ">";
-  const iconPrev = "<";
+  const iconNext = ""; //insert hds icon here
+  const iconPrev = ""; //insert hds icon here
 
   function reducer(state, action) {
     switch (action.type) {

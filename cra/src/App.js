@@ -6,6 +6,8 @@ import PreQuiz from "./components/PreQuiz";
 import Result from "./components/Result";
 
 function App() {
+  const alertIcon = ""; //insert hds icon here
+
   const [preDone, setPreDone] = useState(false);
   // onko alkukartoitus (työkyky 0-10) tehty
   const [quizDone, setQuizDone] = useState(false);
@@ -36,7 +38,9 @@ function App() {
       )}
 
       <Modal open={showErrorModal} onClose={onCloseModal} center>
-        <p className="modal">Vastaa kaikkiin kysymyksiin.</p>
+        <p className="modal" data-icon={alertIcon}>
+          Vastaa kaikkiin kysymyksiin.
+        </p>
       </Modal>
     </div>
   );
