@@ -26,117 +26,115 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
   const questions = [
     {
       questionTitle:
-        "Mollit excepteur voluptate adipisicing sint occaecat labore et eiusmod labore.",
+        "Haluaisitko liikunta-alan ammattilaisen tukea matkallesi kohti aktiivisempaa arkea?",
       answerOptions: [
         {
           id: "1A",
-          optionText:
-            "Adipisicing ipsum minim enim aliquip eiusmod reprehenderit",
-          addPoint: true,
+          optionText: "En, haluan vain treenivinkit",
+          addPoint: false,
         },
         {
           id: "1B",
-          optionText: "Exercitation ut qui non irure quis excepteur",
-          addPoint: false,
+          optionText:
+            "Kyllä, tarvitsen tukea liikunnan aloittamisessa tai lisäämisessä",
+          addPoint: true,
         },
         {
           id: "1C",
-          optionText:
-            "Aliqua laboris officia non sunt cillum sint commodo fugiat labore qui velit laboris",
-          addPoint: false,
+          optionText: "En osaa sanoa",
+          addPoint: true,
         },
       ],
     },
     {
-      questionTitle: "Kysymys Kaksi",
+      questionTitle:
+        "Huomaatko jaksamisen olevan vähäistä työpäivän jälkeen? Kaipaatko lisäenergiaa?",
       answerOptions: [
         {
           id: "2A",
-          optionText: "Ullamco fugiat consectetur ex laborum non duis",
+          optionText: "Työt vievät kaiken energiani",
           addPoint: true,
         },
         {
           id: "2B",
           optionText:
-            "Pariatur laboris tempor deserunt nisi aliquip ut in eiusmod quis nostrud est",
+            "Olen energinen työpäivän jälkeen, harvoin jään sohvalle makoilemaan",
           addPoint: false,
         },
         {
           id: "2C",
-          optionText: "Velit cillum eiusmod elit eu nulla",
-          addPoint: false,
-        },
-        {
-          id: "2D",
-          optionText: "Et eiusmod pariatur mollit commodo",
-          addPoint: false,
+          optionText: "Joskus jään sohvalle",
+          addPoint: true,
         },
       ],
     },
     {
-      questionTitle: "Kysymys Kolme",
+      questionTitle: "Tällä hetkellä liikun...",
       answerOptions: [
         {
           id: "3A",
-          optionText:
-            "Consectetur do nisi adipisicing eiusmod consectetur anim magna",
+          optionText: "En lainkaan",
           addPoint: true,
         },
         {
           id: "3B",
-          optionText: "Nulla dolore Lorem nisi dolore",
-          addPoint: false,
-        },
-        {
-          id: "3C",
-          optionText: "Veniam irure deserunt ut aliqua in consectetur",
-          addPoint: false,
-        },
-      ],
-    },
-    {
-      questionTitle: "Kysymys Neljä",
-      answerOptions: [
-        {
-          id: "4A",
-          optionText: "Officia excepteur nisi velit proident officia",
+          optionText: "Satunnaisesti",
           addPoint: true,
         },
         {
-          id: "4B",
-          optionText: "Esse sunt sint exercitation dolor sit",
-          addPoint: false,
+          id: "3C",
+          optionText: "Kerran viikossa",
+          addPoint: true,
         },
         {
-          id: "4C",
-          optionText:
-            "Reprehenderit esse ad cupidatat fugiat aliqua sit ut amet ea ipsum",
-          addPoint: false,
-        },
-        {
-          id: "4D",
-          optionText: "Veniam irure deserunt ut aliqua in consectetur",
+          id: "3D",
+          optionText: "Säännöllisesti 2 kertaa viikossa (tai useammin)",
           addPoint: false,
         },
       ],
     },
     {
-      questionTitle: "Kysymys Viisi",
+      questionTitle: "Arki- ja hyötyliikuntaa on arjessani...",
+      answerOptions: [
+        {
+          id: "4A",
+          optionText: "Niin paljon, etten koe muulle liikunnalle tarvetta",
+          addPoint: false,
+        },
+        {
+          id: "4B",
+          optionText: "Riittävästi, mutta kaipaan muuta liikuntaa",
+          addPoint: true,
+        },
+        {
+          id: "4C",
+          optionText: "Satunnaisesti, kaipaisin lisää",
+          addPoint: true,
+        },
+        {
+          id: "4D",
+          optionText: "Liian vähän",
+          addPoint: true,
+        },
+      ],
+    },
+    {
+      questionTitle:
+        "Oletko pohtinut liikkumistottumuksiasi ja koet, että haluat niihin muutosta?",
       answerOptions: [
         {
           id: "5A",
-          optionText: "Cupidatat non cupidatat quis ullamco elit",
+          optionText: "Ehdottomasti",
           addPoint: true,
         },
         {
           id: "5B",
-          optionText: "Incididunt magna occaecat voluptate eu velit est culpa",
-          addPoint: false,
+          optionText: "Ehkä",
+          addPoint: true,
         },
         {
           id: "5C",
-          optionText:
-            "Sit nisi esse ad est voluptate irure occaecat exercitation aute amet",
+          optionText: "Olen tyytyväinen tottumuksiini",
           addPoint: false,
         },
       ],

@@ -1,63 +1,108 @@
 const Result = ({ recommendCoaching, reset }) => {
   window.scrollTo(0, 0);
+  //Koulutuskalenteri Onni
+  const ONNI_HREF = "https://onni.hel.fi/DNN-login?returnurl=%2fOmaPalvelu";
+  //Helmen liikuntakoutsaus sivujen linkki
+  const KOUTSAUS_HREF =
+    "http://helmi.hel.fi/henkilosto/Henkilostoedut/henkilostoliikunta/liikuntakoutsaus/Sivut/default.aspx";
+  //henkilöstöliikunnan sivujen linkki
+  const LIIKUNTATARJONTA_HREF =
+    "http://helmi.hel.fi/henkilosto/Henkilostoedut/henkilostoliikunta/liikuntatarjonta/Sivut/default.aspx";
 
   return (
     <div className="container">
-      <div className="sub-container">
-        <h1>Testin tulos</h1>
-        {recommendCoaching && (
-          <>
-            <h3>Suositellaan koutsausta.</h3>
-            <p>
-              Enim in veniam ex aliqua ad nostrud labore. Amet eu culpa fugiat
-              eiusmod ad eu ex. Sit exercitation dolore excepteur mollit quis
-              magna. Nostrud eiusmod elit occaecat in sint velit duis.
-            </p>
-          </>
-        )}
-        {!recommendCoaching && (
-          <>
-            <h3>Koutsausta ei suositella.</h3>
-            <p>
-              Laboris anim fugiat laboris qui. Nulla ut laborum pariatur est
-              laboris est deserunt minim sunt qui occaecat esse cillum qui.
-              Cupidatat dolor aliquip veniam adipisicing anim.
-            </p>
-          </>
-        )}
-      </div>
-      <div className="card">
-        <h4>Non labore cillum esse id:</h4>
-        <ul>
-          <li>Aute proident esse mollit qui proident.</li>
-          <li>Ullamco anim consectetur amet id aliquip.</li>
-          <li>Ut ipsum esse labore aute et adipisicing ut velit sint.</li>
-        </ul>
-      </div>
-      <div className="card">
-        <h4>Fugiat id cillum ad id nisi:</h4>
-        <p>
-          Pariatur incididunt ad id velit dolore ut reprehenderit duis nisi
-          cupidatat Lorem irure. Ullamco laborum quis aliqua eu nisi sit non
-          Lorem aute ut tempor nulla do. Proident excepteur aute ullamco aliqua
-          enim enim elit enim nulla incididunt consequat adipisicing. Nisi culpa
-          fugiat laborum veniam ea cupidatat excepteur nulla. Exercitation et eu
-          nisi ex nostrud cillum anim consectetur.
-        </p>
-      </div>
-      <div className="card">
-        <h4>Yhteydenotot:</h4>
-        <ul className="contact">
-          <li>040 14522323</li>
-          <li>09 23432213</li>
-          <li>040 23165744</li>
-          <li>09 21321321 </li>
-        </ul>
-      </div>
+      <h1>Testin tulos</h1>
+      {recommendCoaching ? (
+        <h3>Suosittelemme osallistumaan liikuntakoutsaukseen!</h3>
+      ) : (
+        <h3>
+          Mahtavaa! Sinulla on jo aktiivisuutta arjessasi, jatka samaan malliin!
+        </h3>
+      )}
+      {recommendCoaching && (
+        <div className="card">
+          <h4>Liikuntakoutsauksen kriteerit:</h4>
+          <ul>
+            <li>Asteikolla 0–10 arvioin työkykyni olevan välillä 6–10</li>
+            <li>Olen motivoitunut lisäämään liikuntaa omassa arjessani</li>
+            <li>Liikun harvemmin kuin kerran viikossa</li>
+          </ul>
+        </div>
+      )}
+      {recommendCoaching && (
+        <div className="card">
+          <h4>Huom!</h4>
+          <p>
+            Liikuntakoutsaus on 6–8 kuukautta kestävä prosessi, joka sisältää 4
+            tapaamiskertaa ja tähtää liikunnan lisäämiseen pienin askelin.
+          </p>
+          <p>
+            Tapaamiskertojen tavoitteena on löytää keskustelun kautta
+            konkreettisia tapoja liikkumisen lisäämiseksi.
+          </p>
+        </div>
+      )}
+
+      {recommendCoaching && (
+        <div className="sub-container">
+          <p>
+            Ota yhteyttä suoraan koutsiin tai varaa aika{" "}
+            <a href={ONNI_HREF} target="_blank" rel="noreferrer">
+              Koulutuskalenteri Onnin
+            </a>{" "}
+            kautta.
+          </p>
+          <p>Tervetuloa 😊 </p>
+        </div>
+      )}
+      {!recommendCoaching && (
+        <div className="sub-container">
+          <p>
+            Jos tilanteesi muuttuu merkittävästi, käy kurkkaamassa osoitteessa{" "}
+            <a href={KOUTSAUS_HREF} target="_blank" rel="noreferrer">
+              Liikuntakoutsaus (hel.fi)
+            </a>
+          </p>
+          <p>
+            Tutustu myös{" "}
+            <a href={LIIKUNTATARJONTA_HREF} target="_blank" rel="noreferrer">
+              {" "}
+              Liikuntatarjontaan (hel.fi)
+            </a>
+          </p>
+        </div>
+      )}
+      {!recommendCoaching && (
+        <div className="card">
+          <h4>Lisätiedot:</h4>
+          <ul className="contact">
+            <li>040 1882130 </li>
+            <li>09 310 22674 </li>
+            <li>040 1946077 </li>
+            <li>09 310 21670 </li>
+          </ul>
+        </div>
+      )}
       <div className="buttons-container">
-        {recommendCoaching && <button className="primary">Varaa aika</button>}
         {recommendCoaching && (
-          <button className="secondary">Helmi-liikuntakoutsaus</button>
+          <a
+            className="primary"
+            href={ONNI_HREF}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Varaa aika
+          </a>
+        )}
+        {recommendCoaching && (
+          <a
+            className="secondary"
+            href={KOUTSAUS_HREF}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Liikuntakoutsaus (hel.fi)
+          </a>
         )}
         <button
           className={recommendCoaching ? "secondary" : "primary"}
