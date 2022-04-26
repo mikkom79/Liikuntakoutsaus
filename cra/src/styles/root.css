@@ -119,4 +119,6 @@
     --lineheight-m: 1.2;
     --lineheight-l: 1.5;
     --lineheight-xl: 1.75;
+
+    --clamp-small: clamp(10em, 100vw, 21em);
 }

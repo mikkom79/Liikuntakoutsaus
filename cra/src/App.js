@@ -36,7 +36,7 @@ function App() {
       )}
 
       <Modal open={showErrorModal} onClose={onCloseModal} center>
-        <p className="modal">Vastaathan kaikkiin kysymyksiin!</p>
+        <p className="modal">Vastaa kaikkiin kysymyksiin.</p>
       </Modal>
     </div>
   );
