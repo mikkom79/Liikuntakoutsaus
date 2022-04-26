@@ -24,6 +24,14 @@ body * {
     padding: 0;
 }
 
+body *:not(.contact > *) {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
 .App {
     width: clamp(375px, 100vw, 30em);
     background-color: var(--color-white);
@@ -43,7 +51,7 @@ body * {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2em;
+    padding-top: 0.5em;
     margin-top: auto;
     margin-bottom: auto;
     gap: 0.5em;
@@ -70,8 +78,9 @@ fieldset {
 
 legend {
     font-weight: 600;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     width: 100%;
+    font-size: var(--fontsize-body-l);
 
 }
 
@@ -83,13 +92,13 @@ span.range-slider {
     color: var(--color-coat-of-arms-dark);
     font-weight: 600;
     width: 100%;
-    margin: 2em 0;
+    margin-top: 1em;
 }
 
 label.radio-label {
     display: flex;
     flex-direction: column;
-    min-height: 2.5em;
+    min-height: 3em;
     padding-left: 3em;
     width: inherit;
     justify-content: center;
@@ -108,30 +117,36 @@ ul {
     width: 100%;
 }
 
-h1,
-h2,
-h3 {
-    margin: 0.2em;
-}
-
 h1 {
     font-size: var(--fontsize-heading-l);
+    margin-bottom: 0.5em;
 }
 
 h2 {
     font-size: var(--fontsize-heading-m);
+    margin-bottom: 0.5em;
 }
 
 h3 {
     font-size: var(--fontsize-heading-s);
     font-weight: 500;
+    margin-bottom: 0;
 }
 
 p,
-label,
-legend {
+label {
     font-size: var(--fontsize-body-m);
     line-height: 120%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+label,
+legend {
+    max-width: 50ch;
 }
 
 a {
@@ -327,18 +342,12 @@ label {
     margin-top: 1.5em;
 }
 
-label,
-p,
-legend,
-h1,
-h2,
-h3,
-h4,
-li:not(.contact > *) {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+.card li {
+    margin-top: 1em;
+}
+
+.card li::marker {
+    color: var(--color-coat-of-arms);
 }
 
 p:not(.range-slider > *) {
@@ -439,4 +448,22 @@ p.modal::before {
     color: var(--color-info-dark);
     user-select: none;
     margin-bottom: 1em;
+}
+
+.pre-quiz-result-output {
+    background-color: var(--color-info-light);
+    width: 5.5em;
+    height: 5.5em;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    border-radius: 50%;
+    font-size: var(--fontsize-body-l);
+    font-weight: 600;
+}
+
+.pre-quiz-result-output::before {
+    content: "Vastasit";
+    font-weight: normal;
+    font-size: var(--fontsize-body-s);
 }

@@ -1,7 +1,7 @@
 const Summary = ({ questions, answersText }) => {
   const titlesArr = questions.map((question) => question.questionTitle);
   const TEXT_ALT = "Ei vastausta";
-
+  window.scrollTo(0, 0);
   return (
     <div className="sub-container">
       <h1>Yhteenveto</h1>

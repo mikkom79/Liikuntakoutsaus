@@ -5,6 +5,7 @@
         width: 100vw;
         min-height: 100vh;
         padding: 5vh 5vw;
+        overflow-x: hidden;
     }
 
     .container {
@@ -52,10 +53,15 @@
         width: 100vw;
         min-height: 100vh;
         padding: 5vh 1em;
+        overflow-x: hidden;
     }
 
     .container {
         min-height: 90vh;
+    }
+
+    .sub-container {
+        height: fit-content;
     }
 
     button,

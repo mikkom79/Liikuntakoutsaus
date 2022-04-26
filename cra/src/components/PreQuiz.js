@@ -22,7 +22,7 @@ const PreQuiz = ({ setPreDone }) => {
       {!showForm && (
         <div className="container">
           <div className="sub-container">
-            <h1>Tarvitsetko tukea liikkumiseen?</h1>
+            <h1>Tarvitsetko tukea liikkumiseen? 💪</h1>
             <p>
               Haluaisitko löytää liikunta-alan ammattilaisen avulla sinulle
               mielekkäitä ja helposti toteutettavia keinoja lisätä
@@ -72,13 +72,7 @@ const PreQuiz = ({ setPreDone }) => {
       {showPreResult && (
         <div className="container">
           <div className="sub-container">
-            <p>
-              <em>
-                Vastasit:
-                <br />
-                <strong>{values}/10</strong>
-              </em>
-            </p>
+            <p class="pre-quiz-result-output">{values} / 10</p>
             <p>Vastauksesi perusteella koet työkykysi alentuneen.</p>
             <p>
               <strong>
@@ -86,7 +80,7 @@ const PreQuiz = ({ setPreDone }) => {
               </strong>{" "}
             </p>
             <div className="card">
-              <h2>Pohdi omaa työkykyäsi:</h2>
+              <h4>Pohdi omaa työkykyäsi</h4>
               <ul>
                 <li>Mitkä asiat vaikuttavat kokemukseesi työkyvystäsi?</li>
                 <li>
@@ -99,7 +93,7 @@ const PreQuiz = ({ setPreDone }) => {
           </div>
           <div className="buttons-container">
             <a
-              className="secondary"
+              className="primary"
               href="https://www.google.com/"
               target="_blank"
               rel="noreferrer"
@@ -107,7 +101,7 @@ const PreQuiz = ({ setPreDone }) => {
               PlaceholderLinkki
             </a>
             <button
-              className="primary"
+              className="secondary"
               type="button"
               onClick={() => {
                 setShowForm(false);

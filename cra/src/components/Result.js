@@ -21,7 +21,7 @@ const Result = ({ recommendCoaching, reset }) => {
       )}
       {recommendCoaching && (
         <div className="card">
-          <h4>Liikuntakoutsauksen kriteerit:</h4>
+          <h4>Liikuntakoutsauksen kriteerit</h4>
           <ul>
             <li>Asteikolla 0–10 arvioin työkykyni olevan välillä 6–10</li>
             <li>Olen motivoitunut lisäämään liikuntaa omassa arjessani</li>
@@ -44,7 +44,7 @@ const Result = ({ recommendCoaching, reset }) => {
       )}
 
       {recommendCoaching && (
-        <div className="sub-container">
+        <div className="sub-container" style={{ paddingTop: "2em" }}>
           <p>
             Ota yhteyttä suoraan koutsiin tai varaa aika{" "}
             <a href={ONNI_HREF} target="_blank" rel="noreferrer">
@@ -52,7 +52,7 @@ const Result = ({ recommendCoaching, reset }) => {
             </a>{" "}
             kautta.
           </p>
-          <p>Tervetuloa 😊 </p>
+          <p>Tervetuloa 😊</p>
         </div>
       )}
       {!recommendCoaching && (
@@ -96,7 +96,7 @@ const Result = ({ recommendCoaching, reset }) => {
         )}
         {recommendCoaching && (
           <a
-            className="secondary"
+            className="primary"
             href={KOUTSAUS_HREF}
             target="_blank"
             rel="noreferrer"
