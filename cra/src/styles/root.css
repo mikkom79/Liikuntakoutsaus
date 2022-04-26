@@ -1,15 +1,11 @@
 :root {
     --font-default: Arial, sans-serif;
-    --breakpoint-xs: 320px;
-    --breakpoint-s: 576px;
-    --breakpoint-m: 768px;
-    --breakpoint-l: 992px;
-    --breakpoint-xl: 1248px;
-    --container-width-xs: 288px;
-    --container-width-s: 544px;
-    --container-width-m: 720px;
-    --container-width-l: 944px;
-    --container-width-xl: 1200px;
+
+    --clamp-small: clamp(12em, 100vw, 22em);
+
+    --breakpoint-height: 560px;
+    --breakpoint-width: 375px;
+
     --color-brick: #bd2719;
     --color-brick-light: #ffeeed;
     --color-brick-medium-light: #facbc8;
@@ -120,5 +116,5 @@
     --lineheight-l: 1.5;
     --lineheight-xl: 1.75;
 
-    --clamp-small: clamp(10em, 100vw, 21em);
+
 }

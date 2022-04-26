@@ -21,7 +21,7 @@ const Summary = ({ questions, answersText }) => {
               {Object.values(answersText)[index] === undefined ? (
                 <p className="summary no-answer">{TEXT_ALT}</p>
               ) : (
-                <p className="summary answer" data-text="Vastaus:">
+                <p className="summary answer" data-text="Vastasit:">
                   "{Object.values(answersText)[index]}"
                 </p>
               )}

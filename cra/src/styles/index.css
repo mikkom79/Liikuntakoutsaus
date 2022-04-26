@@ -35,7 +35,7 @@ body * {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-height: clamp(325px, 100vh, 30em);
+    min-height: 32em;
     text-align: center;
 }
 
@@ -43,6 +43,7 @@ body * {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 0.5em;
     margin-top: auto;
     margin-bottom: auto;
     gap: 0.5em;
@@ -88,9 +89,10 @@ span.range-slider {
 label.radio-label {
     display: flex;
     flex-direction: column;
-    min-height: 3.5em;
+    min-height: 2.5em;
     padding-left: 3em;
     margin-top: 0.5em;
+    width: inherit;
     justify-content: center;
 }
 
@@ -102,7 +104,6 @@ label.radio-label.checked {
 ol,
 ul {
     text-align: left;
-    width: 100%;
     margin: 0;
     padding: 0;
 }
@@ -136,16 +137,24 @@ label,
 legend {
     font-size: var(--fontsize-body-m);
     line-height: 120%;
-    max-width: 50ch;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--color-coat-of-arms);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+a:hover {
+    color: var(--color-coat-of-arms-dark);
+
+    text-decoration: underline;
 }
 
 button,
-a,
+a.secondary,
+a.primary,
 button[type="submit"] {
     --border-width: 2px;
     --color: var(--color-white);
@@ -172,6 +181,7 @@ button[type="submit"] {
     position: relative;
     vertical-align: top;
     width: 60%;
+    text-decoration: none;
 }
 
 button.secondary,
@@ -182,10 +192,10 @@ a.secondary {
 }
 
 button:hover,
-a:hover,
+a.secondary:hover,
 button[type="submit"]:hover,
 button:focus,
-a:focus,
+a.secondary:focus,
 button[type="submit"]:focus {
     transition-property: background-color, border-color, color;
     transition-duration: 85ms;
@@ -253,6 +263,8 @@ label {
     align-items: center;
     text-align: left;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .radio-container input[type="radio"] {
@@ -298,12 +310,12 @@ label {
     transform: scale(1);
 }
 
-.radio-container input[type="radio"]:hover {
+.radio-container:hover>input[type="radio"] {
     background-color: var(--color-coat-of-arms-light);
     border: 0.20em solid var(--color-coat-of-arms);
 }
 
-label.radio-label:not(.checked):hover {
+.radio-container:hover>label.radio-label:not(.checked) {
     color: var(--color-coat-of-arms);
 }
 
@@ -334,8 +346,8 @@ li:not(.contact > *) {
     -ms-user-select: none;
 }
 
-p {
-    max-width: var(--clamp-small);
+p:not(.range-slider > *) {
+    margin: 0.5em 0;
 }
 
 .summary-title {
@@ -343,9 +355,10 @@ p {
     font-weight: normal;
 }
 
-.summary.answer {
+.summary.answer p:not(.summary-title) {
     color: var(--color-black-80);
     font-size: var(--fontsize-body-m);
+    font-style: italic;
 }
 
 p.summary.answer::before {
@@ -353,8 +366,24 @@ p.summary.answer::before {
     color: var(--color-black-60);
     display: block;
     font-size: var(--fontsize-body-s);
-    font-style: italic;
-    margin-top: 0.5em;
+}
+
+
+ol.summary {
+    width: 100%;
+    list-style: none;
+    counter-reset: list;
+}
+
+.summary li {
+    background-color: var(--color-coat-of-arms-light);
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 3fr;
+    grid-auto-rows: auto;
+    align-items: center;
+    gap: 1em;
+    counter-increment: list;
 }
 
 p.summary.no-answer {
@@ -363,29 +392,22 @@ p.summary.no-answer {
     font-style: italic;
 }
 
-ol.summary {
-    width: calc(var(--clamp-small)*0.80);
-}
-
 .summary li.no-answer {
     background-color: var(--color-error-light);
-    padding: 0.5em;
 }
 
-.summary li {
-    background-color: var(--color-coat-of-arms-light);
-    padding: 0.5em;
-}
-
-.summary li:not(:last-child) {
-    margin-bottom: 1.5em;
-}
-
-.summary li::marker {
-    color: var(--color-coat-of-arms);
+li::before {
+    content: counter(list);
+    width: 1em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
     font-weight: 600;
     font-size: var(--fontsize-body-l);
 }
+
 
 ul.contact {
     list-style: none;
@@ -417,4 +439,5 @@ p.modal::before {
     font-weight: 600;
     color: var(--color-info-dark);
     user-select: none;
+    margin-bottom: 1em;
 }
