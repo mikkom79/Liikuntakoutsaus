@@ -1,6 +1,6 @@
 const Radiobutton = ({ label, value, name, onChange, checked }) => {
   return (
-    <div className="radio-container">
+    <li className="radio-container">
       <input
         type="radio"
         name={name}
@@ -14,7 +14,7 @@ const Radiobutton = ({ label, value, name, onChange, checked }) => {
       >
         {label}
       </label>
-    </div>
+    </li>
   );
 };
 
