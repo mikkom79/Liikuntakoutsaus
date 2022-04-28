@@ -1,5 +1,6 @@
 :root {
-    --font-default: Arial, sans-serif;
+
+    --font-default: HelsinkiGrotesk, Arial, sans-serif;
 
     --clamp-small: clamp(12em, 100vw, 22em);
 
@@ -78,9 +79,11 @@
     --color-info: #0062b9;
     --color-info-light: #e5eff8;
     --color-info-dark: #004f94;
+
     --box-shadow-s: 0px 2px 10px 0px rgba(0, 0, 0, 0.07);
     --box-shadow-m: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
     --box-shadow-l: 0px 2px 20px 0px rgba(0, 0, 0, 0.2);
+
     --spacing-layout-2-xs: 1rem;
     --spacing-layout-xs: 1.5rem;
     --spacing-layout-s: 2rem;
@@ -100,6 +103,7 @@
     --spacing-3-xl: 3.5rem;
     --spacing-4-xl: 4rem;
     --spacing-5-xl: 4.5rem;
+
     --fontsize-heading-xl: 3.25rem;
     --fontsize-heading-l: 2.25rem;
     --fontsize-heading-m: 1.5rem;
@@ -110,7 +114,7 @@
     --fontsize-body-m: 1rem;
     --fontsize-body-l: 1.125rem;
     --fontsize-body-xl: 1.25rem;
-    --font-default: HelsinkiGrotesk, Arial, sans-serif;
+
     --lineheight-s: 1;
     --lineheight-m: 1.2;
     --lineheight-l: 1.5;
