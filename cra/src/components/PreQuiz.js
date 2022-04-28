@@ -40,6 +40,7 @@ const PreQuiz = ({ setPreDone }) => {
 
       {showForm && !showPreResult && (
         <form className="container" onSubmit={handleSubmit}>
+          <h1>Työkykysi taso</h1>
           <div className="sub-container">
             <p>
               Oletetaan, että työkykysi on saanut parhaimmillaan 10 pistettä.

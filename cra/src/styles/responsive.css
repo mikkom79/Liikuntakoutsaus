@@ -8,6 +8,11 @@
         overflow-x: hidden;
     }
 
+    .App *:not(.sub-container, .sub-container > *) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     .container {
         min-height: 90vh;
     }
@@ -62,6 +67,7 @@
 
     .sub-container {
         height: fit-content;
+        width: fit-content;
     }
 
     button,

@@ -64,7 +64,7 @@ body *:not(.contact > *) {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-    margin-top: 2em;
+    margin-top: 2.5em;
 }
 
 fieldset {
@@ -119,7 +119,7 @@ ul {
 
 h1 {
     font-size: var(--fontsize-heading-l);
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 h2 {
@@ -154,6 +154,7 @@ a {
     color: var(--color-coat-of-arms);
     font-weight: 600;
     white-space: nowrap;
+    display: block;
 }
 
 a:hover {
@@ -339,7 +340,7 @@ label {
     text-align: left;
     font-size: var(--fontsize-body-m);
     width: var(--clamp-small);
-    margin-top: 1.5em;
+    margin-top: 1em;
 }
 
 .card li {
@@ -413,7 +414,7 @@ p.summary.no-answer {
     align-items: center;
     color: inherit;
     font-weight: 600;
-    font-size: var(--fontsize-body-l);
+    font-size: var(--fontsize-body-xl);
 }
 
 
