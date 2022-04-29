@@ -1,16 +1,11 @@
 /*mobile*/
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 445px) {
 
     .App {
         width: 100vw;
         min-height: 100vh;
-        padding: 5vh 5vw;
+        padding: 2vh 5vw;
         overflow-x: hidden;
-    }
-
-    .App *:not(.sub-container, .sub-container > *) {
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
     .container {
@@ -57,7 +52,7 @@
     .App {
         width: 100vw;
         min-height: 100vh;
-        padding: 5vh 1em;
+        padding: 3vh 1em;
         overflow-x: hidden;
     }
 
@@ -67,7 +62,7 @@
 
     .sub-container {
         height: fit-content;
-        width: fit-content;
+        width: 90vw;
     }
 
     button,
@@ -79,5 +74,20 @@
     button.prev,
     button.next {
         width: 40vw;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    label,
+    legend {
+        max-width: 66ch;
+        text-align: left;
+    }
+
+    label.radio-label {
+        min-height: 2em;
     }
 }

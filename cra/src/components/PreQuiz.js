@@ -72,8 +72,9 @@ const PreQuiz = ({ setPreDone }) => {
       )}
       {showPreResult && (
         <div className="container">
+          <h1>Työkykysi taso</h1>
           <div className="sub-container">
-            <p class="pre-quiz-result-output">{values} / 10</p>
+            <p className="pre-quiz-result-output">{values} / 10</p>
             <p>Vastauksesi perusteella koet työkykysi alentuneen.</p>
             <p>
               <strong>

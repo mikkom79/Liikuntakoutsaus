@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-default);
     background-color: var(--color-silver);
     color: var(--color-black-90);
     min-height: 100vh;
@@ -42,26 +42,27 @@ body *:not(.contact > *) {
     width: 100%;
     min-height: 32em;
     text-align: center;
+    gap: 1em;
 }
 
 .sub-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0.5em;
+    padding: 1em 0;
     margin-top: auto;
     margin-bottom: auto;
-    gap: 0.5em;
+    gap: 1em;
 }
 
 .buttons-container {
     display: flex;
     gap: 1em;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-content: space-around;
     width: 100%;
     flex-wrap: wrap;
-    margin-top: 2.5em;
+    padding-top: 0.5em;
 }
 
 fieldset {
@@ -116,7 +117,6 @@ ul {
 
 h1 {
     font-size: var(--fontsize-heading-l);
-    margin-bottom: 1em;
 }
 
 h2 {
@@ -363,11 +363,14 @@ p:not(.range-slider > *) {
     font-style: italic;
 }
 
+p.summary-title::before,
 p.summary.answer::before {
     content: attr(data-text);
     color: var(--color-black-60);
     display: block;
     font-size: var(--fontsize-body-s);
+    font-style: italic;
+    margin-bottom: 0.2em;
 }
 
 
@@ -386,7 +389,7 @@ ol.summary {
     display: grid;
     grid-template-columns: 0.5fr 3fr 2fr;
     grid-auto-rows: auto;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1em;
     counter-increment: list;
@@ -396,10 +399,13 @@ p.summary.no-answer {
     color: var(--color-error);
     font-size: var(--fontsize-body-s);
     font-style: italic;
+    font-weight: 600;
+    align-self: center;
 }
 
 .summary li.no-answer {
     background-color: var(--color-error-light);
+    border: 1px solid var(--color-error);
 }
 
 .summary li::before {

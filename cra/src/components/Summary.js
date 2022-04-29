@@ -16,12 +16,14 @@ const Summary = ({ questions, answersText }) => {
                   : "summary answer"
               }
             >
-              <p className="summary-title">{title}</p>
+              <p className="summary-title" data-text="Kysymys:">
+                {title}
+              </p>
 
               {Object.values(answersText)[index] === undefined ? (
                 <p className="summary no-answer">{TEXT_ALT}</p>
               ) : (
-                <p className="summary answer" data-text="Vastasit:">
+                <p className="summary answer" data-text="Vastaus:">
                   "{Object.values(answersText)[index]}"
                 </p>
               )}

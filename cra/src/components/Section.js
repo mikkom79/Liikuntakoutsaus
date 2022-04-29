@@ -10,8 +10,6 @@ const Section = ({
   setAnswersText,
 }) => {
   const handleChange = (value, label) => {
-    console.log(value, label);
-
     const _answers = { ...answers };
     _answers[`answer${step}`] = value;
     //insert the answers into an array before assigning it to setAnswers
