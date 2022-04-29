@@ -1,4 +1,4 @@
-const Summary = ({ questions, answersText }) => {
+const Summary = ({ questions, answersText, jumpTo }) => {
   const titlesArr = questions.map((question) => question.questionTitle);
   const TEXT_ALT = "Ei vastausta";
   window.scrollTo(0, 0);
@@ -15,6 +15,11 @@ const Summary = ({ questions, answersText }) => {
                   ? "summary no-answer"
                   : "summary answer"
               }
+              onClick={() => {
+                if (Object.values(answersText)[index] === undefined) {
+                  jumpTo(index); //if the answers contain an unanswered item, clicking it triggers a jump to said question
+                }
+              }}
             >
               <p className="summary-title" data-text="Kysymys:">
                 {title}

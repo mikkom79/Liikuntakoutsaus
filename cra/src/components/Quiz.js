@@ -159,6 +159,16 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
     answerText5: undefined,
   });
 
+  const jumpTo = (index) => {
+    //calculate the amount of steps "backwards" needed, using the index (key) of the item that has been clicked
+
+    const jump = state.step - index - 1;
+
+    for (let i = 0; i < jump; i++) {
+      dispatch({ type: "previous" });
+    } //iterate the amount of jumps needed, in order to find the unanswered question
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let isComplete = true; //defaults to true
@@ -196,6 +206,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
         setAnswers={setAnswers}
         answersText={answersText}
         setAnswersText={setAnswersText}
+        jumpTo={jumpTo}
       />
 
       <div className="buttons-container">
