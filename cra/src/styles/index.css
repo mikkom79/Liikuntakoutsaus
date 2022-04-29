@@ -390,7 +390,8 @@ p.summary.no-answer {
 
 .summary li.no-answer {
     background-color: var(--color-error-light);
-    border: 1px solid var(--color-error);
+    border: 3px solid var(--color-error);
+    cursor: pointer;
 }
 
 .summary li::before {

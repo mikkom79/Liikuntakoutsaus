@@ -81,11 +81,11 @@ const Result = ({ recommendCoaching, reset }) => {
         )}
         {!recommendCoaching && (
           <div className="card">
-            <h4>Lisätiedot liikuntakoutseilta:</h4>
+            <h4>Lisätiedot liikuntakoutseilta</h4>
             <ul className="contact">
-              <li>040 1882130, 09 310 22674 </li>
-
-              <li>040 1946077, 09 310 21670 </li>
+              <li>ma–pe klo 08–16</li>
+              <li>puh. 040 1882130 & 09 310 22674 </li>
+              <li>puh. 040 1946077 & 09 310 21670</li>
             </ul>
           </div>
         )}
