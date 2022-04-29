@@ -2,7 +2,7 @@ import { useReducer, useState } from "react";
 import Section from "./Section";
 
 const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
-  const threshold = 3; //minimum amount of points needed for the coaching to be recommended
+  const threshold = 5; //minimum amount of points needed for the coaching to be recommended
 
   const initialState = { step: 1 };
   //controls which quiz page the user is currently on
