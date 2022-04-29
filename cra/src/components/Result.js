@@ -47,11 +47,17 @@ const Result = ({ recommendCoaching, reset }) => {
         {recommendCoaching && (
           <div className="sub-container" style={{ paddingTop: "2em" }}>
             <p>
-              Ota yhteyttä suoraan koutsiin tai varaa aika{" "}
+              Varaa aika{" "}
               <a href={ONNI_HREF} target="_blank" rel="noreferrer">
-                Koulutuskalenteri Onnin
+                Onnin Koulutuskalenterin
               </a>{" "}
               kautta.
+            </p>
+            <p>
+              Lisätietoja{" "}
+              <a href={KOUTSAUS_HREF} target="_blank" rel="noreferrer">
+                Liikuntakoutsaus (hel.fi)
+              </a>
             </p>
             <p>Tervetuloa 😊</p>
           </div>
@@ -75,12 +81,11 @@ const Result = ({ recommendCoaching, reset }) => {
         )}
         {!recommendCoaching && (
           <div className="card">
-            <h4>Lisätiedot:</h4>
+            <h4>Lisätiedot liikuntakoutseilta:</h4>
             <ul className="contact">
-              <li>040 1882130 </li>
-              <li>09 310 22674 </li>
-              <li>040 1946077 </li>
-              <li>09 310 21670 </li>
+              <li>040 1882130, 09 310 22674 </li>
+
+              <li>040 1946077, 09 310 21670 </li>
             </ul>
           </div>
         )}
