@@ -45,7 +45,7 @@ const Result = ({ recommendCoaching, reset }) => {
         )}
 
         {recommendCoaching && (
-          <div className="sub-container" style={{ paddingTop: "2em" }}>
+          <div className="sub-container">
             <p>
               Varaa aika{" "}
               <a href={ONNI_HREF} target="_blank" rel="noreferrer">

@@ -42,17 +42,16 @@ body *:not(.contact > *) {
     width: 100%;
     min-height: 32em;
     text-align: center;
-    gap: 1em;
+    gap: 1.5em;
 }
 
 .sub-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em 0;
     margin-top: auto;
     margin-bottom: auto;
-    gap: 1em;
+    gap: 1.5em;
 }
 
 .buttons-container {
@@ -62,7 +61,6 @@ body *:not(.contact > *) {
     align-content: space-around;
     width: 100%;
     flex-wrap: wrap;
-    padding-top: 0.5em;
 }
 
 fieldset {
@@ -70,7 +68,6 @@ fieldset {
     flex-direction: column;
     width: 90%;
     border: none;
-    margin: 2vh 0;
     text-align: center;
 }
 
@@ -110,8 +107,6 @@ label.radio-label.checked {
 ol,
 ul {
     text-align: left;
-    margin: 0;
-    padding: 0;
     width: 100%;
 }
 
@@ -121,13 +116,11 @@ h1 {
 
 h2 {
     font-size: var(--fontsize-heading-m);
-    margin-bottom: 0.5em;
 }
 
 h3 {
     font-size: var(--fontsize-heading-s);
     font-weight: 500;
-    margin-bottom: 0;
 }
 
 p,
@@ -272,8 +265,6 @@ label {
     align-items: center;
     text-align: left;
     width: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 .radio-container input[type="radio"] {
@@ -283,8 +274,6 @@ label {
     position: absolute;
     appearance: none;
     background-color: var(--color-white);
-    margin: 0;
-    padding: 0;
     font: inherit;
     color: var(--color-black-50);
     width: 1.5em;
@@ -337,7 +326,7 @@ label {
     text-align: left;
     font-size: var(--fontsize-body-m);
     width: var(--clamp-small);
-    margin-top: 1em;
+
 }
 
 .card li {
@@ -346,10 +335,6 @@ label {
 
 .card li::marker {
     color: var(--color-coat-of-arms);
-}
-
-p:not(.range-slider > *) {
-    margin: 0.5em 0;
 }
 
 .summary-title {
@@ -377,7 +362,7 @@ p.summary.answer::before {
 ol.summary {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 1em;
     width: 100%;
     list-style: none;
     counter-reset: list;
@@ -451,7 +436,6 @@ p.modal::before {
     font-weight: 600;
     color: var(--color-info-dark);
     user-select: none;
-    margin-bottom: 1em;
 }
 
 .pre-quiz-result-output {
