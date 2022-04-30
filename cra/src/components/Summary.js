@@ -1,6 +1,6 @@
 const Summary = ({ questions, answersText, jumpTo }) => {
   const titlesArr = questions.map((question) => question.questionTitle);
-  const TEXT_ALT = "Ei vastausta";
+  const TEXT_ALT = "Vastaa kysymykseen >>";
   window.scrollTo(0, 0);
   return (
     <div className="sub-container">
