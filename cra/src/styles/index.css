@@ -216,12 +216,13 @@ a.secondary:hover {
     color: var(--color-coat-of-arms-dark, transparent);
 }
 
-.react-responsive-modal-closeButton {
-    width: fit-content;
-}
+button[type="submit"]:disabled {
+    background-color: var(--color-black-20, transparent);
+    border-color: transparent;
+    border-color: var(--color-black-20, transparent);
+    color: var(--color-white);
+    cursor: not-allowed;
 
-.react-responsive-modal-modal {
-    background-color: var(--color-alert-light) !important;
 }
 
 #main-quiz-submit,
@@ -406,30 +407,8 @@ p.summary.no-answer {
     font-size: var(--fontsize-body-xl);
 }
 
-
 ul.contact {
     list-style: none;
-}
-
-p.modal {
-    padding: 0.5em;
-    margin: 1em;
-    margin-top: 2em;
-    font-size: var(--fontsize-body-m);
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-p.modal::before {
-    content: attr(data-icon);
-    display: block;
-    color: var(--color-alert-dark);
-    font-size: 2rem;
-    margin: 0.5em;
-    line-height: 0;
 }
 
 .step-tracker {
