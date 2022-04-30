@@ -1,8 +1,10 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Section from "./Section";
 
-const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
+const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
   const threshold = 5; //minimum amount of points needed for the coaching to be recommended
+
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
   const initialState = { step: 1 };
   //controls which quiz page the user is currently on
@@ -169,30 +171,29 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
     } //iterate the amount of jumps needed, in order to find the unanswered question
   };
 
+  useEffect(() => {
+    //every time [answers]-state changes, go through current answers and check if any are undefined
+    const emptyAnswer = Object.values(answers).some(
+      (value) => value === undefined
+    );
+    if (emptyAnswer) {
+      return; //If an empty answer is found, return instantly.
+    }
+    setBtnDisabled(false); //if no answer is currently undefined, enable the submit button
+  }, [answers]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    let isComplete = true; //defaults to true
 
-    Object.values(answers).map((value) => {
-      if (!value) {
-        isComplete = false;
-      }
-    });
-    if (!isComplete) {
-      //if any of answers is undefined, do not calculate points, and show error
-      setShowErrorModal(true);
-      return;
-    }
-    let totalPoints = 0;
+    let totalPoints = 0; //calculate the total points; find and compare currently stored answers to the list of answer options
     Object.values(answers).map((value, index) => {
       const option = questions[index].answerOptions.find(
         (question) => question.id === value
       );
       if (option?.addPoint) {
         totalPoints++;
-      } //calculate the total points; find and compare currently stored answers to the list of answer options => if addPoint is true, add one point to the total points
+      } //if addPoint is true, add one point to the total points
     });
-    console.log(`${totalPoints} out of ${threshold} points`);
     setRecommendCoaching(totalPoints >= threshold ? true : false);
     setQuizDone(true);
   };
@@ -234,7 +235,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching, setShowErrorModal }) => {
           </button>
         )}
         {state.step > questions.length && (
-          <button type="submit" id="main-quiz-submit">
+          <button type="submit" id="main-quiz-submit" disabled={btnDisabled}>
             Lähetä vastaukset
           </button>
         )}
