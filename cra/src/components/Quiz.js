@@ -4,13 +4,12 @@ import Section from "./Section";
 const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
   const threshold = 5; //minimum amount of points needed for the coaching to be recommended
 
-  const [btnDisabled, setBtnDisabled] = useState(true);
-
-  const initialState = { step: 1 };
-  //controls which quiz page the user is currently on
+  const [btnDisabled, setBtnDisabled] = useState(true); //controls the state of the submit form button
 
   const iconNext = ""; //insert hds icon here
   const iconPrev = ""; //insert hds icon here
+
+  const initialState = { step: 1 };
 
   function reducer(state, action) {
     switch (action.type) {
@@ -20,7 +19,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
         return { step: state.step - 1 };
       default:
         throw new Error();
-    }
+    } //controls which quiz page the user is currently on
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -162,13 +161,13 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
   });
 
   const jumpTo = (index) => {
-    //calculate the amount of steps "backwards" needed, using the index (key) of the item that has been clicked
+    //calculate the amount of steps "backwards" needed, using the index (key) of the item that has been clicked (Summary.js)
 
     const jump = state.step - index - 1;
 
     for (let i = 0; i < jump; i++) {
       dispatch({ type: "previous" });
-    } //iterate the amount of jumps needed, in order to find the unanswered question
+    } //iterate the amount of jumps (dispatch type "previous") needed, in order to navigate to the unanswered question
   };
 
   useEffect(() => {
