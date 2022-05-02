@@ -9,6 +9,40 @@ const Result = ({ recommendCoaching, reset }) => {
   const LIIKUNTATARJONTA_HREF =
     "http://helmi.hel.fi/henkilosto/Henkilostoedut/henkilostoliikunta/liikuntatarjonta/Sivut/default.aspx";
 
+  const CARD = {
+    c1: (
+      <>
+        <h4>Liikuntakoutsauksen kriteerit</h4>
+        <ul>
+          <li>Asteikolla 0–10 arvioin työkykyni olevan välillä 6–10</li>
+          <li>Olen motivoitunut lisäämään liikuntaa omassa arjessani</li>
+          <li>Liikun harvemmin kuin kerran viikossa</li>
+        </ul>
+      </>
+    ),
+    c2: (
+      <>
+        <p>
+          Liikuntakoutsaus on 6–8 kuukautta kestävä prosessi, joka sisältää 4
+          tapaamiskertaa ja tähtää liikunnan lisäämiseen pienin askelin.
+        </p>
+        <p>
+          Tapaamiskertojen tavoitteena on löytää keskustelun kautta
+          konkreettisia tapoja liikkumisen lisäämiseksi.
+        </p>
+      </>
+    ),
+    c3: (
+      <>
+        <h4>Lisätiedot liikuntakoutseilta</h4>
+        <ul className="contact">
+          <li>ma–pe klo 08–16</li>
+          <li>puh.040 1882130 & 09 310 22674 </li>
+          <li>puh. 040 1946077 & 09 310 21670</li>
+        </ul>
+      </>
+    ),
+  };
   return (
     <div className="container">
       <h1>Testin tulos</h1>
@@ -21,28 +55,8 @@ const Result = ({ recommendCoaching, reset }) => {
             malliin!
           </h3>
         )}
-        {recommendCoaching && (
-          <div className="card">
-            <h4>Liikuntakoutsauksen kriteerit</h4>
-            <ul>
-              <li>Asteikolla 0–10 arvioin työkykyni olevan välillä 6–10</li>
-              <li>Olen motivoitunut lisäämään liikuntaa omassa arjessani</li>
-              <li>Liikun harvemmin kuin kerran viikossa</li>
-            </ul>
-          </div>
-        )}
-        {recommendCoaching && (
-          <div className="card">
-            <p>
-              Liikuntakoutsaus on 6–8 kuukautta kestävä prosessi, joka sisältää
-              4 tapaamiskertaa ja tähtää liikunnan lisäämiseen pienin askelin.
-            </p>
-            <p>
-              Tapaamiskertojen tavoitteena on löytää keskustelun kautta
-              konkreettisia tapoja liikkumisen lisäämiseksi.
-            </p>
-          </div>
-        )}
+        {recommendCoaching && <div className="card">{CARD.c1}</div>}
+        {recommendCoaching && <div className="card">{CARD.c2}</div>}
 
         {recommendCoaching && (
           <div className="sub-container">
@@ -79,16 +93,7 @@ const Result = ({ recommendCoaching, reset }) => {
             </p>
           </div>
         )}
-        {!recommendCoaching && (
-          <div className="card">
-            <h4>Lisätiedot liikuntakoutseilta</h4>
-            <ul className="contact">
-              <li>ma–pe klo 08–16</li>
-              <li>puh. 040 1882130 & 09 310 22674 </li>
-              <li>puh. 040 1946077 & 09 310 21670</li>
-            </ul>
-          </div>
-        )}
+        {!recommendCoaching && <div className="card">{CARD.c3}</div>}
       </div>
       <div className="buttons-container">
         {recommendCoaching && (
