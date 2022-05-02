@@ -4,8 +4,6 @@ import PreQuiz from "./components/PreQuiz";
 import Result from "./components/Result";
 
 function App() {
-  const alertIcon = ""; //insert hds icon here
-
   const [preDone, setPreDone] = useState(false);
   // onko alkukartoitus (työkyky 0-10) tehty
   const [quizDone, setQuizDone] = useState(false);

@@ -3,11 +3,10 @@ import Slider from "./Slider";
 
 const PreQuiz = ({ setPreDone }) => {
   const [showForm, setShowForm] = useState(false);
-  const [values, setValues] = useState([5]);
   const [showPreResult, setShowResult] = useState(false);
+  const [values, setValues] = useState([5]);
 
   const LINK_HREF = "https://www.google.com/";
-
 
   const CONTENT = {
     c1: (
@@ -89,19 +88,13 @@ const PreQuiz = ({ setPreDone }) => {
           <div className="sub-container">
             {CONTENT.c2}
             <span className="range-slider">
-              <p className="left" style={{ marginRight: "0.5em" }}>
-                0
-              </p>
+              <p style={{ marginRight: "0.5em" }}>0</p>
               <Slider values={values} setValues={setValues} />
-              <p className="right" style={{ marginLeft: "0.5em" }}>
-                10
-              </p>
+              <p style={{ marginLeft: "0.5em" }}>10</p>
             </span>
           </div>
           <div className="buttons-container">
-            <button type="submit" className="pre">
-              Lähetä vastaus
-            </button>
+            <button type="submit">Lähetä vastaus</button>
           </div>
         </form>
       )}

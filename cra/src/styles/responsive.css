@@ -4,7 +4,7 @@
     .App {
         width: 100vw;
         min-height: 100vh;
-        padding: 2vh 5vw;
+        padding: 1em;
         overflow-x: hidden;
     }
 
@@ -52,7 +52,7 @@
     .App {
         width: 100vw;
         min-height: 100vh;
-        padding: 3vh 1em;
+        padding: 1em;
         overflow-x: hidden;
     }
 
@@ -63,19 +63,6 @@
     .sub-container {
         height: fit-content;
     }
-
-    button,
-    a.primary,
-    a.secondary,
-    button[type="submit"],
-    button.nav,
-    #main-quiz-submit,
-    button.prev,
-    button.next {
-        width: 40vw;
-    }
-
-
 
     label.radio-label {
         min-height: 2em;

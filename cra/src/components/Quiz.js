@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 import Section from "./Section";
 
 const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
-  const threshold = 5; //minimum amount of points needed for the coaching to be recommended
+  const threshold = 5; //minimum amount of points needed for the coaching to be recommended (5 = maximum amount of points)
 
   const [btnDisabled, setBtnDisabled] = useState(true); //controls the state of the submit form button
 
@@ -171,14 +171,14 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
   };
 
   useEffect(() => {
-    //every time [answers]-state changes, go through current answers and check if any are undefined
+    //every time [answers]-state changes (=user clicks a radio button), go through current answers and check if any are undefined
     const emptyAnswer = Object.values(answers).some(
       (value) => value === undefined
     );
     if (emptyAnswer) {
       return; //If an empty answer is found, return instantly.
     }
-    setBtnDisabled(false); //if no answer is currently undefined, enable the submit button
+    setBtnDisabled(false); //if no answer is currently undefined, enable the submit form button
   }, [answers]);
 
   const handleSubmit = (e) => {
@@ -193,7 +193,7 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
         totalPoints++;
       } //if addPoint is true, add one point to the total points
     });
-    setRecommendCoaching(totalPoints >= threshold ? true : false);
+    setRecommendCoaching(totalPoints >= threshold);
     setQuizDone(true);
   };
 
