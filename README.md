@@ -17,5 +17,5 @@ Työkalun sisäinen logiikka;
   -> Koutsaustarvetta puoltavista vastauksista käyttäjälle kertyy pisteitä.
 
 3. Kun käyttäjä on vastannut kaikkiin kysymyksiin, työkalu laskee yhteen pisteet ja kertyneen pistemäärän mukaan tulostaa käyttäjälle kyselyn tulokset.
-  -> Jos pistemäärä on puolet tai yli puolet kokonaispistemäärästä, suositellaan koutsausta, ja tarjotaan ajanvarauspalvelu.
-  -> Jos pistemäärä on alle puolet kokonaispistemäärästä, käyttäjää suositellaan jatkamaan nykyisten liikuntatottumustensa noudattamista.
+  -> Jos pistemäärä ylittää rajan, suositellaan koutsausta, ja tarjotaan linkki ajanvarauspalveluun.
+  -> Jos pistemäärä alittaa rajan, käyttäjää suositellaan jatkamaan nykyisten liikuntatottumustensa noudattamista.
