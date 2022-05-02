@@ -1,10 +1,10 @@
-/*mobile*/
-@media only screen and (max-width: 445px) {
+/*default*/
+@media only screen and (max-width: 800px) {
 
     .App {
         width: 100vw;
         min-height: 100vh;
-        padding: 1em;
+        padding: 1em 2.5em;
         overflow-x: hidden;
     }
 
@@ -13,7 +13,19 @@
     }
 
     .sub-container {
-        width: 100%;
+        height: fit-content;
+    }
+
+    .step-tracker {
+        padding-top: 2em;
+    }
+}
+
+/*mobile*/
+@media only screen and (max-width: 375px) {
+
+    .App {
+        padding: 1em;
     }
 
     .card {
@@ -40,31 +52,4 @@
         width: inherit;
     }
 
-    li {
-        width: 100%;
-    }
-
-}
-
-/*landscape*/
-@media only screen and (max-height: 525px) {
-
-    .App {
-        width: 100vw;
-        min-height: 100vh;
-        padding: 1em;
-        overflow-x: hidden;
-    }
-
-    .container {
-        min-height: 90vh;
-    }
-
-    .sub-container {
-        height: fit-content;
-    }
-
-    label.radio-label {
-        min-height: 2em;
-    }
 }
