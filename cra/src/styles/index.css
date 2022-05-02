@@ -42,7 +42,7 @@ body *:not(.contact > *) {
     width: 100%;
     min-height: 32em;
     text-align: center;
-    gap: 1.5em;
+    gap: 3em;
 }
 
 .sub-container {
@@ -425,6 +425,7 @@ ul.contact {
     display: flex;
     flex-direction: column;
     place-content: center;
+    text-align: center;
     border-radius: 50%;
     font-size: var(--fontsize-body-l);
     font-weight: 600;
