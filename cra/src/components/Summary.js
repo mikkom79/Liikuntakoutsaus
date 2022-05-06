@@ -5,15 +5,15 @@ const Summary = ({ questions, answersText, jumpTo }) => {
   return (
     <div className="sub-container">
       <h1>Yhteenveto</h1>
-      <ol className="summary">
+      <ol className="summary-list">
         {titlesArr.map((title, index) => {
           return (
             <li
               key={index}
               className={
                 Object.values(answersText)[index] === undefined
-                  ? "summary no-answer"
-                  : "summary answer"
+                  ? "summary not-answered"
+                  : "summary"
               }
               onClick={() => {
                 if (Object.values(answersText)[index] === undefined) {
@@ -21,17 +21,17 @@ const Summary = ({ questions, answersText, jumpTo }) => {
                 }
               }}
             >
-              <p className="summary-title" data-text="Kysymys:">
-                {title}
-              </p>
+              <div className="summary-question-text-container">
+                <p>{title}</p>
+              </div>
 
-              {Object.values(answersText)[index] === undefined ? (
-                <p className="summary no-answer">{TEXT_ALT}</p>
-              ) : (
-                <p className="summary answer" data-text="Vastaus:">
-                  "{Object.values(answersText)[index]}"
-                </p>
-              )}
+              <div className="summary-answer-text-container">
+                {Object.values(answersText)[index] === undefined ? (
+                  <p>{TEXT_ALT}</p>
+                ) : (
+                  <p>"{Object.values(answersText)[index]}"</p>
+                )}
+              </div>
               {/*Object.values = js magic*/}
             </li>
           );
