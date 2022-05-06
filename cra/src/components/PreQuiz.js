@@ -9,11 +9,11 @@ const PreQuiz = ({ setPreDone }) => {
   const LINK_HREF =
     "https://helsinginkaupunki.sharepoint.com/sites/Intra-Tyohyvinvointi-ja-tyoterveys";
 
+  const PAGE_TITLE = "Työkykysi";
   const CONTENT = {
     c1: (
       <>
-        <h1>Tarvitsetko tukea liikkumiseen? 💪</h1>
-        <p>
+        <p className="lead-paragraph">
           Haluaisitko löytää liikunta-alan ammattilaisen avulla sinulle
           mielekkäitä ja helposti toteutettavia keinoja lisätä kokonaisvaltaista
           hyvinvointia tukevaa liikuntaa?
@@ -23,7 +23,7 @@ const PreQuiz = ({ setPreDone }) => {
     ),
     c2: (
       <>
-        <h1>Työkykysi taso</h1>
+        <h1>{PAGE_TITLE}</h1>
         <p>Oletetaan, että työkykysi on saanut parhaimmillaan 10 pistettä.</p>
         <p>
           <label>
@@ -37,7 +37,7 @@ const PreQuiz = ({ setPreDone }) => {
     ),
     c3: (
       <>
-        <h1>Työkykysi taso</h1>
+        <h1>{PAGE_TITLE}</h1>
         <p className="pre-quiz-result-output">{values} / 10</p>
         <p>Vastauksesi perusteella koet työkykysi alentuneen.</p>
         <p>
@@ -46,7 +46,7 @@ const PreQuiz = ({ setPreDone }) => {
           </strong>{" "}
         </p>
         <div className="card">
-          <h4>Pohdi omaa työkykyäsi</h4>
+          <h4>Pohdi omaa työkykyäsi:</h4>
           <ul>
             <li>Mitkä asiat vaikuttavat kokemukseesi työkyvystäsi?</li>
             <li>

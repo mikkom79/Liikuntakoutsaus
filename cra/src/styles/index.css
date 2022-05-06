@@ -145,6 +145,11 @@ label {
     line-height: 120%;
 }
 
+p.lead-paragraph {
+    font-size: var(--fontsize-body-xl);
+    font-weight: 600;
+}
+
 a {
     text-decoration: none;
     color: var(--color-coat-of-arms);
@@ -350,7 +355,6 @@ ol.summary-list li {
     background-color: var(--color-coat-of-arms-medium-light);
     display: grid;
     grid-template-columns: 0.5fr 3.5fr 3fr;
-    grid-template-areas: 'marker question answer';
     counter-increment: list;
     place-content: center;
     border-right: 0.2em solid var(--color-coat-of-arms-medium-light);
