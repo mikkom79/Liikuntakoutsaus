@@ -6,7 +6,8 @@ const PreQuiz = ({ setPreDone }) => {
   const [showPreResult, setShowResult] = useState(false);
   const [values, setValues] = useState([5]);
 
-  const LINK_HREF = "https://www.google.com/";
+  const LINK_HREF =
+    "https://helsinginkaupunki.sharepoint.com/sites/Intra-Tyohyvinvointi-ja-tyoterveys";
 
   const CONTENT = {
     c1: (
@@ -108,7 +109,7 @@ const PreQuiz = ({ setPreDone }) => {
               target="_blank"
               rel="noreferrer"
             >
-              PlaceholderLinkki
+              Työhyvinvointi & Työterveys
             </a>
             <button
               className="secondary"
