@@ -19,6 +19,8 @@ body {
     scrollbar-gutter: stable both-edges;
     overflow-x: hidden;
     font-size: var(--fontsize-body-m);
+    word-wrap: break-word;
+    word-break: normal;
 }
 
 body *:not(.contact > *) {
@@ -59,8 +61,14 @@ body *:not(.contact > *) {
     gap: 1em;
     justify-content: space-around;
     align-content: space-around;
+    margin-bottom: 0.5em;
     width: 100%;
     flex-wrap: wrap;
+}
+
+.buttons-container>* {
+    flex: 1 1 25%;
+    white-space: normal;
 }
 
 fieldset {
@@ -129,16 +137,6 @@ label {
     line-height: 120%;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-label,
-legend {
-    max-width: 50ch;
-}
-
 a {
     text-decoration: none;
     color: var(--color-coat-of-arms);
@@ -176,12 +174,11 @@ button[type="submit"] {
     font-size: var(--fontsize-body-m);
     justify-content: center;
     min-height: var(--min-size);
-    min-width: var(--min-size);
+    max-width: var(--clamp-small);
     padding: 0 var(--spacing-2-xs);
     position: relative;
     vertical-align: top;
     text-decoration: none;
-    width: 45%;
 }
 
 button.secondary,
@@ -223,12 +220,6 @@ button[type="submit"]:disabled {
     color: var(--color-white);
     cursor: not-allowed;
 
-}
-
-#main-quiz-submit,
-button.prev,
-button.next {
-    width: 45%;
 }
 
 button.prev::before,
@@ -338,29 +329,7 @@ label {
     color: var(--color-coat-of-arms);
 }
 
-.summary-title {
-    font-size: var(--fontsize-heading-xxs);
-    font-weight: normal;
-}
-
-.summary.answer p:not(.summary-title) {
-    color: var(--color-black-80);
-    font-size: var(--fontsize-body-m);
-    font-style: italic;
-}
-
-p.summary-title::before,
-p.summary.answer::before {
-    content: attr(data-text);
-    color: var(--color-black-60);
-    display: block;
-    font-size: var(--fontsize-body-s);
-    font-style: italic;
-    margin-bottom: 0.2em;
-}
-
-
-ol.summary {
+ol.summary-list {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -369,42 +338,66 @@ ol.summary {
     counter-reset: list;
 }
 
-.summary li {
-    background-color: var(--color-coat-of-arms-light);
-    padding: 1em;
+ol.summary-list li {
+    background-color: var(--color-coat-of-arms-medium-light);
     display: grid;
-    grid-template-columns: 0.5fr 3fr 2fr;
-    grid-auto-rows: auto;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1em;
+    grid-template-columns: 0.5fr 3.5fr 3fr;
+    grid-template-areas: 'marker question answer';
     counter-increment: list;
+    place-content: center;
+    border-right: 0.2em solid var(--color-coat-of-arms-medium-light);
 }
 
-p.summary.no-answer {
+ol.summary-list li div {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.summary-answer-text-container {
+    font-style: italic;
+    background-color: var(--color-coat-of-arms-light);
+}
+
+.summary.not-answered {
+    background-color: var(--color-error-light);
+    border: 1px solid var(--color-error);
+    cursor: pointer;
+}
+
+.summary.not-answered .summary-answer-text-container {
     color: var(--color-error);
+    background-color: transparent;
     font-size: var(--fontsize-body-s);
     font-style: italic;
     font-weight: 600;
     align-self: center;
+    white-space: nowrap;
+    margin: 0.5em;
 }
 
-.summary li.no-answer {
-    background-color: var(--color-error-light);
-    border: 3px solid var(--color-error);
-    cursor: pointer;
-}
+/*LIST MARKERS*/
 
-.summary li::before {
+.summary-list li::before {
     content: counter(list);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
-    color: inherit;
     font-weight: 600;
     font-size: var(--fontsize-body-xl);
+    margin-left: 0.5em;
+    place-content: center;
+    display: flex;
+    line-height: 0;
+    grid-row: 1;
+}
+
+li.summary::before {
+    color: var(--color-coat-of-arms-dark);
+}
+
+li.summary.not-answered::before {
+    color: var(--color-error);
 }
 
 ul.contact {
