@@ -8,7 +8,6 @@ const Section = ({
   setAnswers,
   answersText,
   setAnswersText,
-  jumpTo,
 }) => {
   const handleChange = (value, label) => {
     const _answers = { ...answers };
@@ -48,11 +47,7 @@ const Section = ({
       )}
 
       {step > questions.length && (
-        <Summary
-          questions={questions}
-          answersText={answersText}
-          jumpTo={jumpTo}
-        />
+        <Summary questions={questions} answersText={answersText} />
       )}
     </>
   );
