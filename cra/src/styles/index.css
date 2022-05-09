@@ -31,10 +31,9 @@ body *:not(.contact > *) {
     user-select: none;
 }
 
-header>* {
-    position: absolute;
-    left: .5em;
-    top: .5em;
+header {
+    display: flex;
+    justify-content: center;
 }
 
 .App {
@@ -50,7 +49,7 @@ header>* {
     width: 100%;
     min-height: 32em;
     text-align: center;
-    gap: 3em;
+    gap: 2em;
 }
 
 .sub-container {
@@ -210,9 +209,9 @@ button[type="submit"]:focus {
     transition-timing-function: ease-out;
 }
 
-button.primary:hover,
-a.primary:hover,
-button[type="submit"]:hover {
+button.primary:hover:not(button:disabled),
+a.primary:hover:not(button:disabled),
+button[type="submit"]:hover:not(button:disabled) {
     background-color: var(--color-coat-of-arms-dark, transparent);
     border-color: var(--color-coat-of-arms-dark, transparent);
 }
@@ -224,7 +223,8 @@ a.secondary:hover {
     color: var(--color-coat-of-arms-dark, transparent);
 }
 
-button[type="submit"]:disabled {
+button[type="submit"]:disabled,
+button:disabled {
     background-color: var(--color-black-20, transparent);
     border-color: transparent;
     border-color: var(--color-black-20, transparent);
@@ -350,7 +350,7 @@ ol.summary-list {
 }
 
 ol.summary-list li {
-    background-color: var(--color-coat-of-arms-light);
+    background-color: var(--color-coat-of-arms-medium-light);
     display: grid;
     grid-template-columns: 0.3fr 4fr 3fr;
     grid-template-rows: auto;
@@ -366,45 +366,24 @@ ol.summary-list li * {
 }
 
 .summary-answer-text-container {
-    font-style: italic;
     background-color: var(--color-coat-of-arms-light);
-}
-
-.summary.not-answered {
-    background-color: var(--color-error-light);
-    cursor: pointer;
-}
-
-.summary.not-answered .summary-answer-text-container {
-    color: var(--color-error);
-    background-color: transparent;
-    font-size: var(--fontsize-body-s);
     font-style: italic;
-    font-weight: 600;
-    text-decoration: underline;
 }
+
+
 
 /*LIST MARKERS*/
 
 .summary-list li::before {
     content: counter(list);
-    justify-items: center;
-    align-items: center;
     font-weight: 600;
     height: 100%;
     width: 100%;
-    padding: 0.5em;
+    padding-left: 1em;
     font-size: var(--fontsize-body-xl);
-    background-color: var(--color-coat-of-arms-medium-light);
     color: var(--color-coat-of-arms-dark);
-    place-content: center;
+    place-items: center;
     display: flex;
-    grid-row: 1/span 2;
-}
-
-li.summary.not-answered::before {
-    background-color: var(--color-error);
-    color: var(--color-error-light);
 }
 
 ul.contact {
