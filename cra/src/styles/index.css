@@ -31,12 +31,10 @@ body *:not(.contact > *) {
     user-select: none;
 }
 
-header {
+header>* {
     position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0.5em;
-    width: 100vw;
+    left: .5em;
+    top: .5em;
 }
 
 .App {
