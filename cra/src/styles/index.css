@@ -408,9 +408,3 @@ ul.contact {
     font-size: var(--fontsize-body-l);
     font-weight: 600;
 }
-
-.pre-quiz-result-output::before {
-    content: "Vastasit";
-    font-weight: normal;
-    font-size: var(--fontsize-body-s);
-}
