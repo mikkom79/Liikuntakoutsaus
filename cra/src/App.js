@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {<Header />}
       {!preDone && <PreQuiz setPreDone={setPreDone} />}
       {preDone && !quizDone && (
         <Quiz

@@ -23,7 +23,6 @@ const PreQuiz = ({ setPreDone }) => {
     ),
     c2: (
       <>
-        <h1>{PAGE_TITLE}</h1>
         <p>Oletetaan, että työkykysi on saanut parhaimmillaan 10 pistettä.</p>
         <p>
           <label>
@@ -37,7 +36,6 @@ const PreQuiz = ({ setPreDone }) => {
     ),
     c3: (
       <>
-        <h1>{PAGE_TITLE}</h1>
         <p className="pre-quiz-result-output">{values} / 10</p>
         <p>Vastauksesi perusteella koet työkykysi alentuneen.</p>
         <p>
@@ -86,6 +84,7 @@ const PreQuiz = ({ setPreDone }) => {
 
       {showForm && !showPreResult && (
         <form className="container" onSubmit={handleSubmit}>
+          <h1>{PAGE_TITLE}</h1>
           <div className="sub-container">
             {CONTENT.c2}
             <span className="range-slider">
@@ -101,6 +100,7 @@ const PreQuiz = ({ setPreDone }) => {
       )}
       {showPreResult && (
         <div className="container">
+          <h1>{PAGE_TITLE}</h1>
           <div className="sub-container">{CONTENT.c3}</div>
           <div className="buttons-container">
             <a
