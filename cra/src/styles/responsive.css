@@ -57,8 +57,8 @@
     }
 
     .summary-answer-text-container {
-        grid-column: 2/3;
         grid-row: 2/3;
+        grid-column: 1/span 2;
     }
 
     .buttons-container>* {

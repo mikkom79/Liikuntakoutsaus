@@ -4,7 +4,7 @@ import Section from "./Section";
 const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
   const threshold = 5; //minimum amount of points needed for the coaching to be recommended (5 = maximum amount of points)
 
-  const [btnDisabled, setBtnDisabled] = useState(true); //controls the state of the submit form button
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true); // controls the state of the form's next step button
 
   const iconNext = ""; //insert hds icon here
   const iconPrev = ""; //insert hds icon here
@@ -160,26 +160,11 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
     answerText5: undefined,
   });
 
-  const jumpTo = (index) => {
-    //calculate the amount of steps "backwards" needed, using the index (key) of the item that has been clicked (Summary.js)
-
-    const jump = state.step - index - 1;
-
-    for (let i = 0; i < jump; i++) {
-      dispatch({ type: "previous" });
-    } //iterate the amount of jumps (dispatch type "previous") needed, in order to navigate to the unanswered question
-  };
-
   useEffect(() => {
-    //every time [answers]-state changes (=user clicks a radio button), go through current answers and check if any are undefined
-    const emptyAnswer = Object.values(answers).some(
-      (value) => value === undefined
-    );
-    if (emptyAnswer) {
-      return; //If an empty answer is found, return instantly.
-    }
-    setBtnDisabled(false); //if no answer is currently undefined, enable the submit form button
-  }, [answers]);
+    //check if user has answered current step question, and is able to go to the next step
+    const answerIndex = Object.values(answers).indexOf(undefined);
+    setNextBtnDisabled(answerIndex + 1 === state.step);
+  }, [answers, state.step]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -206,7 +191,6 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
         setAnswers={setAnswers}
         answersText={answersText}
         setAnswersText={setAnswersText}
-        jumpTo={jumpTo}
       />
 
       <div className="buttons-container">
@@ -229,12 +213,13 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
             type="button"
             id="next"
             onClick={() => dispatch({ type: "next" })}
+            disabled={nextBtnDisabled}
           >
             Seuraava
           </button>
         )}
         {state.step > questions.length && (
-          <button type="submit" id="main-quiz-submit" disabled={btnDisabled}>
+          <button type="submit" id="main-quiz-submit">
             Lähetä vastaukset
           </button>
         )}

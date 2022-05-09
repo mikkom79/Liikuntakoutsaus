@@ -81,14 +81,14 @@ const Result = ({ recommendCoaching, reset }) => {
             <p>
               Jos tilanteesi muuttuu merkittävästi, käy kurkkaamassa osoitteessa{" "}
               <a href={KOUTSAUS_HREF} target="_blank" rel="noreferrer">
-                Liikuntakoutsaus (hel.fi)
+                Liikuntakoutsaus
               </a>
             </p>
             <p>
               Tutustu myös{" "}
               <a href={LIIKUNTATARJONTA_HREF} target="_blank" rel="noreferrer">
                 {" "}
-                Liikuntatarjontaan (hel.fi)
+                Liikuntatarjontaan
               </a>
             </p>
           </div>
@@ -113,7 +113,7 @@ const Result = ({ recommendCoaching, reset }) => {
             target="_blank"
             rel="noreferrer"
           >
-            Liikuntakoutsaus (hel.fi)
+            Liikuntakoutsaus
           </a>
         )}
         <button
