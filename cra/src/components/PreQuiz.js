@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Slider from "./Slider";
+import Header from "./Header";
 
 const PreQuiz = ({ setPreDone }) => {
   const [showForm, setShowForm] = useState(false);
@@ -73,6 +74,7 @@ const PreQuiz = ({ setPreDone }) => {
     <>
       {!showForm && (
         <div className="container">
+          <Header />
           <div className="sub-container">{CONTENT.c1}</div>
           <div className="buttons-container">
             <button className="primary" onClick={() => setShowForm(true)}>
