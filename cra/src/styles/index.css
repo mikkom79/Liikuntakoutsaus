@@ -31,10 +31,9 @@ body *:not(.contact > *) {
     user-select: none;
 }
 
-header>* {
-    position: absolute;
-    left: .5em;
-    top: .5em;
+header {
+    display: flex;
+    justify-content: center;
 }
 
 .App {
@@ -50,7 +49,7 @@ header>* {
     width: 100%;
     min-height: 32em;
     text-align: center;
-    gap: 3em;
+    gap: 2em;
 }
 
 .sub-container {
@@ -377,15 +376,13 @@ ol.summary-list li * {
 
 .summary-list li::before {
     content: counter(list);
-    justify-items: center;
-    align-items: center;
     font-weight: 600;
     height: 100%;
     width: 100%;
-    padding: 1em;
+    padding-left: 1em;
     font-size: var(--fontsize-body-xl);
     color: var(--color-coat-of-arms-dark);
-    place-content: center;
+    place-items: center;
     display: flex;
 }
 

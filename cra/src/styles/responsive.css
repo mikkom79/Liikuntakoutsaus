@@ -45,6 +45,7 @@
     ol.summary-list li {
         grid-template-columns: auto 6fr;
         grid-template-rows: auto auto;
+
     }
 
     ol.summary-list li * {
@@ -54,11 +55,21 @@
     .summary-question-text-container {
         grid-row: 1/2;
         grid-column: 2/3;
+
     }
 
     .summary-answer-text-container {
         grid-row: 2/3;
         grid-column: 1/span 2;
+    }
+
+    .summary-answer-text-container p {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .summary-list li::before {
+        padding: 0.5em;
     }
 
     .buttons-container>* {
