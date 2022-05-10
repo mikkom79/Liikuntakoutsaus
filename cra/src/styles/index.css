@@ -344,7 +344,7 @@ label {
     flex-direction: column;
     gap: 1.5em;
     padding: 1.5em;
-    background-color: var(--color-coat-of-arms-light);
+    background-color: var(--color-silver-light);
     /*border: 1px solid var(--color-coat-of-arms);*/
     justify-content: center;
     align-items: center;
@@ -399,6 +399,7 @@ h4 {
     height: 100%;
     width: 100%;
     padding-left: 1em;
+    padding-right: 0.5em;
     font-size: var(--fontsize-body-xl);
     color: var(--color-coat-of-arms-dark);
     place-items: center;

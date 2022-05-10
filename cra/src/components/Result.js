@@ -37,7 +37,7 @@ const Result = ({ recommendCoaching, reset }) => {
         <h4>Lisätiedot liikuntakoutseilta</h4>
         <ul className="contact">
           <li>
-            ma–pe <em>klo </em>08–16
+            ma–pe <em>klo </em>08–15
           </li>
           <li>
             <em>puh.</em> 040 1882130 / 09 310 22674{" "}
@@ -87,7 +87,7 @@ const Result = ({ recommendCoaching, reset }) => {
             <p>
               Jos tilanteesi muuttuu merkittävästi, käy kurkkaamassa osoitteessa{" "}
               <a href={KOUTSAUS_HREF} target="_blank" rel="noreferrer">
-                Liikuntakoutsaus (hel.fi)
+                Liikuntakoutsaus (intra)
               </a>
             </p>
             <p>
@@ -120,11 +120,7 @@ const Result = ({ recommendCoaching, reset }) => {
         >
           Liikuntakoutsaus
         </a>
-        <button
-          className={recommendCoaching ? "secondary" : "primary"}
-          type="button"
-          onClick={() => reset()}
-        >
+        <button className={"secondary"} type="button" onClick={() => reset()}>
           Palaa alkuun
         </button>
       </div>
