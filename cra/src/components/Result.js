@@ -1,18 +1,18 @@
 const Result = ({ recommendCoaching, reset }) => {
   window.scrollTo(0, 0);
   //Koulutuskalenteri Onni
-  const ONNI_HREF = "https://onni.hel.fi/DNN-login?returnurl=%2fOmaPalvelu";
+  const ONNI_HREF = "https://onni.hel.fi/OmaPalvelu";
   //Helmen liikuntakoutsaus sivujen linkki
   const KOUTSAUS_HREF =
     "https://helsinginkaupunki.sharepoint.com/sites/Intra-Henkilostoedut/SitePages/Liikuntakoutsaus.aspx";
   //henkilöstöliikunnan sivujen linkki
   const LIIKUNTATARJONTA_HREF =
-    "http://helmi.hel.fi/henkilosto/Henkilostoedut/henkilostoliikunta/liikuntatarjonta/Sivut/default.aspx";
+    "https://helsinginkaupunki.sharepoint.com/sites/Intra-Henkilostoedut/SitePages/Liikuntatarjonta-ja-ilmoittautuminen.aspx";
 
   const CARD = {
     c1: (
       <>
-        <h4>Liikuntakoutsauksen kriteerit</h4>
+        <h4>Liikuntakoutsauksen kriteerit:</h4>
         <ul>
           <li>Asteikolla 0–10 arvioin työkykyni olevan välillä 6–10</li>
           <li>Olen motivoitunut lisäämään liikuntaa omassa arjessani</li>
@@ -34,7 +34,7 @@ const Result = ({ recommendCoaching, reset }) => {
     ),
     c3: (
       <>
-        <h4>Lisätiedot liikuntakoutseilta</h4>
+        <h4>Lisätiedot liikuntakoutseilta:</h4>
         <ul className="contact">
           <li>
             ma–pe <em>klo </em>08–15
@@ -76,7 +76,7 @@ const Result = ({ recommendCoaching, reset }) => {
             <p>
               Lisätietoja osoitteessa{" "}
               <a href={KOUTSAUS_HREF} target="_blank" rel="noreferrer">
-                Liikuntakoutsaus (hel.fi)
+                Liikuntakoutsaus (intra)
               </a>
             </p>
             <p>Tervetuloa 😊</p>
@@ -94,7 +94,7 @@ const Result = ({ recommendCoaching, reset }) => {
               Tutustu myös{" "}
               <a href={LIIKUNTATARJONTA_HREF} target="_blank" rel="noreferrer">
                 {" "}
-                Liikuntatarjontaan (hel.fi)
+                Liikuntatarjontaan (intra)
               </a>
             </p>
           </div>
