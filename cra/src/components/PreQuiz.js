@@ -19,7 +19,6 @@ const PreQuiz = ({ setPreDone }) => {
           mielekkäitä ja helposti toteutettavia keinoja lisätä kokonaisvaltaista
           hyvinvointia tukevaa liikuntaa?
         </p>
-        <p>Testaa, olisiko liikuntakoutsaus sinun juttusi!</p>
       </>
     ),
     c2: (
@@ -75,11 +74,16 @@ const PreQuiz = ({ setPreDone }) => {
       {!showForm && (
         <div className="container">
           <Header />
-          <div className="sub-container">{CONTENT.c1}</div>
-          <div className="buttons-container">
-            <button className="primary" onClick={() => setShowForm(true)}>
-              Tee testi
-            </button>
+          <div className="sub-container">
+            {CONTENT.c1}
+            <div className="lead-card">
+              <p>Testaa, olisiko liikuntakoutsaus sinun juttusi!</p>
+              <div className="buttons-container">
+                <button className="primary" onClick={() => setShowForm(true)}>
+                  Tee testi
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}

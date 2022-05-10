@@ -132,7 +132,7 @@ h2 {
 }
 
 h3 {
-    font-size: var(--fontsize-heading-s);
+    font-size: var(--fontsize-heading-xs);
     font-weight: 500;
 }
 
@@ -323,13 +323,11 @@ label {
 .card {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    background-color: var(--color-coat-of-arms-medium-light);
     padding: 1em 2em;
+    gap: 0.5em;
     text-align: left;
-    font-size: var(--fontsize-body-m);
+    background-color: var(--color-coat-of-arms-light);
     width: var(--clamp-small);
-
 }
 
 .card li {
@@ -338,6 +336,19 @@ label {
 
 .card li::marker {
     color: var(--color-coat-of-arms);
+}
+
+.lead-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 1.5em;
+    background-color: var(--color-coat-of-arms-light);
+    /*border: 1px solid var(--color-coat-of-arms);*/
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
 }
 
 ol.summary-list {
@@ -370,6 +381,14 @@ ol.summary-list li * {
     font-style: italic;
 }
 
+p,
+h1,
+h2,
+h3,
+h4 {
+    max-width: var(--clamp-small);
+}
+
 
 
 /*LIST MARKERS*/
@@ -397,7 +416,7 @@ ul.contact {
 }
 
 .pre-quiz-result-output {
-    background-color: var(--color-info-light);
+    background-color: var(--color-coat-of-arms-medium-light);
     width: 5.5em;
     height: 5.5em;
     display: flex;
@@ -405,6 +424,13 @@ ul.contact {
     place-content: center;
     text-align: center;
     border-radius: 50%;
-    font-size: var(--fontsize-body-l);
+    font-size: var(--fontsize-body-xl);
     font-weight: 600;
+}
+
+.pre-quiz-result-output::before {
+    content: "Vastasit: ";
+    display: block;
+    font-size: var(--fontsize-body-s);
+    font-weight: normal;
 }

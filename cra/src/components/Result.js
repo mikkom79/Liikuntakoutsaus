@@ -36,9 +36,15 @@ const Result = ({ recommendCoaching, reset }) => {
       <>
         <h4>Lisätiedot liikuntakoutseilta</h4>
         <ul className="contact">
-          <li>ma–pe klo 08–16</li>
-          <li>puh.040 1882130 & 09 310 22674 </li>
-          <li>puh. 040 1946077 & 09 310 21670</li>
+          <li>
+            ma–pe <em>klo </em>08–16
+          </li>
+          <li>
+            <em>puh.</em> 040 1882130 / 09 310 22674{" "}
+          </li>
+          <li>
+            <em>puh.</em> 040 1946077 / 09 310 21670
+          </li>
         </ul>
       </>
     ),
@@ -68,9 +74,9 @@ const Result = ({ recommendCoaching, reset }) => {
               kautta.
             </p>
             <p>
-              Lisätietoja{" "}
+              Lisätietoja osoitteessa{" "}
               <a href={KOUTSAUS_HREF} target="_blank" rel="noreferrer">
-                Liikuntakoutsaus
+                Liikuntakoutsaus (hel.fi)
               </a>
             </p>
             <p>Tervetuloa 😊</p>
@@ -81,14 +87,14 @@ const Result = ({ recommendCoaching, reset }) => {
             <p>
               Jos tilanteesi muuttuu merkittävästi, käy kurkkaamassa osoitteessa{" "}
               <a href={KOUTSAUS_HREF} target="_blank" rel="noreferrer">
-                Liikuntakoutsaus
+                Liikuntakoutsaus (hel.fi)
               </a>
             </p>
             <p>
               Tutustu myös{" "}
               <a href={LIIKUNTATARJONTA_HREF} target="_blank" rel="noreferrer">
                 {" "}
-                Liikuntatarjontaan
+                Liikuntatarjontaan (hel.fi)
               </a>
             </p>
           </div>
@@ -106,16 +112,14 @@ const Result = ({ recommendCoaching, reset }) => {
             Varaa aika
           </a>
         )}
-        {recommendCoaching && (
-          <a
-            className="primary"
-            href={KOUTSAUS_HREF}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Liikuntakoutsaus
-          </a>
-        )}
+        <a
+          className="primary"
+          href={KOUTSAUS_HREF}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Liikuntakoutsaus
+        </a>
         <button
           className={recommendCoaching ? "secondary" : "primary"}
           type="button"
