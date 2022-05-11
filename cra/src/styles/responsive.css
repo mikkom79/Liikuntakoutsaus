@@ -14,7 +14,7 @@
     }
 
     .container {
-        min-height: 90vh;
+        min-height: 80vh;
     }
 
 }
@@ -23,11 +23,12 @@
 @media only screen and (max-width: 425px) {
 
     .App {
-        padding: 0.5em;
+        padding: 1em;
     }
 
     .container {
-        gap: 2em;
+        min-height: 90vh;
+        gap: 1em;
     }
 
     .sub-container {
@@ -36,6 +37,12 @@
 
     .card {
         width: 100%;
+        padding: 1em;
+    }
+
+    .card li {
+        margin-left: 1.5em;
+        width: 90%;
     }
 
     ol.summary-list {
@@ -64,15 +71,20 @@
     }
 
     .summary-answer-text-container p {
-        justify-content: center;
-        text-align: center;
+        justify-content: left;
+        margin-left: 1em;
     }
 
     .summary-list li::before {
         padding: 0.5em;
+        place-items: flex-start;
     }
 
     .buttons-container>* {
         flex: 1 0 100%;
+    }
+
+    .buttons-container {
+        gap: 0.5em;
     }
 }

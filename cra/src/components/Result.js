@@ -35,17 +35,21 @@ const Result = ({ recommendCoaching, reset }) => {
     c3: (
       <>
         <h4>Lisätiedot liikuntakoutseilta:</h4>
-        <ul className="contact">
-          <li>
-            ma–pe <em>klo </em>08–15
-          </li>
-          <li>
-            <em>puh.</em> 040 1882130 / 09 310 22674{" "}
-          </li>
-          <li>
-            <em>puh.</em> 040 1946077 / 09 310 21670
-          </li>
-        </ul>
+        <div className="contact">
+          <div>
+            ma–pe <p className="detail">klo</p> 08–15
+          </div>
+          <div>
+            <p className="detail">puh.</p> <address>040 1882130</address>
+            <p className="detail"> / </p>
+            <address> 09 310 22674</address>
+          </div>
+          <div>
+            <p className="detail">puh.</p> <address>040 1946077</address>{" "}
+            <p className="detail"> / </p>
+            <address> 09 310 21670</address>
+          </div>
+        </div>
       </>
     ),
   };
