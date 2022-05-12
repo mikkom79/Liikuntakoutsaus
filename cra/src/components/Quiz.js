@@ -170,11 +170,11 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
     e.preventDefault();
 
     let totalPoints = 0; //calculate the total points; find and compare currently stored answers to the list of answer options
-    Object.values(answers).map((value, index) => {
+    Object.values(answers).forEach((value, index) => {
       const option = questions[index].answerOptions.find(
         (question) => question.id === value
       );
-      if (option?.addPoint) {
+      if (option.addPoint) {
         totalPoints++;
       } //if addPoint is true, add one point to the total points
     });
