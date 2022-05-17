@@ -26,8 +26,8 @@ const Slider = ({ rtl, values, setValues }) => {
             {...props}
             style={{
               ...props.style,
-              height: "1.2em",
-              width: "2px",
+              height: "1em",
+              width: "1px",
               backgroundColor:
                 index * STEP < values[0]
                   ? "var(--color-coat-of-arms)"
@@ -92,8 +92,8 @@ const Slider = ({ rtl, values, setValues }) => {
       />
       <output
         style={{
-          marginTop: "25px",
-          fontSize: "1.4rem",
+          marginTop: "0.5em",
+          fontSize: "1.8rem",
           backgroundColor: "var(--color-info-light)",
           height: "2em",
           width: "2em",

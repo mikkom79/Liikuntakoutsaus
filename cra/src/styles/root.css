@@ -2,7 +2,7 @@
 
     --font-default: HelsinkiGrotesk, Arial, sans-serif;
 
-    --clamp-small: clamp(12em, 100vw, 26em);
+    --clamp-small: clamp(10em, 90vw, 26em);
 
     --breakpoint-height: 560px;
     --breakpoint-width: 375px;

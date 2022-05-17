@@ -96,11 +96,21 @@ span.range-slider {
     flex: none;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 0.5em;
+    gap: 0;
     color: var(--color-coat-of-arms-dark);
     font-weight: 600;
     width: 100%;
     margin-top: 1em;
+    border: 1px solid var(--color-coat-of-arms-medium-light);
+    border-radius: 0.3em;
+    padding: 1em;
+}
+
+.range-slider p {
+    color: var(--color-black-60);
+    font-weight: normal;
+    font-size: var(--fontsize-body-l);
+    margin-top: 5px;
 }
 
 label.radio-label {
@@ -255,12 +265,6 @@ button.next::after {
 
 label {
     cursor: pointer;
-}
-
-.range-slider p {
-    color: var(--color-black-60);
-    font-weight: normal;
-    margin-top: 6px;
 }
 
 .radio-list {
@@ -432,8 +436,8 @@ h4 {
 
 .pre-quiz-result-output {
     background-color: var(--color-coat-of-arms-medium-light);
-    width: 5.5em;
-    height: 5.5em;
+    width: 4.4em;
+    height: 4.4em;
     display: flex;
     flex-direction: column;
     place-content: center;
