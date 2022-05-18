@@ -11,8 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: var(--font-default);
-    /*background-color: var(--color-silver);*/
-    background-color: red;
+    background-color: var(--color-silver);
     color: var(--color-black-90);
     min-height: 100vh;
     margin: 0;
@@ -40,6 +39,7 @@ header {
 .App {
     width: clamp(375px, 100vw, 30em);
     background-color: var(--color-white);
+    background-color: red;
     padding: 2em;
 }
 
