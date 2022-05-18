@@ -22,6 +22,12 @@
 /*mobile*/
 @media only screen and (max-width: 380px) {
 
+    :root {
+
+        font-size: 125%;
+        /*root font size*/
+    }
+
     .App {
         padding: 0.1em 1em;
     }

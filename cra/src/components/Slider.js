@@ -90,21 +90,7 @@ const Slider = ({ rtl, values, setValues }) => {
           </div>
         )}
       />
-      <output
-        style={{
-          marginTop: "0.5em",
-          fontSize: "1.8rem",
-          backgroundColor: "var(--color-info-light)",
-          height: "2em",
-          width: "2em",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: "50%",
-        }}
-      >
-        {values[0]}
-      </output>
+      <output className="output-range">{values[0]}</output>
     </div>
   );
 };
