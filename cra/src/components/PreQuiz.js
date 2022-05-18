@@ -15,7 +15,7 @@ const PreQuiz = ({ setPreDone }) => {
     c1: (
       <>
         <p className="lead-paragraph">
-          KAKKA Haluaisitko löytää liikunta-alan ammattilaisen avulla sinulle
+          Haluaisitko löytää liikunta-alan ammattilaisen avulla sinulle
           mielekkäitä ja helposti toteutettavia keinoja lisätä kokonaisvaltaista
           hyvinvointia tukevaa liikuntaa?
         </p>
