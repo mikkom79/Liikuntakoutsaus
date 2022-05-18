@@ -39,6 +39,7 @@ header {
 .App {
     width: clamp(375px, 100vw, 30em);
     background-color: var(--color-white);
+    background-color: red;
     padding: 2em;
 }
 
@@ -452,4 +453,16 @@ h4 {
     display: block;
     font-size: var(--fontsize-body-s);
     font-weight: normal;
+}
+
+.output-range {
+    margin-top: 0.5em;
+    font-size: 1.6rem;
+    background-color: var(--color-info-light);
+    height: 2em;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
