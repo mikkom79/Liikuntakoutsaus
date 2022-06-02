@@ -18,4 +18,4 @@ Työkalun sisäinen logiikka;
 
 3. Kun käyttäjä on vastannut kaikkiin kysymyksiin, työkalu laskee yhteen pisteet ja kertyneen pistemäärän mukaan tulostaa käyttäjälle kyselyn tulokset.
    -> Jos pistemäärä ylittää rajan, suositellaan koutsausta, ja tarjotaan linkki ajanvarauspalveluun.
-   -> Jos pistemäärä alittaa rajan, käyttäjää suositellaan jatkamaan nykyisten liikuntatottumustensa noudattamista.
+   -> Jos pistemäärä alittaa rajan, käyttäjää suositellaan jatkamaan nykyisten liikuntatottumustensa noudattamista
