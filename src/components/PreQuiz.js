@@ -77,7 +77,7 @@ const PreQuiz = ({ setPreDone }) => {
           <div className="sub-container">
             {CONTENT.c1}
             <div className="lead-card">
-              <p>Testaa, olisiko liikuntakoutsaus sinun juttusi!</p>
+              <p>Testaa, olisiko liikuntakoutsaus sinun juttusi! ????!!!</p>
               <div className="buttons-container">
                 <button className="primary" onClick={() => setShowForm(true)}>
                   Tee testi
