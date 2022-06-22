@@ -1,7 +1,7 @@
 const Result = ({ recommendCoaching, reset }) => {
   window.scrollTo(0, 0);
   //Koulutuskalenteri Onni
-  const ONNI_HREF = "https://onni.hel.fi/OmaPalvelu";
+  const ONNI_HREF = "https://onni.hel.fi/kirjautuminen";
   //Helmen liikuntakoutsaus sivujen linkki
   const KOUTSAUS_HREF =
     "https://helsinginkaupunki.sharepoint.com/sites/Intra-Henkilostoedut/SitePages/Liikuntakoutsaus.aspx";
@@ -36,17 +36,13 @@ const Result = ({ recommendCoaching, reset }) => {
       <>
         <h4>Lisätiedot liikuntakoutseilta:</h4>
         <div className="contact">
+          <div>ma–pe klo 08–15</div>
           <div>
-            ma–pe <p className="detail">klo</p> 08–15
-          </div>
-          <div>
-            <p className="detail">puh.</p> <address>040 1882130</address>
-            <p className="detail"> / </p>
+            puh. <address>040 1882130</address> /
             <address> 09 310 22674</address>
           </div>
           <div>
-            <p className="detail">puh.</p> <address>040 1946077</address>{" "}
-            <p className="detail"> / </p>
+            puh. <address>040 1946077</address> /
             <address> 09 310 21670</address>
           </div>
         </div>

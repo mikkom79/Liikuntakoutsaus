@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 import Section from "./Section";
 
 const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
-  const threshold = 5; //minimum amount of points needed for the coaching to be recommended (5 = maximum amount of points)
+  const threshold = 4; //minimum amount of points needed for the coaching to be recommended (5 = maximum amount of points)
 
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true); // controls the state of the form's next step button
 
@@ -25,50 +25,6 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const questions = [
-    {
-      questionTitle:
-        "Haluaisitko liikunta-alan ammattilaisen tukea matkallesi kohti aktiivisempaa arkea?",
-      answerOptions: [
-        {
-          id: "1A",
-          optionText: "En, haluan vain treenivinkit",
-          addPoint: false,
-        },
-        {
-          id: "1B",
-          optionText:
-            "Kyllä, tarvitsen tukea liikunnan aloittamisessa tai lisäämisessä",
-          addPoint: true,
-        },
-        {
-          id: "1C",
-          optionText: "En osaa sanoa",
-          addPoint: true,
-        },
-      ],
-    },
-    {
-      questionTitle:
-        "Huomaatko jaksamisen olevan vähäistä työpäivän jälkeen? Kaipaatko lisäenergiaa?",
-      answerOptions: [
-        {
-          id: "2A",
-          optionText: "Työt vievät kaiken energiani",
-          addPoint: true,
-        },
-        {
-          id: "2B",
-          optionText:
-            "Olen energinen työpäivän jälkeen, harvoin jään sohvalle makoilemaan",
-          addPoint: false,
-        },
-        {
-          id: "2C",
-          optionText: "Joskus jään sohvalle",
-          addPoint: true,
-        },
-      ],
-    },
     {
       questionTitle: "Tällä hetkellä liikun...",
       answerOptions: [
@@ -94,6 +50,30 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
         },
       ],
     },
+
+    {
+      questionTitle:
+        "Huomaatko jaksamisen olevan vähäistä työpäivän jälkeen? Kaipaatko lisäenergiaa?",
+      answerOptions: [
+        {
+          id: "2A",
+          optionText: "Työt vievät kaiken energiani",
+          addPoint: false,
+        },
+        {
+          id: "2B",
+          optionText:
+            "Olen energinen työpäivän jälkeen, harvoin jään sohvalle makoilemaan",
+          addPoint: false,
+        },
+        {
+          id: "2C",
+          optionText: "Joskus jään sohvalle",
+          addPoint: false,
+        },
+      ],
+    },
+
     {
       questionTitle: "Arki- ja hyötyliikuntaa on arjessani...",
       answerOptions: [
@@ -137,6 +117,28 @@ const Quiz = ({ setQuizDone, setRecommendCoaching }) => {
           id: "5C",
           optionText: "Olen tyytyväinen tottumuksiini",
           addPoint: false,
+        },
+      ],
+    },
+    {
+      questionTitle:
+        "Haluaisitko liikunta-alan ammattilaisen tukea matkallesi kohti aktiivisempaa arkea?",
+      answerOptions: [
+        {
+          id: "1A",
+          optionText: "En, haluan vain treenivinkit",
+          addPoint: false,
+        },
+        {
+          id: "1B",
+          optionText:
+            "Kyllä, tarvitsen tukea liikunnan aloittamisessa tai lisäämisessä",
+          addPoint: true,
+        },
+        {
+          id: "1C",
+          optionText: "En osaa sanoa",
+          addPoint: true,
         },
       ],
     },
