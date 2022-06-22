@@ -102,6 +102,9 @@ const Result = ({ recommendCoaching, reset }) => {
         {!recommendCoaching && <div className="card">{CARD.c3}</div>}
       </div>
       <div className="buttons-container">
+        <button className={"secondary"} type="button" onClick={() => reset()}>
+          Palaa alkuun
+        </button>
         {recommendCoaching && (
           <a
             className="primary"
@@ -120,9 +123,6 @@ const Result = ({ recommendCoaching, reset }) => {
         >
           Liikuntakoutsaus
         </a>
-        <button className={"secondary"} type="button" onClick={() => reset()}>
-          Palaa alkuun
-        </button>
       </div>
     </div>
   );

@@ -109,14 +109,6 @@ const PreQuiz = ({ setPreDone }) => {
           <h1>{PAGE_TITLE}</h1>
           <div className="sub-container">{CONTENT.c3}</div>
           <div className="buttons-container">
-            <a
-              className="primary"
-              href={LINK_HREF}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Työhyvinvointi & Työterveys
-            </a>
             <button
               className="secondary"
               type="button"
@@ -128,6 +120,14 @@ const PreQuiz = ({ setPreDone }) => {
             >
               Palaa alkuun
             </button>
+            <a
+              className="primary"
+              href={LINK_HREF}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Työhyvinvointi & Työterveys
+            </a>
           </div>
         </div>
       )}
