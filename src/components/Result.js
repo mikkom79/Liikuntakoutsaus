@@ -4,7 +4,7 @@ const Result = ({ recommendCoaching, reset }) => {
   const ONNI_HREF = "https://onni.hel.fi/kirjautuminen";
   //Helmen liikuntakoutsaus sivujen linkki
   const KOUTSAUS_HREF =
-    "https://helsinginkaupunki.sharepoint.com/sites/Intra-Henkilostoedut/SitePages/Liikuntakoutsaus.aspx";
+    "https://helsinginkaupunki.sharepoint.com/sites/Intra-Henkilostoedut/SitePages/Liikunta-%20ja%20ryhm%C3%A4koutsaus.aspx";
   //henkilöstöliikunnan sivujen linkki
   const LIIKUNTATARJONTA_HREF =
     "https://helsinginkaupunki.sharepoint.com/sites/Intra-Henkilostoedut/SitePages/Liikuntatarjonta-ja-ilmoittautuminen.aspx";
